@@ -1,14 +1,19 @@
 import java.time.LocalDate;
 
 public class CartaoCredito {
-
 	private int banco;
-
 	private int bandeiraCartao;
-
 	private int numCartao;
-
 	private int codigoCartao;
+	private LocalDate dataValidade;
+	
+	public CartaoCredito(int banco, int bandeiraCartao, int numCartao, int codigoCartao, LocalDate dataValidade) {
+		setBanco(banco);
+		setBandeiraCartao(bandeiraCartao);
+		setNumCartao(numCartao);
+		setCodigoCartao(codigoCartao);
+		setDataValidade(dataValidade);
+	}
 
 	public int getBanco() {
 		return banco;
@@ -49,7 +54,5 @@ public class CartaoCredito {
 	public void setDataValidade(LocalDate dataValidade) {
 		this.dataValidade = dataValidade;
 	}
-
-	private LocalDate dataValidade;
 
 }

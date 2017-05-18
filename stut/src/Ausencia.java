@@ -2,13 +2,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Ausencia {
-
 	private LocalDate data;
-
 	private String viagem;
-
 	private String observacoes;
-
 	private ArrayList listaAusencias;
 
 	public void verificarAusencias() {
