@@ -1,6 +1,5 @@
 import java.time.LocalTime;
 import java.util.LinkedList;
-import java.util.Map;
 import java.util.TreeMap;
 
 public class Turma {
@@ -51,5 +50,22 @@ public class Turma {
 		});
 		rota.rotaOrdenadaPadraoJson(a);
 	}
-
+	
+	public String getRotaDia(){
+		this.cont = 0;
+		listaAluno.forEach(x -> {
+			if(x.ehAusente()){
+				this.cont++;
+			}
+		});
+		if(this.cont == 0){
+			return rota.getRotaPadrao();
+		}else{
+			TreeMap<LocalTime, Aluno> a = new TreeMap<LocalTime, Aluno>();
+			listaAluno.forEach(x -> {
+				a.put(x.getContratoAluno().getRecolhimentoCasa(), x);
+			});
+			return rota.rotaAtualizadaPadraoJson(a);
+		}
+	}
 }

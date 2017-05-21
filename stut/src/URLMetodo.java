@@ -41,7 +41,22 @@ public class URLMetodo implements Container {
 				System.out.println("Entrando no get");
 				mensagem = stutService.consultarClientes(request);
 				this.enviaResposta(Status.OK, response, mensagem);
-			} else {
+			} 
+			
+			
+			
+			else if(path.startsWith("/requisitarTurma") && "POST".equals(method)){
+				System.out.println("Entrando no get");
+				String[] aux = path.split("/");
+				String cpf = aux[(aux.length-2)];
+				String tipoU = aux[(aux.length-1)];
+				mensagem = stutService.getJSONTurma(request, cpf, tipoU);
+				this.enviaResposta(Status.OK, response, mensagem);
+			}
+			
+			
+			
+			else {
 				this.naoEncontrado(response, path);
 			}
 

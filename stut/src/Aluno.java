@@ -3,36 +3,50 @@ import java.util.ArrayList;
 
 public class Aluno extends Pessoa {
 	private String responsavel;
-	private ContratoAluno contratoA ;
+	private ContratoAluno contratoA;
 	private Faculdade faculdade;
 	private ContratoAluno contrato;
-	// private Faculdade faculdade;
 	private CartaoCredito cartao;
-	// private Turma turma;
+	//private Turma turma;
 	private int turma;
 	private int ausencias;
 	private boolean ausente = false;
 	private boolean temTurma = false;
 
-	public Aluno(String nome, LocalDate dataNascimento, int idade, String cpf, String rg, String tel, Endereco endereco,
-			String email, String senha, String responsavel, ContratoAluno contrato, String facul, CartaoCredito cartao,
-			int turma) {
+	public Aluno(String nome, LocalDate dataNascimento, int idade,
+			String cpf, String rg, String tel, Endereco endereco,
+			String email, String senha, String responsavel, 
+			ContratoAluno contrato, Faculdade facul, 
+			CartaoCredito cartao) {
+		
+		
 		super(nome, dataNascimento, idade, cpf, rg, tel, endereco, email, senha);
 		setContratoAluno(contrato);
 		setResponsavel(responsavel);
 		setCartao(cartao);
-		setTurma(turma);
+		setFaculdade(facul);
 		setAusencias(0);
 	}
 
 	// Para testar WebService
-	public Aluno(String nome, LocalDate dataNascimento, int idade, String cpf, String rg, String tel, Endereco endAluno,
-			String email, String senha, String responsavel2, ContratoAluno contratoAluno, String faculdade2,
-			String cartao2, String turma2) {
+	public Aluno(String nome, LocalDate dataNascimento, int idade,
+			String cpf, String rg, String tel, Endereco endAluno,
+			String email, String senha, String responsavel2, 
+			ContratoAluno contratoAluno, String faculdade2,String cartao2, String turma2) {
+		
+		
 		super(nome, dataNascimento, idade, cpf, rg, tel, endAluno, email, senha);
 		setContratoAluno(contratoAluno);
 		setResponsavel(responsavel2);
 		setAusencias(0);
+	}
+
+	public Faculdade getFaculdade() {
+		return faculdade;
+	}
+
+	public void setFaculdade(Faculdade faculdade) {
+		this.faculdade = faculdade;
 	}
 
 	/**
@@ -86,12 +100,20 @@ public class Aluno extends Pessoa {
 		this.cartao = cartao;
 	}
 
+	//public Turma getTurma() {
+	//	return turma;
+	//}
+	
 	public int getTurma() {
 		return turma;
 	}
 
+	//public void setTurma(Turma turma) {
+	//	this.turma = turma;
+	//}
+	
 	public void setTurma(int turma) {
-		this.turma = turma;
+	this.turma = turma;
 	}
 
 	public int getAusencias() {
