@@ -4,22 +4,15 @@ public class ContratoMotorista extends Contrato {
 	private String placaVeiculo;
 	private String modeloVeiculo;
 	private String anoVeiculo;
-	
+
 	public ContratoMotorista(String formaPgto, String assinaturaPagto, String servico, LocalDate inicioContrato,
 			LocalDate fimContrato, int percentualMulta, String status) {
-		super(formaPgto, assinaturaPagto, servico, inicioContrato, fimContrato, percentualMulta, status);
-
-		
-	}
-
-	/*public ContratoMotorista(String formaPgto, String assinaturaPagto, String servico, LocalDate inicioContrato,
-			LocalDate fimContrato, int percentualMulta, StatusContrato status) {
 
 		super(formaPgto, assinaturaPagto, servico, inicioContrato, fimContrato, percentualMulta, status);
 		setPlacaVeiculo(placaVeiculo);
 		setModeloVeiculo(modeloVeiculo);
 		setAnoVeiculo(anoVeiculo);
-	}*/
+	}
 
 	/**
 	 * Métodos

@@ -3,17 +3,17 @@ import java.util.ArrayList;
 
 public class Aluno extends Pessoa {
 	private String responsavel;
-	private Contrato contrato;
-	private Faculdade faculdade;
+	private ContratoAluno contrato;
+	// private Faculdade faculdade;
+	private String faculdade;
 	private CartaoCredito cartao;
-	private Turma turma;
+	// private Turma turma;
+	private int turma;
 	private int ausencias;
 
-
-
 	public Aluno(String nome, LocalDate dataNascimento, int idade, String cpf, String rg, String tel, Endereco endereco,
-			String email, String senha, String responsavel, ContratoAluno contrato, Faculdade facul,
-			CartaoCredito cartao, Turma turma) {
+			String email, String senha, String responsavel, ContratoAluno contrato, String facul, CartaoCredito cartao,
+			int turma) {
 		super(nome, dataNascimento, idade, cpf, rg, tel, endereco, email, senha);
 		setContrato(contrato);
 		setResponsavel(responsavel);
@@ -22,7 +22,6 @@ public class Aluno extends Pessoa {
 		setTurma(turma);
 		setAusencias(0);
 	}
-	
 
 	/**
 	 * Métodos
@@ -38,79 +37,63 @@ public class Aluno extends Pessoa {
 	public ArrayList verificarViagens() {
 		return null;
 	}
-	
+
 	/**
 	 * Getters e setters
 	 */
-
 
 	public String getResponsavel() {
 		return responsavel;
 	}
 
-
 	public void setResponsavel(String responsavel) {
 		this.responsavel = responsavel;
 	}
 
-
-	public Contrato getContrato() {
+	public ContratoAluno getContrato() {
 		return contrato;
 	}
 
-
-	public void setContrato(Contrato contrato) {
+	public void setContrato(ContratoAluno contrato) {
 		this.contrato = contrato;
 	}
 
-
-	public Faculdade getFaculdade() {
+	public String getFaculdade() {
 		return faculdade;
 	}
 
-
-	public void setFaculdade(Faculdade faculdade) {
+	public void setFaculdade(String faculdade) {
 		this.faculdade = faculdade;
 	}
-
 
 	public CartaoCredito getCartao() {
 		return cartao;
 	}
 
-
 	public void setCartao(CartaoCredito cartao) {
 		this.cartao = cartao;
 	}
 
-
-	public Turma getTurma() {
+	public int getTurma() {
 		return turma;
 	}
 
-
-	public void setTurma(Turma turma) {
+	public void setTurma(int turma) {
 		this.turma = turma;
 	}
-
 
 	public int getAusencias() {
 		return ausencias;
 	}
 
-
 	public void setAusencias(int ausencias) {
 		this.ausencias = ausencias;
 	}
 
-
 	@Override
 	public String toString() {
-		return super.toString() + " responsavel=" + responsavel + ", contrato=" + contrato + ", faculdade=" + faculdade + ", cartao="
-				+ cartao + ", turma=" + turma + ", ausencias=" + ausencias + "]";
+		return super.toString() + " responsavel: " + responsavel + contrato.toString() + ", faculdade:" + faculdade
+				+ cartao.toString() + ", turma: " + turma + ", ausencias: " + ausencias;
 	}
-
-	
-
 
 }

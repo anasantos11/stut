@@ -51,7 +51,11 @@ public abstract class Contrato {
 	public void renovarAluno() {
 
 	}
+	
 
+	/**
+	 * Getters e setters
+	 */
 	public String getFormaPgto() {
 		return formaPgto;
 	}
@@ -108,8 +112,12 @@ public abstract class Contrato {
 		this.status = status;
 	}
 
-	/**
-	 * Getters e setters
-	 */
+	@Override
+	public String toString() {
+		return "Contrato formaPgto: " + formaPgto + ", assinaturaPagto :" + assinaturaPagto + ", servico: " + servico
+				+ ", inicioContrato: " + inicioContrato + ", fimContrato: " + fimContrato + ", percentualMulta: "
+				+ percentualMulta + ", status: " + status + "]";
+	}
+	
 
 }

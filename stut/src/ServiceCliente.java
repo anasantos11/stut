@@ -1,7 +1,7 @@
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Calendar;
+
 
 import org.simpleframework.http.Query;
 import org.simpleframework.http.Request;
@@ -9,10 +9,10 @@ import org.simpleframework.http.Request;
 public class ServiceCliente {
 	private Stut lista;
 
-	public String cadastroUsuario(Request request) {
+	public String contratoPassageiro(Request request) {
 		Pessoa aluno = null;
 		Query query = request.getQuery();
-		
+
 		// Query Aluno
 		String nome = query.get("nome");
 		LocalDate dataNascimento = LocalDate.parse(query.get("dataNascimento"));
@@ -32,46 +32,51 @@ public class ServiceCliente {
 		String cepAluno = query.get("cep");
 		// Query Faculdade
 		String faculdade = query.get("faculdade");
-		String cartao = query.get("cartao");
-		String turma = query.get("turma");
-		int ausencias = query.getInteger("ausencias");
+		// Query Cartao
+		int banco = query.getInteger("banco");
+		String bandeiraCartao = query.get("bandeiraCartao");
+		int numCartao = query.getInteger("numCartao");
+		int codigoCartao = query.getInteger("codigoCartao");
+		LocalDate dataValidade = LocalDate.parse(query.get("dataValidade"));
+
+		// Query Turma
+		int turma = query.getInteger("turma");
+
 		// Contrato Aluno
 		String formaPgto = query.get("formaPgto");
 		String assinaturaPagto = query.get("assinaturaPagto");
 		String servico = query.get("servico");
 		LocalDate inicioContrato = LocalDate.parse(query.get("inicioContrato"));
 		LocalDate fimContrato = LocalDate.parse(query.get("fimContrato"));
-		int percentualMulta = query.getInteger("percentualMulta");
-		String status = query.get("status");
-		LocalTime recolhimentoCasa =
-		LocalTime.parse(query.get("recolhimentoCasa"));
-		// LocalTime recolhimentoFaculdade =
-		// LocalTime.parse(query.get("recolhimentoFaculdade"));
-		// LocalTime entregaCasa = LocalTime.parse(query.get("entregaCasa"));
-		// LocalTime entregaFaculdade =
-		// LocalTime.parse(query.get("entregaFaculdade"));
+		int percentualMulta = 50;
+		String status = "Ativo";
+		LocalTime recolhimentoCasa = LocalTime.parse(query.get("recolhimentoCasa"));
+		LocalTime recolhimentoFaculdade = LocalTime.parse(query.get("recolhimentoFaculdade"));
+		LocalTime entregaCasa = LocalTime.parse(query.get("entregaCasa"));
+		LocalTime entregaFaculdade = LocalTime.parse(query.get("entregaFaculdade"));
 
 		Endereco endAluno = new Endereco(ruaAluno, numAluno, bairroAluno, cidadeAluno, estadoAluno, cepAluno);
-		ContratoAluno contratoAluno = new ContratoAluno(formaPgto, assinaturaPagto, servico, inicioContrato,
-				fimContrato, percentualMulta,
-				status/*
-						 * , recolhimentoCasa, recolhimentoFaculdade,
-						 * entregaCasa, entregaFaculdade
-						 */);
+		CartaoCredito cartao = new CartaoCredito(banco, bandeiraCartao, numCartao, codigoCartao, dataValidade);
+		ContratoAluno contrato = new ContratoAluno(formaPgto, assinaturaPagto, servico, inicioContrato, fimContrato,
+				percentualMulta, status, recolhimentoCasa, recolhimentoFaculdade, entregaCasa, entregaFaculdade);
 
-		aluno = new Aluno(nome, dataNascimento, idade, cpf, rg, tel, endAluno, email, senha, responsavel, contratoAluno,
+		aluno = new Aluno(nome, dataNascimento, idade, cpf, rg, tel, endAluno, email, senha, responsavel, contrato,
 				faculdade, cartao, turma);
 
 		if (aluno != null) {
-
 			lista.inserirCliente((Aluno) aluno);
 		}
-
 		return aluno.toString();
 	} // Fim cadastro
 
 	public String totalAlunos(Request request) {
 		return Integer.toString(lista.quantCliente());
+
+	}
+	
+	public String consultarClientes(Request request) {
+		Aluno a = lista.consultarClientes();
+		return a.toString();
 
 	}
 

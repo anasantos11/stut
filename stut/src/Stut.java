@@ -22,6 +22,10 @@ public class Stut {
 		return fornecedores.size();
 	}
 	
+	public Aluno consultarClientes() {
+		return clientes.get(0);
+	}
+	
 	
 
 }
