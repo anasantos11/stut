@@ -9,6 +9,8 @@
 html,
 body {
     height: 100%;
+    line-height: 30px;
+
 }
 
 body {
@@ -93,12 +95,12 @@ footer {
 }
 
 .navbar {
-  background-color: #7f96aa;
+  background-color:#222;
   color: #fff;
-  border-color:  #7f96aa;
+  border-color:  #080808;
 }
 .navbar-inverse .navbar-nav>li>a {
-  background-color: #7f96aa;
+  background-color: #222;
   color: #fff;
 
 }
