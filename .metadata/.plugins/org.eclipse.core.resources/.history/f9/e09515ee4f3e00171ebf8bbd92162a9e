@@ -3,10 +3,14 @@ import java.util.ArrayList;
 
 public class Aluno extends Pessoa {
 	private String responsavel;
+<<<<<<< HEAD
 	private ContratoAluno contratoA ;
 	private Faculdade faculdade;
+=======
 	private ContratoAluno contrato;
 	// private Faculdade faculdade;
+	private String faculdade;
+>>>>>>> 6c126b612dfaeeac964def5d2da5eb4d77b609b6
 	private CartaoCredito cartao;
 	// private Turma turma;
 	private int turma;
@@ -20,10 +24,12 @@ public class Aluno extends Pessoa {
 		super(nome, dataNascimento, idade, cpf, rg, tel, endereco, email, senha);
 		setContratoAluno(contrato);
 		setResponsavel(responsavel);
+		setFaculdade(facul);
 		setCartao(cartao);
 		setTurma(turma);
 		setAusencias(0);
 	}
+<<<<<<< HEAD
 
 	// Para testar WebService
 	public Aluno(String nome, LocalDate dataNascimento, int idade, String cpf, String rg, String tel, Endereco endAluno,
@@ -34,6 +40,8 @@ public class Aluno extends Pessoa {
 		setResponsavel(responsavel2);
 		setAusencias(0);
 	}
+=======
+>>>>>>> 6c126b612dfaeeac964def5d2da5eb4d77b609b6
 
 	/**
 	 * Métodos
@@ -62,6 +70,7 @@ public class Aluno extends Pessoa {
 		this.responsavel = responsavel;
 	}
 
+<<<<<<< HEAD
 	public ContratoAluno getContratoAluno() {
 		return contratoA;
 	}
@@ -70,12 +79,29 @@ public class Aluno extends Pessoa {
 		this.contratoA = contrato;
 	}
 
+	public Contrato getContrato() {
+		return contratoA;
+	}
+
+
+	public void setContrato(ContratoAluno contrato) {
+		this.contratoA = contrato;
+=======
 	public ContratoAluno getContrato() {
 		return contrato;
 	}
 
 	public void setContrato(ContratoAluno contrato) {
 		this.contrato = contrato;
+>>>>>>> 6c126b612dfaeeac964def5d2da5eb4d77b609b6
+	}
+
+	public String getFaculdade() {
+		return faculdade;
+	}
+
+	public void setFaculdade(String faculdade) {
+		this.faculdade = faculdade;
 	}
 
 	public CartaoCredito getCartao() {
@@ -102,6 +128,7 @@ public class Aluno extends Pessoa {
 		this.ausencias = ausencias;
 	}
 
+<<<<<<< HEAD
 	public boolean ehAusente() {
 		return ausente;
 	}
@@ -122,7 +149,12 @@ public class Aluno extends Pessoa {
 	public String toString() {
 		return super.toString() + " responsavel=" + responsavel + ", contrato=" + contratoA + ", faculdade=" + faculdade + ", cartao="
 				+ cartao + ", turma=" + turma + ", ausencias=" + ausencias + "]";
-
+=======
+	@Override
+	public String toString() {
+		return super.toString() + " responsavel: " + responsavel + contrato.toString() + ", faculdade:" + faculdade
+				+ cartao.toString() + ", turma: " + turma + ", ausencias: " + ausencias;
+>>>>>>> 6c126b612dfaeeac964def5d2da5eb4d77b609b6
 	}
 
 }

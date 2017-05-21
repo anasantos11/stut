@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Cadastramento de produto</h1>
+<p>Cadastramento de produto através de web service.</p>
+
+<form action="http://127.0.0.1:8088/adicionarProduto"  method="post">
+  Descrição:
+  <input type="text" name="descricao" value=""><br />
+  Preco:
+  <input type="text" name="preco" value=""><br />
+  Quantidade:
+  <input type="text" name="quant" value=""><br />
+  Data de fabricação:
+  <input type="text" name="dataFabricacao" value=""><br />
+  Tipo de produto: <br />
+  <input type="radio" name="tipo" value="1" checked>Bem durável<br />
+  <input type="radio" name="tipo" value="2">Bem de Consumo<br />
+  <br /><br />
+  <input type="submit" value="cadastrar">
+</form>
+
+<br />
+<h1>Consultar produto</h1>
+<p>Consulta produto no estoque através de web service.</p>
+
+<form action="http://127.0.0.1:8088/consultarProduto"  method="get">
+  Descrição:
+  <input type="text" name="descricao" value=""><br />
+  <br /><br />
+  <input type="submit" value="consultar">
+</form>
+
+<br />
+<h1>Remover produto</h1>
+<p>Remove produto do estoque através de web service.</p>
+
+<form action="http://127.0.0.1:8088/removerProduto"  method="get">
+  Descrição:
+  <input type="text" name="descricao" value=""><br />
+  <br /><br />
+  <input type="submit" value="remover">
+</form>
+
+
+<br />
+<h1>Consultar total em estoque</h1>
+<p>Consulta a quantidade total de produtos em estoque.</p>
+
+<form action="http://127.0.0.1:8088/totalEmEstoque"  method="get">
+  <br /><br />
+  <input type="submit" value="consultar">
+</form>
+
+
+<br />
+<h1>Consultar valor total em estoque</h1>
+<p>Consulta o valor total dos produtos em estoque.</p>
+
+<form action="http://127.0.0.1:8088/valorEmEstoque"  method="get">
+  <br /><br />
+  <input type="submit" value="consultar">
+</form>
+
+
+</body>
+</html>

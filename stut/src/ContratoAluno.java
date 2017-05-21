@@ -17,11 +17,6 @@ public class ContratoAluno extends Contrato {
 		setEntregaFaculdade(entregaFaculdade);
 	}
 
-	public ContratoAluno(String formaPgto, String assinaturaPagto, String servico, LocalDate inicioContrato,
-			LocalDate fimContrato, int percentualMulta, String status) {
-		super(formaPgto, assinaturaPagto, servico, inicioContrato, fimContrato, percentualMulta, status);
-	}
-
 	public void multaAluno() {
 
 	}
@@ -55,4 +50,12 @@ public class ContratoAluno extends Contrato {
 	public void setEntregaFaculdade(LocalTime entregaFaculdade) {
 		this.entregaFaculdade = entregaFaculdade;
 	}
+
+	@Override
+	public String toString() {
+		return "ContratoAluno" + super.toString() + "recolhimentoCasa: " + recolhimentoCasa
+				+ ", recolhimentoFaculdade: " + recolhimentoFaculdade + ", entregaCasa: " + entregaCasa
+				+ ", entregaFaculdade: " + entregaFaculdade;
+	}
+
 }

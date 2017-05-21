@@ -55,7 +55,7 @@ public class ServiceCliente {
 		LocalDate dataValidade = LocalDate.parse(query.get("dataValidade"));
 
 		// Query Turma
-		int turmaNum = query.getInteger("turma");
+		int turma = query.getInteger("turma");
 
 		// Contrato Aluno
 		String formaPgto = query.get("formaPgto");
@@ -79,10 +79,15 @@ public class ServiceCliente {
 				faculdade, cartao, turma);
 
 		if (aluno != null) {
+<<<<<<< HEAD
 			lb = insereListBairros(lb, (Aluno) aluno);
 			lt = insereTurma(lt, (Aluno)aluno);
+		}
+		
+=======
 			lista.inserirCliente((Aluno) aluno);
 		}
+>>>>>>> 6c126b612dfaeeac964def5d2da5eb4d77b609b6
 		return aluno.toString();
 	} // Fim cadastro
 

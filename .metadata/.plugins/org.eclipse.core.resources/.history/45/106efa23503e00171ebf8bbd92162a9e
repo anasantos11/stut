@@ -17,6 +17,54 @@ public class Motorista extends Pessoa {
 		setLicenca(licenca);
 		setTurma(turma);
 	}
+<<<<<<< HEAD
+	private Conta conta;
+	private String cnh;
+	private int quantidadeAssentos;
+	private String licenca;
+	private Turma turma;
+=======
+
+	public Conta getConta() {
+		return conta;
+	}
+
+	public void setConta(Conta conta) {
+		this.conta = conta;
+	}
+
+	public String getCnh() {
+		return cnh;
+	}
+
+	public void setCnh(String cnh) {
+		this.cnh = cnh;
+	}
+
+	public int getQuantidadeAssentos() {
+		return quantidadeAssentos;
+	}
+
+	public void setQuantidadeAssentos(int quantidadeAssentos) {
+		this.quantidadeAssentos = quantidadeAssentos;
+	}
+
+	public String getLicenca() {
+		return licenca;
+	}
+
+	public void setLicenca(String licenca) {
+		this.licenca = licenca;
+	}
+
+	public Turma getTurma() {
+		return turma;
+	}
+
+	public void setTurma(Turma turma) {
+		this.turma = turma;
+	}
+>>>>>>> 6c126b612dfaeeac964def5d2da5eb4d77b609b6
 
 	
 	public boolean temAssentos(){

@@ -55,7 +55,7 @@ public class ServiceCliente {
 		LocalDate dataValidade = LocalDate.parse(query.get("dataValidade"));
 
 		// Query Turma
-		int turmaNum = query.getInteger("turma");
+		int turma = query.getInteger("turma");
 
 		// Contrato Aluno
 		String formaPgto = query.get("formaPgto");
