@@ -141,7 +141,7 @@ public abstract class Pessoa {
 	public String toString() {
 		return "Pessoa [nome=" + nome + ", dataNascimento=" + dataNascimento + ", idade=" + idade + ", cpf=" + cpf
 				+ ", identidade=" + identidade + ", tel=" + tel + ", endereco=" + endereco + ", email=" + email
-				+ ", senha=" + senha + ", cont=" + cont + "]";
+				+ ", senha=" + senha + "]";
 	}
 	
 	
