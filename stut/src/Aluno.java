@@ -3,11 +3,13 @@ import java.util.ArrayList;
 
 public class Aluno extends Pessoa {
 	private String responsavel;
-	private Contrato contrato;
+	private ContratoAluno contratoA ;
 	private Faculdade faculdade;
 	private CartaoCredito cartao;
 	private Turma turma;
 	private int ausencias;
+	private boolean ausente = false;
+	private boolean temTurma = false;
 
 	// Para testar WebService
 	private String f;
@@ -19,7 +21,7 @@ public class Aluno extends Pessoa {
 			CartaoCredito cartao, Turma turma) {
 
 		super(nome, dataNascimento, idade, cpf, rg, tel, endereco, email, senha);
-		setContrato(contrato);
+		setContratoAluno(contrato);
 		setResponsavel(responsavel);
 		setFaculdade(facul);
 		setCartao(cartao);
@@ -32,7 +34,7 @@ public class Aluno extends Pessoa {
 			String email, String senha, String responsavel2, ContratoAluno contratoAluno, String faculdade2,
 			String cartao2, String turma2) {
 		super(nome, dataNascimento, idade, cpf, rg, tel, endAluno, email, senha);
-		setContrato(contratoAluno);
+		setContratoAluno(contratoAluno);
 		setResponsavel(responsavel2);
 		setF(faculdade2);
 		setC(cartao2);
@@ -93,12 +95,12 @@ public class Aluno extends Pessoa {
 		this.responsavel = responsavel;
 	}
 
-	public Contrato getContrato() {
-		return contrato;
+	public ContratoAluno getContratoAluno() {
+		return contratoA;
 	}
 
-	public void setContrato(Contrato contrato) {
-		this.contrato = contrato;
+	public void setContratoAluno(ContratoAluno contrato) {
+		this.contratoA = contrato;
 	}
 
 	public Faculdade getFaculdade() {
@@ -133,10 +135,26 @@ public class Aluno extends Pessoa {
 		this.ausencias = ausencias;
 	}
 
+	public boolean ehAusente() {
+		return ausente;
+	}
+
+	public void setEhAusente(boolean ehAusente) {
+		this.ausente = ehAusente;
+	}
+
+	public boolean temTurma() {
+		return temTurma;
+	}
+
+	public void setTemTurma(boolean temTurma) {
+		this.temTurma = temTurma;
+	}
+
 	@Override
 	public String toString() {
 
-		return super.toString() + "Aluno [responsavel=" + responsavel + ", contrato=" + contrato + ", faculdade="
+		return super.toString() + "Aluno [responsavel=" + responsavel + ", contrato=" + contratoA + ", faculdade="
 				+ faculdade + ", cartao=" + cartao + ", turma=" + turma + ", ausencias=" + ausencias + ", f=" + f
 				+ ", c=" + c + ", t=" + t + "]";
 	}

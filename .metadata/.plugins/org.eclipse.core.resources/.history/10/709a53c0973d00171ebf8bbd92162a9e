@@ -1,0 +1,18 @@
+import java.time.LocalTime;
+
+public class Rota {
+	private Turma turma;
+	private LocalTime inicioViagem;
+	private LocalTime terminoViagem;
+	private LocalTime tempoViagem;
+	
+	public Rota(Turma turma, LocalTime inicioViagem, LocalTime terminoViagem, LocalTime tempoViagem) {
+		this.turma = turma;
+		this.inicioViagem = inicioViagem;
+		this.terminoViagem = terminoViagem;
+		this.tempoViagem = tempoViagem;
+	}
+	
+	
+
+}

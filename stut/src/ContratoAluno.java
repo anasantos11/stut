@@ -20,43 +20,33 @@ public class ContratoAluno extends Contrato {
 	public void multaAluno() {
 
 	}
-
 	public void encerrarAluno() {
 
 	}
-
 	public void renovarAluno() {
 
 	}
-
 	public LocalTime getRecolhimentoCasa() {
 		return recolhimentoCasa;
 	}
-
 	public void setRecolhimentoCasa(LocalTime recolhimentoCasa) {
 		this.recolhimentoCasa = recolhimentoCasa;
 	}
-
 	public LocalTime getRecolhimentoFaculdade() {
 		return recolhimentoFaculdade;
 	}
-
 	public void setRecolhimentoFaculdade(LocalTime recolhimentoFaculdade) {
 		this.recolhimentoFaculdade = recolhimentoFaculdade;
 	}
-
 	public LocalTime getEntregaCasa() {
 		return entregaCasa;
 	}
-
 	public void setEntregaCasa(LocalTime entregaCasa) {
 		this.entregaCasa = entregaCasa;
 	}
-
 	public LocalTime getEntregaFaculdade() {
 		return entregaFaculdade;
 	}
-
 	public void setEntregaFaculdade(LocalTime entregaFaculdade) {
 		this.entregaFaculdade = entregaFaculdade;
 	}

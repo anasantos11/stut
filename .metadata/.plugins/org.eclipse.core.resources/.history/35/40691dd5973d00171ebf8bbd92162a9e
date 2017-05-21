@@ -1,0 +1,26 @@
+import java.time.LocalDateTime;
+import java.time.Period;
+import java.util.LinkedList;
+
+public class Turma {
+	private LinkedList<Aluno> listaAluno;
+	private Motorista motorista;
+	private Rota rota;
+	private static int idTurma;
+	private int cont = 0;
+
+	public LinkedList verificarAlunos() {
+		return listaAluno;
+	}
+
+	public void verificarRota() {
+
+	}
+	
+	public String rotaOrdenada(){
+		LocalDateTime inicio = LocalDateTime.now();
+		rota = new Rota(this, LocalDateTime.now(), terminoViagem, Period.between(arg0, arg1))
+		return "";
+	}
+
+}

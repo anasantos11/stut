@@ -2,15 +2,18 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.LinkedList;
 
 import org.simpleframework.http.Query;
 import org.simpleframework.http.Request;
 
 public class StutService {
+	private int j;
 	private ListaTeste lista;
+	public LinkedList<LinkedList<Aluno>> lb = new LinkedList<LinkedList<Aluno>>();
+	public LinkedList<Turma> lt = new LinkedList<Turma>();
 	private String cadastroUsuario(Request request) {
-
-		Pessoa aluno = null;
+		Aluno aluno = null;
 
 		Query query = request.getQuery();
 		// Query Aluno
@@ -18,6 +21,7 @@ public class StutService {
 		LocalDate dataNascimento = LocalDate.parse(query.get("dataNascimento"));
 		String cpf = query.get("cpf");
 		String rg = query.get("rg");
+		
 		// Query Endereço Aluno
 		String ruaAluno = query.get("rua");
 		int numAluno = query.getInteger("numero");
@@ -25,16 +29,15 @@ public class StutService {
 		String cidadeAluno = query.get("cidade");
 		String estadoAluno = query.get("estado");
 		String cepAluno = query.get("cep");
+		
 		// Query Aluno
 		int idade = query.getInteger("idade");
 		String tel = query.get("tel");
 		String email = query.get("email");
 		String senha = query.get("senha");
 		String responsavel = query.get("responsavel");
+		
 		// Query Faculdade
-
-		
-		
 		String faculdade = query.get("faculdade");
 		String cartao = query.get("cartao");
 		String turma = query.get("turma");
@@ -62,11 +65,42 @@ public class StutService {
 				faculdade, cartao, turma);
 		
 		if (aluno != null) {
-			
-			lista.adicionar((Aluno) aluno);
+			lista.adicionar((Aluno) aluno);		
+			lb = insereListBairros(lb, aluno);
+			lt = insereTurma(lt, aluno);
 		}
-
 		return aluno.toString();
+	}
+	
+	private LinkedList<Turma> insereTurma(LinkedList<Turma> x, Aluno aluno) {
+		 
+		lt.forEach(y -> {
+			// pro futuro String bairroTurma = y.verificarAlunos().get(0).getEndereco().getBairro();
+			String bairroAluno = aluno.getEndereco().getBairro();
+			boolean temEspaco = y.getMotorista().temAssentos();
+			
+			if(temEspaco){
+				y.verificarAlunos().add(aluno);
+				y.ordenarRota();
+			}
+		});
+		return x;
+	}
+
+	private LinkedList<LinkedList<Aluno>> insereListBairros(LinkedList<LinkedList<Aluno>> a, Aluno aluno){
+		int i = lb.size();
+		for (j = 0; j < i; j++) {
+			lb.get(j).forEach(x -> {
+				if(x.getEndereco().getBairro().equals(aluno.getEndereco().getBairro())){
+					lb.get(j).add(aluno);
+				}else if(j == (i-1)){
+					LinkedList<Aluno> aux = new LinkedList<Aluno>();
+					aux.add(aluno);
+					lb.add(aux);
+				}
+			});
+		}
+		return a;
 	}
 
 	/*
