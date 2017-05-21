@@ -17,6 +17,11 @@ public class ContratoAluno extends Contrato {
 		setEntregaFaculdade(entregaFaculdade);
 	}
 
+	public ContratoAluno(String formaPgto, String assinaturaPagto, String servico, LocalDate inicioContrato,
+			LocalDate fimContrato, int percentualMulta, String status) {
+		super(formaPgto, assinaturaPagto, servico, inicioContrato, fimContrato, percentualMulta, status);
+	}
+
 	public void multaAluno() {
 
 	}
