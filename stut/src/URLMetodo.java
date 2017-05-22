@@ -28,17 +28,14 @@ public class URLMetodo implements Container {
 			String mensagem;
 
 			if (path.startsWith("/contratoPassageiro") && "POST".equals(method)) {
-				System.out.println("Entrnado no post");
 				mensagem = stutService.contratoPassageiro(request);
 
 				this.enviaResposta(Status.CREATED, response, mensagem);
 
 			} else if (path.startsWith("/totalAlunos") && "GET".equals(method)) {
-				System.out.println("Entrando no get");
 				mensagem = stutService.totalAlunos(request);
 				this.enviaResposta(Status.OK, response, mensagem);
 			} else if (path.startsWith("/consultarClientes") && "GET".equals(method)) {
-				System.out.println("Entrando no get");
 				mensagem = stutService.consultarClientes(request);
 				this.enviaResposta(Status.OK, response, mensagem);
 			} 

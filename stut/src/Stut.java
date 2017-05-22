@@ -1,5 +1,9 @@
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.function.Consumer;
+
+
 
 public class Stut {
 	private List<Aluno> clientes = new LinkedList<Aluno>();
@@ -25,8 +29,18 @@ public class Stut {
 		return fornecedores.size();
 	}
 	
-	public Aluno consultarClientes() {
-		return clientes.get(0);
+	public Aluno consultarClientes(String cpf) {
+		Aluno resp = null;
+		Iterator<Aluno> iter = clientes.iterator();
+		while(iter.hasNext()){
+			Aluno alunoAtual = iter.next();
+			if(alunoAtual.getCpf() == cpf){
+				resp = alunoAtual;
+				return alunoAtual;
+			}
+		}			
+		return resp;
+		
 	}
 	
 	public Aluno consultarClientes(int x) {

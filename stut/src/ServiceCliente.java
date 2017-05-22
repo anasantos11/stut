@@ -80,7 +80,10 @@ public class ServiceCliente {
 	}
 	
 	public String consultarClientes(Request request) {
-		Aluno a = lista.consultarClientes();
+		Query query = request.getQuery();
+		String cpf = query.get("cpf");
+		Aluno a = lista.consultarClientes(cpf);
+		System.out.println(a.toString());
 		return a.toString();
 	}
 

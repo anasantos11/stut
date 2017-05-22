@@ -112,12 +112,12 @@
       <div class="row col-md-offset-1 col-md-10 col-md-offset-1">
         <!--  <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-box"> -->
         <div class="form-box">
-          <form role="form" action="" method="post" class="f1">
+          <form role="form" action="http://127.0.0.1:8080/contratoPassageiro" method="POST" class="f1">
             <h3>Contrato nosso serviço</h3>
             <p>Preencha os dados abaixo para contratar o transporte universitário</p>
             <div class="f1-steps">
               <div class="f1-progress">
-                <div class="f1-progress-line" data-now-value="16.66" data-number-of-steps="3" style="width: 16.66%;"></div>
+                <div class="f1-progress-line" data-now-value="10" data-number-of-steps="5" style="width: 10%;"></div>
               </div>
               <div class="f1-step active">
                 <div class="f1-step-icon"><i class="fa fa-user"></i></div>
@@ -128,13 +128,21 @@
                 <p>Dados endereço</p>
               </div>
               <div class="f1-step">
-                <div class="f1-step-icon"><i class="fa fa-twitter"></i></div>
-                <p>social</p>
+                <div class="f1-step-icon"><i class="fa fa-credit-card"></i></div>
+                <p>Dados Bancários</p>
+              </div>
+              <div class="f1-step">
+                <div class="f1-step-icon"><i class="fa fa-file-o" ></i></div>
+                <p>Dados Contratuais</p>
+              </div>
+              <div class="f1-step">
+                <div class="f1-step-icon"><i class="fa fa-bus"></i></div>
+                <p>Sua Van</p>
               </div>
             </div>
 
             <fieldset><!-- Dados Pessoais -->
-              <div class="controls col-md-5">
+              <div class="controls col-md-6">
                 <label>Nome Completo:</label>
                 <input type="text" name="nome"  value="" class="form-control" >
                 <p class="help-block"></p>
@@ -144,29 +152,24 @@
                 <input type="date" name="dataNascimento" value="" class="form-control" >
                 <p class="help-block"></p>
               </div>
-              <div class="controls col-md-3">
+              <div class="controls col-md-2">
                 <label>Idade</label>
                 <input type="number" name="idade" value="" class="form-control"  >
                 <p class="help-block"></p>
               </div>
-              <div class="controls col-md-6" >
+              <div class="controls col-md-4" >
                 <label>CPF:</label>
                 <input type="text" name="cpf" value="" class="form-control"  >
                 <p class="help-block"></p>
               </div>
-              <div class="controls col-md-6">
+              <div class="controls col-md-4">
                 <label>RG:</label>
                 <input type="text" name="rg" value="" class="form-control"  >
                 <p class="help-block"></p>
               </div>
-              <div class="controls col-md-6">
+              <div class="controls col-md-4">
                 <label>Telefone:</label>
                 <input type="text" name="tel" value="" class="form-control"  >
-                <p class="help-block"></p>
-              </div>
-              <div class="controls col-md-6">
-                <label>Responsável</label>
-                <input type="text" name="responsavel" value="" class="form-control"  >
                 <p class="help-block"></p>
               </div>
               <div class="controls col-md-6">
@@ -179,7 +182,16 @@
                 <input type="password" name="senha" value="" class="form-control" >
                 <p class="help-block"></p>
               </div>
-
+              <div class="controls col-md-6">
+                <label>Faculdade</label>
+                <input type="text" name="faculdade" value="" class="form-control" >
+                <p class="help-block"></p>
+              </div>
+              <div class="controls col-md-6">
+                <label>Responsável</label>
+                <input type="text" name="responsavel" value="" class="form-control"  >
+                <p class="help-block"></p>
+              </div>
               <div class="f1-buttons">
                 <button type="button" class="btn btn-next">Próximo</button>
               </div>
@@ -216,37 +228,124 @@
                 <input type="text" name="estado" value="" class="form-control" >
                 <p class="help-block"></p>
               </div>
-
               <div class="f1-buttons">
                 <button type="button" class="btn btn-previous">Anterior</button>
                 <button type="button" class="btn btn-next">Próximo</button>
               </div>
             </fieldset>
 
-            <fieldset>
-              <h4>Social media profiles:</h4>
-              <div class="form-group">
-                <label class="sr-only" for="f1-facebook">Facebook</label>
-                <input type="text" name="f1-facebook" placeholder="Facebook..." class="f1-facebook form-control" id="f1-facebook">
+            <fieldset><!-- Dados Bancários -->
+              <div class="controls col-md-4">
+                <label>Banco:</label>
+                <input type="number" name="banco" value="" class="form-control" >
+                <p class="help-block"></p>
               </div>
-              <div class="form-group">
-                <label class="sr-only" for="f1-twitter">Twitter</label>
-                <input type="text" name="f1-twitter" placeholder="Twitter..." class="f1-twitter form-control" id="f1-twitter">
+              <div class="controls col-md-4">
+                <label>Bandeira Cartão</label>
+                <input type="text" name="bandeiraCartao" value="" class="form-control" >
+                <p class="help-block"></p>
               </div>
-              <div class="form-group">
-                <label class="sr-only" for="f1-google-plus">Google plus</label>
-                <input type="text" name="f1-google-plus" placeholder="Google plus..." class="f1-google-plus form-control" id="f1-google-plus">
+              <div class="controls col-md-4">
+                <label>Número Cartão</label>
+                <input type="number" name="numCartao" value="" class="form-control" >
+                <p class="help-block"></p>
+              </div>
+              <div class="controls col-md-4">
+                <label>Código cartão (CVV):</label>
+                <input type="number" name="codigoCartao" value="" class="form-control" >
+                <p class="help-block"></p>
+              </div>
+              <div class="controls col-md-4 col-md-offset-4">
+                <label>Data Validade:</label>
+                <input type="date" name="dataValidade" value="" class="form-control" >
+                <p class="help-block"></p>
               </div>
               <div class="f1-buttons">
-                <button type="button" class="btn btn-previous">Previous</button>
-                <button type="submit" class="btn btn-submit">Submit</button>
+                <button type="button" class="btn btn-previous">Anterior</button>
+                <button type="button" class="btn btn-next">Próximo</button>
               </div>
             </fieldset>
 
+            <fieldset><!-- Dados Contratuais -->
+              <div class="controls">
+                <label>Forma Pagamento:</label>
+                <input type="text" name="formaPgto" value="" class="form-control" >
+                <p class="help-block"></p>
+              </div>
+              <div class="controls">
+                <label>Tipo de assinatura:</label>
+                <input type="text" name="assinaturaPgto" value="" class="form-control" >
+                <p class="help-block"></p>
+              </div>
+              <div class="controls">
+                <label>Serviço:</label>
+                <input type="text" name="servico" value="" class="form-control" >
+                <p class="help-block"></p>
+              </div>
+              <div class="controls">
+                <label>Início Contrato:</label>
+                <input type="date" name="inicioContrato" value="" class="form-control" >
+                <p class="help-block"></p>
+              </div>
+              <div class="controls">
+                <label>Fim do Contrato:</label>
+                <input type="date" name="fimContrato" value="" class="form-control" >
+                <p class="help-block"></p>
+              </div>
+              <div class="controls">
+                <label>Horário recolher em casa:</label>
+                <input type="time" name="recolhimentoCasa" value="" class="form-control" >
+                <p class="help-block"></p>
+              </div>
+              <div class="controls">
+                <label>Horário entrega faculdade</label>
+                <input type="time" name="entregaFaculdade" value="" class="form-control" >
+                <p class="help-block"></p>
+              </div>
+              <div class="controls">
+                <label>Horário recolhimento faculdade</label>
+                <input type="time" name="recolhimentoFaculdade" value="" class="form-control" >
+                <p class="help-block"></p>
+              </div>
+              <div class="controls">
+                <label>Horário entrega casa</label>
+                <input type="time" name="entregaCasa" value="" class="form-control" >
+                <p class="help-block"></p>
+              </div>
+              <div class="f1-buttons">
+                <button type="button" class="btn btn-previous">Anterior</button>
+                <button type="button" class="btn btn-next">Próximo</button>
+              </div>
+            </fieldset>
+
+            <fieldset> <!-- Escolha sua turma -->
+              <div class="form-group">
+                <h4>  Escolha a turma/van que deseja entrar </h4>
+                <div class="col-md-12">
+                  <div class="thumbnail">
+                    <div class="caption-full">
+                      <p> Neste local terá todas as turmas disponíveis para o passageiro </p>
+                      <div class="controls">
+                        <label>Turma</label>
+                        <input type="number" name="turma" value="" class="form-control" >
+                        <p class="help-block"></p>
+                      </div>
+                      <p id='listaTurmas'></p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="f1-buttons">
+                  <button type="button" class="btn btn-previous">Anterior</button>
+                  <button type="submit" class="btn btn-submit">Cadastrar</button>
+                </div>
+              </fieldset>
+
+            </form>
           </form>
+          </div>
         </div>
       </div>
-
     </div>
   </div>
 
