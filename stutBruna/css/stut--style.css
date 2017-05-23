@@ -1,0 +1,14 @@
+ #alinha { 
+  text-align: center;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+
+.bordas {  
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
+  margin-bottom: 50px !important;
+  color: inherit !important;
+  background-color: #e91e63 !important;
+}
