@@ -34,7 +34,7 @@ public class Stut {
 		Iterator<Aluno> iter = clientes.iterator();
 		while(iter.hasNext()){
 			Aluno alunoAtual = iter.next();
-			if(alunoAtual.getCpf() == cpf){
+			if(alunoAtual.getCpf().equals(cpf)){
 				resp = alunoAtual;
 				return alunoAtual;
 			}
