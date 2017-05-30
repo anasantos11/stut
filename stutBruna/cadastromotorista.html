@@ -1,182 +1,408 @@
-<!DOCTYPE html>
-<html lang="en">
+      <!DOCTYPE html>
+      <html lang="en">
 
-<head>
+      <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>StuT: Transporte Universitário </title>
 
-    <title>StuT: Transporte Universitário </title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/form-elements.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link href="css/modern-business.css" rel="stylesheet">
+        <link href="css/stut--style.css" rel="stylesheet">
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link rel="icon" href="img/stut-logo-round.png" type="img/png" />
 
-    <!-- Custom CSS -->
-    <link href="css/modern-business.css" rel="stylesheet">
-      <link href="css/stut--style.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link rel="icon" href="img/stut-logo-round.png" type="img/png" />
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+        <![endif]-->
 
-</head>
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
 
-<body>
+      </head>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
+      <body>
+
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+          <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-left">
-            <div class="navbar-header-stut">
-                    <img class="stut-logo"src="img/stut-logo-white.png" alt=" StuT ">
+              <ul class="nav navbar-nav navbar-left">
+                <div class="navbar-header-stut">
+                  <img class="stut-logo"src="img/stut-logo-white.png" alt=" StuT ">
                 </div>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <a href="home.html">Home</a>
+                </li>
+                <li>
+                  <a href="contato.html">Contato</a>
+                </li>
+                 <li>
+                        <a href="tabelapreco.html">Preços</a>
+                    </li>
+                <li>
+                  <a href="ajuda.html">Ajuda</a>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contrate-nos <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
                     <li>
-                        <a href="home.html">Home</a>
+                      <a href="cadastromotorista.html">Quero ser motorista!</a>
                     </li>
                     <li>
-                        <a href="locaisatendidos.html">Locais atendidos</a>
+                      <a href="cadastrocliente.html">Quero ser passageiro!</a>
                     </li>
-                    <li>
-                        <a href="contato.html">Contato</a>
-                    </li>
-                     <li>
-                        <a href="ajuda.html">Ajuda</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contrate-nos <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="cadastromotorista.html">Quero ser motorista!</a>
-                            </li>
-                            <li>
-                                <a href="cadastrocliente.html">Quero ser passageiro!</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="loginmotorista.html">Eu sou motorista!</a>
-                            </li>
-                            <li>
-                                <a href="logincliente.html">Eu sou passageiro! </a>
-                            </li>
-                        </ul>
-                    </li>
-                    
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+                  </ul>
+                </li>
+                <li>
+                  <a href="login.html">Login</a>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
         </div>
-        <!-- /.container -->
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
     </nav>
 
-
-
-     <div class="container">
-
-        <!-- Page Heading/Breadcrumbs -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Quero ser motorista! 
-                    <small>Para ser motorista, preencha os campos abaixos e em breve você receberá um email com a confirmação </small>
-                </h1>
-                <ol class="breadcrumb">
-                    <li><a href="home.html">Home</a>
-                    </li>
-                    <li class="active">Quero ser um motorista!</li>
-                </ol>
-            </div>
-        </div>
-
-
-<div class="form-group row">
-  <label for="example-text-input" class="col-xs-2 col-form-label">Nome Completo </label>
-  <div class="col-xs-4">
-    <input class="form-control" type="text"  id="example-text-input">
-    
-  </div>
-</div>
-<div class="form-group row">
-  <label for="example-email-input" class="col-xs-2 col-form-label">Email</label>
-  <div class="col-xs-4">
-    <input class="form-control" type="email" id="example-email-input">
-  </div>
-</div>
-<div class="form-group row">
-  <label for="example-tel-input" class="col-xs-2 col-form-label">Telefone</label>
-  <div class="col-xs-3">
-    <input class="form-control" type="tel" id="example-tel-input">
-  </div>
-</div>
-
-<div class="form-group row">
-  <label for="example-number-input" class="col-xs-2 col-form-label">Idade</label>
-  <div class="col-xs-1">
-    <input class="form-control" type="number" id="example-number-input">
-  </div>
-</div>
-<div class="form-group row">
-  <label for="example-date-input" class="col-xs-2 col-form-label">Data de Nascimento</label>
-  <div class="col-xs-2">
-    <input class="form-control" type="date" id="example-date-input">
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-        <hr>
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; StuT 2017</p>
+    <!-- Top content -->
+    <div class="top-content">
+      <div class="container" >
+        <div class="row col-md-offset-1 col-md-10 col-md-offset-1">
+          <!--  <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-box"> -->
+          <div class="form-box">
+            <form role="form" action="http://127.0.0.1:8080/contratoPassageiro" method="POST" class="f1">
+              <h3>Pré-Contrato</h3>
+              <p>Preencha os dados a seguir para se tornar um motorista </p>
+              <div class="f1-steps">
+                <div class="f1-progress">
+                  <div class="f1-progress-line" data-now-value="10" data-number-of-steps="5" style="width: 10%;"></div>
                 </div>
+                <div class="f1-step active">
+                  <div class="f1-step-icon"><i class="fa fa-user"></i></div>
+                  <p>Dados Pessoais</p>
+                </div>
+                <div class="f1-step">
+                  <div class="f1-step-icon"><i class="fa fa-home"></i></div>
+                  <p>Dados endereço</p>
+                </div>
+                <div class="f1-step">
+                  <div class="f1-step-icon"><i class="fa fa-credit-card"></i></div>
+                  <p>Dados Bancários</p>
+                </div>
+                <div class="f1-step">
+                  <div class="f1-step-icon"><i class="fa fa-file-o" ></i></div>
+                  <p>Lista de preferências</p>
+                </div>
+                <div class="f1-step">
+                  <div class="f1-step-icon"><i class="fa fa-bus"></i></div>
+                  <p>Dados do Veículo</p>
+                </div>
+              </div>
+              <fieldset><!-- Dados Pessoais -->
+                <div class="controls col-md-6">
+                  <label>Nome Completo:</label>
+                  <input type="text" name="nome"  value="" class="form-control" >
+                  <p class="help-block"></p>
+                </div>
+                <div class="controls col-md-4">
+                  <label>Data de Nascimento:</label>
+                  <input type="date" name="dataNascimento" value="" class="form-control" >
+                  <p class="help-block"></p>
+                </div>
+                <div class="controls col-md-2">
+                  <label>Idade:</label>
+                  <input type="number" name="idade" id="idade" value="" class="form-control"  >
+                  <p class="help-block"></p>
+                </div>
+                <div class="controls col-md-4" >
+                  <label>CPF:</label>
+                  <input type="text" maxlength="11" name="cpf" value="" class="form-control"  >
+                  <p class="help-block"></p>
+                </div>
+                <div class="controls col-md-4">
+                  <label>RG:</label>
+                  <input type="text" name="rg" value="" class="form-control"  >
+                  <p class="help-block"></p>
+                </div>
+                <div class="controls col-md-4">
+                  <label>Telefone:</label>
+                  <input type="text" name="tel" value="" class="form-control"  >
+                  <p class="help-block"></p>
+                </div>
+                <div class="controls col-md-6">
+                  <label>E-mail:</label>
+                  <input type="email" name="email" value="" class="form-control" id="email" >
+                  <p class="help-block"></p>
+                </div>
+                <div class="controls col-md-6">
+                  <label>Senha: </label>
+                  <input type="password" name="senha" value="" class="form-control" >
+                  <p class="help-block"></p>
+                </div>
+                <div class="controls col-md-6">
+                  <label>CNH: </label>
+                  <input type="text" maxlength="11" name="faculdade" value="" class="form-control" >
+                  <p class="help-block"></p>
+                </div> 
+                <div class="form-group">
+                 <label for="exampleInputFile">&nbsp &nbsp Atestado de antecedentes: </label>
+                 <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                 <small id="fileHelp" class="form-text text-muted">O arquivo deve ser do tipo .PDF</small>
+               </div>
+               <div class="f1-buttons">
+                <button type="button" class="btn btn-next">Próximo</button>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <!-- Dados Endereço -->
+              
+
+
+              <div class="controls col-md-4 ">
+                <label>CEP:
+                <input type="text" name="cep" id="cep" value="" maxlenght="9" class="form-control" onblur="pesquisacep(this.value);"> </label>
+              </div>
+              <div class="controls col-md-4">
+                <label>Rua:</label>
+                <input type="text" size="60" id="rua" name="rua" value="" class="form-control" >
+                <p class="help-block"></p>
+              </div>
+              <div class="controls col-md-4 ">
+                <label>Número:</label>
+                <input type="number" name="numero" value="" class="form-control" >
+                <p class="help-block"></p>
+              </div>
+              <div class="controls col-md-4">
+                <label>Bairro:</label>
+                <input type="text" name="bairro" id="bairro" size="40" value="" class="form-control" >
+                <p class="help-block"></p>
+              </div>
+              <div class="controls  col-md-4">
+                <label>Cidade:</label>
+                <input type="text" name="cidade" id="cidade" size="40" value="" class="form-control" >
+                <p class="help-block"></p>
+              </div>
+              <div class="controls col-md-4">
+                <label>UF:</label>
+                <input type="text" name="uf" id="uf" size="2" value="" class="form-control" >
+                <p class="help-block"></p>
+              </div>
+              <div class="f1-buttons">
+                <button type="button" class="btn btn-previous">Anterior</button>
+                <button type="button" class="btn btn-next">Próximo</button>
+              </div>
+            </fieldset>
+
+
+            
+
+
+            <fieldset><!-- Dados Bancários -->
+
+             <div class="controls col-md-6">
+               <label for="exampleSelect1">Banco: </label>
+               <select class="form-control" id="exampleSelect1">
+                <option>Banco do Brasil</option>
+                <option>Bradesco</option>
+                <option>Itaú</option>
+                <option>Caixa</option>
+                <option>Santander</option>
+                <option>HSBC</option>
+                <option>Banrisul</option>
+                <option>BNB</option>
+                <option>Banestes</option>
+                <option>Citi</option>
+                <option>Banco da Amazônia</option>
+                <option>BRB</option>
+                <option>Safra</option>
+              </select>
+              
             </div>
-        </footer>
 
-    </div>
-    <!-- /.container -->
+            <div class="controls col-md-6">
+             <label for="exampleSelect1">Tipo de conta: </label>
+             <select class="form-control" id="exampleSelect2">
+               <option>Corrente</option>
+               <option>Poupança</option>
+               <option>Salário</option>
+             </select>
+           </div>
+           <div class="form-group">
+             <div class="controls col-md-4">
+              <label>Conta: </label>
+              <input type="text" name="conta" value="" class="form-control" >
+              <p class="help-block"></p>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="controls col-md-4">
+              <label>Agência: </label>
+              <input type="number" name="agencia" value="" class="form-control" >
+              <p class="help-block"></p>
+            </div>
+          </div> </p><br><br>
+          <div class="f1-buttons">
+            <br><br><br>
+            <button type="button" class="btn btn-previous">Anterior</button>
+            <button type="button" class="btn btn-next">Próximo</button>
+          </div>
+        </fieldset>
+        <fieldset><!-- Lista de preferência-->
+        </p>
+        <h4> Atenção! Poderá haver mudança nos bairros/faculdades que irá atuar. Entraremos em contato em caso de divergência. </h4>
+      </p>
+      <div class="controls">
+        <label>Marque em quais turnos pretende atuar:  </label>
+      </p>
+      <label class="form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Manhã
+      </label> &nbsp
+      <label class="form-check-inline">
+       <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Tarde
+     </label> &nbsp
+     <label class="form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Noite
+    </label> &nbsp
+  </div>
+  <div class="controls">
+   <label for="exampleSelect1">Selecione a cidade que irá atuar: </label>
+   <select class="form-control" id="exampleSelect1">
+     <option>Cidade 1</option>
+     <option>Cidade 2</option>
+     <option>Cidade 3</option>
+     <option>Cidade 4</option>
+     <option>Cidade 5</option>
+   </select>
+ </div>
+ <div class="controls">
+   <label for="exampleSelect2">Selecione em quais bairros deseja atuar: </label>
+   <select multiple class="form-control" id="exampleSelect2">
+     <option>1</option>
+     <option>2</option>
+     <option>3</option>
+     <option>4</option>
+     <option>5</option>
+   </select>
+ </div>
+ 
+ <div class="controls">
+   <label for="exampleSelect1">Tipo de contrato: </label>
+   <select class="form-control" id="exampleSelect1">
+     <option>Semestral</option>
+     <option>Anual</option>
+   </select>
+ </div>
+ <div class="controls">
+  <label>Início Contrato:</label>
+  <input type="date" name="inicioContrato" value="" class="form-control" >
+  <p class="help-block"></p>
+</div>
+<div class="controls">
+  <label>Fim do Contrato:</label>
+  <input type="date" name="fimContrato" value="" class="form-control" >
+  <p class="help-block"></p>
+</div> 
+<br>
+<div class="f1-buttons">
+  <button type="button" class="btn btn-previous">Anterior</button>
+  <button type="button" class="btn btn-next">Próximo</button>
+</div>
+</fieldset>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
 
-</body>
 
-</html>
+
+
+
+
+<fieldset> <!-- Dados do veículo -->
+  <br>
+  <div class="controls col-md-6">
+    <label>Modelo: </label>
+    <input type="text" name="nome"  value="" class="form-control" >
+    <p class="help-block"></p>
+  </div>
+  <div class="controls col-md-6">
+    <label>Ano: </label>
+    <input type="text" name="nome"  value="" class="form-control" >
+    <p class="help-block"></p>
+  </div>
+  <div class="controls col-md-6">
+    <label>Placa:</label>
+    <input type="text" name="nome"  value="" class="form-control" >
+    <p class="help-block"></p>
+  </div>
+  <div class="controls col-md-6">
+    <label for="exampleInputFile">Cópia da Autorização para Transporte Fretado (ATF): </label>
+    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+    <small id="fileHelp" class="form-text text-muted">O arquivo deve ser do tipo .PDF </small>
+    <br><br>
+  </div>  
+  <div class="f1-buttons">
+    <button type="button" class="btn btn-previous">Anterior</button>
+    <button type="submit" class="btn btn-submit">Enviar contrato</button>
+  </div>
+</fieldset>
+</form>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- Javascript -->
+<script src="js/jquery.js"></script>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.backstretch.min.js"></script>
+<script src="js/retina-1.1.0.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/endereco-por-cep.js"></script>
+
+        <!--[if lt IE 10]>
+        <script src="s/placeholder.js"></script>
+        <![endif]-->
+
+
+      </body>
+
+      </html>
