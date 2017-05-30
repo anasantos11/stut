@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -10,8 +11,7 @@ public class Stut {
 	private List<Motorista> fornecedores = new LinkedList<Motorista>();
 	private int j;
 	public LinkedList<LinkedList<Aluno>> lb = new LinkedList<LinkedList<Aluno>>();
-	public LinkedList<Turma> lt = new LinkedList<Turma>();
-	
+	public List<Turma> lt = new ArrayList<Turma>();
 	
 	public void inserirCliente(Aluno a) {
 		clientes.add(a);

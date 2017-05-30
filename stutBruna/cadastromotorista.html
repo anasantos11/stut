@@ -76,7 +76,7 @@
                   <a href="ajuda.html">Ajuda</a>
                 </li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contrate-nos <b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" id="ativo"data-toggle="dropdown">Contrate-nos <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li>
                       <a href="cadastromotorista.html">Quero ser motorista!</a>
@@ -178,7 +178,7 @@
                   <label>CNH: </label>
                   <input type="text" maxlength="11" name="faculdade" value="" class="form-control" >
                   <p class="help-block"></p>
-                </div> 
+                </div>
                 <div class="form-group">
                  <label for="exampleInputFile">&nbsp &nbsp Atestado de antecedentes: </label>
                  <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
@@ -191,7 +191,7 @@
 
             <fieldset>
               <!-- Dados Endereço -->
-              
+
 
 
               <div class="controls col-md-4 ">
@@ -230,7 +230,7 @@
             </fieldset>
 
 
-            
+
 
 
             <fieldset><!-- Dados Bancários -->
@@ -252,7 +252,7 @@
                 <option>BRB</option>
                 <option>Safra</option>
               </select>
-              
+
             </div>
 
             <div class="controls col-md-6">
@@ -320,7 +320,7 @@
      <option>5</option>
    </select>
  </div>
- 
+
  <div class="controls">
    <label for="exampleSelect1">Tipo de contrato: </label>
    <select class="form-control" id="exampleSelect1">
@@ -337,7 +337,7 @@
   <label>Fim do Contrato:</label>
   <input type="date" name="fimContrato" value="" class="form-control" >
   <p class="help-block"></p>
-</div> 
+</div>
 <br>
 <div class="f1-buttons">
   <button type="button" class="btn btn-previous">Anterior</button>
@@ -374,7 +374,7 @@
     <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
     <small id="fileHelp" class="form-text text-muted">O arquivo deve ser do tipo .PDF </small>
     <br><br>
-  </div>  
+  </div>
   <div class="f1-buttons">
     <button type="button" class="btn btn-previous">Anterior</button>
     <button type="submit" class="btn btn-submit">Enviar contrato</button>
@@ -401,15 +401,15 @@
    <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
    <script type="text/javascript">
    $(document).ready(function () {
- 
+
       // Método para pular campos teclando ENTER
        $('.pula').on('keypress', function(e){
            var tecla = (e.keyCode?e.keyCode:e.which);
- 
+
            if(tecla == 13){
                campo = $('.pula');
                indice = campo.index(this);
- 
+
                if(campo[indice+1] != null){
                    proximo = campo[indice + 1];
                    proximo.focus();
@@ -417,33 +417,33 @@
                }
            }
        });
- 
+
         // Inseri máscara no CEP
        $("#cep").inputmask({
            mask: ["99999-999",],
            keepStatic: true
        });
- 
+
         // Método para consultar o CEP
       $('#cep').on('blur', function(){
- 
+
          if($.trim($("#cep").val()) != ""){
- 
+
             $("#mensagem").html('(Aguarde, consultando CEP ...)');
             $.getScript("http://cep.republicavirtual.com.br/web_cep.php?formato=javascript&cep="+$("#cep").val(), function(){
- 
+
                if(resultadoCEP["resultado"]){
                   $("#rua").val(unescape(resultadoCEP["tipo_logradouro"])+" "+unescape(resultadoCEP["logradouro"]));
                   $("#bairro").val(unescape(resultadoCEP["bairro"]));
                   $("#cidade").val(unescape(resultadoCEP["cidade"]));
                   $("#uf").val(unescape(resultadoCEP["uf"]));
                }
- 
+
                $("#mensagem").html('');
-            });            
-         }        
+            });
+         }
       });
-   });   
+   });
    </script>
 
         <!--[if lt IE 10]>
