@@ -48,6 +48,8 @@ public class URLMetodo implements Container {
 				System.out.println("Entrando no get");
 			} 
 			
+>>>>>>> 8f75f6291f8692ec59bcdd460c9c919c95ce6114
+>>>>>>> 3c8d4ef8e019f38f8acf8c80d985c25c4f8886e5
 			else if(path.startsWith("/requisitarTurma") && "POST".equals(method)){
 				String[] aux = path.split("/");
 				String identificador = aux[(aux.length-2)];
@@ -78,8 +80,10 @@ public class URLMetodo implements Container {
 			} else {
 				this.naoEncontrado(response, path);
 			}
-		} 
-		}catch (Exception e) {
+
+		} catch (
+
+		Exception e) {
 			e.printStackTrace();
 		}
 	}

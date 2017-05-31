@@ -85,9 +85,10 @@
               </li>
             </ul>
           </li>
-          <li>
-            <a href="login.html">Login</a>
-          </li>
+         <li>
+                  <a href="#" role="button" data-toggle="modal" data-target="#login-modal">Login</a>      
+                  </li>               
+                </ul>
 
         </ul>
       </div>
@@ -160,19 +161,19 @@
                 <p class="help-block"></p>
               </div>
               <div class="controls col-md-4">
-                <label>Senha</label>
+                <label>Senha:</label>
                 <input type="password" name="senha" value="" class="form-control" >
                 <p class="help-block"></p>
               </div>
               <div id="dadosAlunoMenor" hidden="true">
                 <div class="controls col-md-6 col-md-offset-1">
                   <label>Responsável</label>
-                  <input type="text" name="responsavel" value="" class="form-control"  >
+                  <input name="responsavel" value="" class="form-control"  >
                   <p class="help-block"></p>
                 </div>
               </div>
               <div class="controls col-md-1" style="display:none">
-                <label>Idade</label>
+                <label>Idade:</label>
                 <input type="number" name="idade" id= "idade" value="" class="form-control" onchange="showData()" >
                 <p class="help-block"></p>
               </div>
@@ -327,7 +328,7 @@
 
                 <div class="f1-buttons">
                   <button type="button" class="btn btn-previous">Anterior</button>
-                  <button type="button" class="btn btn-submit" onclick="validarCadastro()">Cadastrar</button>
+                  <button type="submit" class="btn btn-submit" onclick="validarCadastro()">Cadastrar</button>
                 </div>
               </fieldset>
 
@@ -403,6 +404,47 @@ $(document).ready(function () {
 <!--[if lt IE 10]>
 <script src="s/placeholder.js"></script>
 <![endif]-->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header" align="center">
+            <img class="img-circle" id="img_logo" src="img/stut-logo-round.png">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <!-- Begin # DIV Form -->
+          <div id="div-forms">
+
+            <!-- Begin # Login Form -->
+            <form id="login-form">
+              <div class="modal-body">
+                <div id="div-login-msg" class="form-group">
+                  <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                  <span id="text-login-msg">Insira seu cpf e sua senha.</span>
+                </div>
+                <div class="form-group">
+                  <input id="login_username" class="form-control" type="error" placeholder="CPF" required>
+                </div>
+                <div class="form-group">
+                  <input id="login_password" class="form-control" type="error" placeholder="Senha" required>
+                </div>
+                <div class="form-group">
+                  <select class="form-control" id="exampleSelect1">
+                    <option>Selecione o tipo de usuário</option>
+                    <option>Motorista</option>
+                    <option>Passageiro</option>
+                  </select>
+                </div>
+                <div class="modal-footer">
+                  <div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                  </div>
+                </div>
+              </form>
+
+            </div>
 
 
 </body>
