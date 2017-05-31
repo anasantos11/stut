@@ -30,10 +30,48 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script type="text/javascript">
+        function getRequisition(){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(xhttp.responseText);
+                    if(xhttp.responseText != null){
+                        if(tipo == "al"){
+                            localStorage.setItem("dados_usuario", responseText);
+                            localStorage.setItem("autenticacao" , 1);
+                            location.href = "areadopassageiro.html";
+                        }else{
+                            localStorage.setItem("dados_usuario", responseText);
+                            localStorage.setItem("autenticacao" , 1);
+                            location.href = "areadomotorista.html";
+                        }
+                    }else{
+                        alert("Usuario ou senha Incorretos");
+                    }
+                }
+            };
+            var login = document.getElementById("login").value;
+            var senha = document.getElementById("login").value;
+            var tipo = document.getElementById("tipoUsuario").value;
+            xhttp.open("POST", "http://127.0.0.1:8080/logarUsuario/" + login + "/" + senha + "/" + tipo, true);
+            xhttp.send();
+        }
+    </script>
+
 </head>
-
+<body>
+    <!-- <div>
+        <input type="text" name="" id="login">
+        <input type="passwordx" name="" id="senha">
+        <select id="tipoUsuario">
+            <option>selecione</option>
+            <option value="al">aluno</option>
+            <option value="mot">motorista</option>
+        </select>
+        <button type="submit" onclick="getRequisition()">logar</button>
+    </div> -->
 <body onload="carregaFaculdade()">
-
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -51,9 +89,10 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-left">
-            <div class="navbar-header-stut">
+                <div class="navbar-header-stut">
                     <img class="stut-logo"src="img/stut-logo-white.png" alt=" StuT ">
                 </div>
+
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>

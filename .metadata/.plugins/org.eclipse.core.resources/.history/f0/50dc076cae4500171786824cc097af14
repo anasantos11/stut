@@ -1,0 +1,81 @@
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.function.Consumer;
+
+
+
+public class Stut {
+	private List<Aluno> clientes = new LinkedList<Aluno>();
+	private List<Motorista> fornecedores = new LinkedList<Motorista>();
+	private int j;
+	private LinkedList<LinkedList<Aluno>> lb = new LinkedList<LinkedList<Aluno>>();
+	private LinkedList<Turma> lt = new LinkedList<Turma>();
+	
+	
+	public void inserirCliente(Aluno a) {
+		clientes.add(a);
+	}
+
+	public int quantCliente() {
+		return clientes.size();
+	}
+	
+	public void inserirFornecedor(Motorista m){
+		fornecedores.add(m);
+	}
+	
+	public int quantMotorista(){
+		return fornecedores.size();
+	}
+	
+	public Aluno consultarClientes(String cpf) {
+		Aluno resp = null;
+		Iterator<Aluno> iter = clientes.iterator();
+		while(iter.hasNext()){
+			Aluno alunoAtual = iter.next();
+			if(alunoAtual.getCpf() == cpf){
+				resp = alunoAtual;
+				return alunoAtual;
+			}
+		}			
+		return resp;
+		
+	}
+	
+	public Aluno consultarClientes(int x) {
+		return clientes.get(x);
+	}
+	
+	public Motorista consultarFornecedor(int x) {
+		return fornecedores.get(x);
+	}
+	
+	public void inserirEmTurma(Aluno aluno) {
+		lt.forEach(y -> {
+			// pro futuro String bairroTurma = y.verificarAlunos().get(0).getEndereco().getBairro();
+			// pro futuro String bairroAluno = aluno.getEndereco().getBairro();
+			boolean temEspaco = y.getMotorista().temAssentos();
+			
+			if(temEspaco){
+				y.verificarAlunos().add(aluno);
+				y.ordenarRota();
+			}
+		});
+	}
+
+	public void alunoPorBairro(Aluno aluno){
+		int i = lb.size();
+		for (j = 0; j < i; j++) {
+			lb.get(j).forEach(x -> {
+				if(x.getEndereco().getBairro().equals(aluno.getEndereco().getBairro())){
+					lb.get(j).add(aluno);
+				}else if(j == (i-1)){
+					LinkedList<Aluno> aux = new LinkedList<Aluno>();
+					aux.add(aluno);
+					lb.add(aux);
+				}
+			});
+		}
+	}
+}
