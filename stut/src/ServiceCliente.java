@@ -112,10 +112,14 @@ public class ServiceCliente {
 
 	public String getAlunoAutenticado(String cpf, String senha) {
 		Aluno a = lista.consultarClientes(cpf);
-		String resp = null;
+		String resp = "0";
 		if(a != null){
 			if(a.getSenha().equals(senha)){
-				resp = a.toString();
+				resp = "aluno : {"
+							+ "\"value\" : \"aluno\","
+							+ "\"nome\" : \""+a.getNome()+"\","
+							+ "\"cpf\" : \""+a.getCpf()+"\""
+						+ "}";
 			}
 		}
 		return resp;
@@ -123,10 +127,14 @@ public class ServiceCliente {
 
 	public String getMotoristaAutenticado(String identificador, String senha) {
 		Motorista m = lista.consultarFornecedor(identificador);
-		String resp = null;
+		String resp = "0";
 		if(m != null){
 			if(m.getSenha().equals(senha)){
-				resp = m.toString();
+				resp = "motorista : {"
+						+ "\"value\" : \"motorista\","
+						+ "\"nome\" : \""+m.getNome()+"\","
+						+ "\"cpf\" : \""+m.getCpf()+"\""
+					+ "}";
 			}
 		}
 		return resp;

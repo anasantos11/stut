@@ -22,6 +22,7 @@
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="icon" href="img/stut-logo-round.png" type="img/png" />
     <script language="javaScript" type="text/javascript" src="js/cidades-estados-1.4-utf8.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,47 +31,8 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script type="text/javascript">
-        function getRequisition(){
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    console.log(xhttp.responseText);
-                    if(xhttp.responseText != null){
-                        if(tipo == "al"){
-                            localStorage.setItem("dados_usuario", responseText);
-                            localStorage.setItem("autenticacao" , 1);
-                            location.href = "areadopassageiro.html";
-                        }else{
-                            localStorage.setItem("dados_usuario", responseText);
-                            localStorage.setItem("autenticacao" , 1);
-                            location.href = "areadomotorista.html";
-                        }
-                    }else{
-                        alert("Usuario ou senha Incorretos");
-                    }
-                }
-            };
-            var login = document.getElementById("login").value;
-            var senha = document.getElementById("login").value;
-            var tipo = document.getElementById("tipoUsuario").value;
-            xhttp.open("POST", "http://127.0.0.1:8080/logarUsuario/" + login + "/" + senha + "/" + tipo, true);
-            xhttp.send();
-        }
-    </script>
-
 </head>
 <body>
-    <!-- <div>
-        <input type="text" name="" id="login">
-        <input type="passwordx" name="" id="senha">
-        <select id="tipoUsuario">
-            <option>selecione</option>
-            <option value="al">aluno</option>
-            <option value="mot">motorista</option>
-        </select>
-        <button type="submit" onclick="getRequisition()">logar</button>
-    </div> -->
 <body onload="carregaFaculdade()">
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -288,15 +250,15 @@
                                 <input id="login_password" class="form-control" type="error" placeholder="Senha" required>
                             </div>
                              <div class="form-group">
-                            <select class="form-control" id="exampleSelect1">
-                                    <option>Selecione o tipo de usuário</option>
-                                     <option>Motorista</option>
-                                     <option>Passageiro</option>
+                            <select class="form-control" id="login_type_user">
+                                    <option value="">Selecione o tipo de usuário</option>
+                                     <option value="mot">Motorista</option>
+                                     <option value="al">Passageiro</option>
                                  </select>
                               </div>
                         <div class="modal-footer">
                             <div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="autentica()">Login</button>
                             </div>
                         </div>
                     </form>
