@@ -91,7 +91,7 @@ public class ServiceCliente {
 		lista = new Stut();
 	}
 	
-	public String getJSONTurma(Request r, String cpf, String tipoU){
+	public String getJSONTurma(String cpf, String tipoU){
 		String resp = null;
 		if(tipoU.equals("motorista")){ 
 			for (int i = 0; i < lista.quantMotorista(); i++) {
@@ -106,6 +106,28 @@ public class ServiceCliente {
 				if(aux.getCpf().equals(cpf)){
 					//resp =  aux.getTurma().getRotaDia();
 				}
+			}
+		}
+		return resp;
+	}
+
+	public String getAlunoAutenticado(String cpf, String senha) {
+		Aluno a = lista.consultarClientes(cpf);
+		String resp = null;
+		if(a != null){
+			if(a.getSenha().equals(senha)){
+				resp = a.toString();
+			}
+		}
+		return resp;
+	}
+
+	public String getMotoristaAutenticado(String identificador, String senha) {
+		Motorista m = lista.consultarFornecedor(identificador);
+		String resp = null;
+		if(m != null){
+			if(m.getSenha().equals(senha)){
+				resp = m.toString();
 			}
 		}
 		return resp;

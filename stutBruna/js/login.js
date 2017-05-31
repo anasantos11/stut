@@ -1,5 +1,3 @@
-
-
 function showData(){
 	var idade = document.getElementById("idade").value;
 	console.log(idade);

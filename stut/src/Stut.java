@@ -9,10 +9,13 @@ public class Stut {
 	private List<Aluno> clientes = new LinkedList<Aluno>();
 	private List<Motorista> fornecedores = new LinkedList<Motorista>();
 	private int j;
-	public LinkedList<LinkedList<Aluno>> lb = new LinkedList<LinkedList<Aluno>>();
-	public LinkedList<Turma> lt = new LinkedList<Turma>();
+	private LinkedList<LinkedList<Aluno>> lb = new LinkedList<LinkedList<Aluno>>();
+	private LinkedList<Turma> lt = new LinkedList<Turma>();
 	
-	
+	public LinkedList<LinkedList<Aluno>> getListBairrosXAuno() {
+		return lb;
+	}
+
 	public void inserirCliente(Aluno a) {
 		clientes.add(a);
 	}
@@ -36,11 +39,21 @@ public class Stut {
 			Aluno alunoAtual = iter.next();
 			if(alunoAtual.getCpf() == cpf){
 				resp = alunoAtual;
-				return alunoAtual;
 			}
 		}			
-		return resp;
-		
+		return resp;	
+	}
+	
+	public Motorista consultarFornecedor(String cpf) {
+		Motorista resp = null;
+		Iterator<Motorista> iter = fornecedores.iterator();
+		while(iter.hasNext()){
+			Motorista motAtual = iter.next();
+			if(motAtual.getCpf().equals(cpf)){
+				resp = motAtual;
+			}
+		}			
+		return resp;	
 	}
 	
 	public Aluno consultarClientes(int x) {

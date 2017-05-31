@@ -27,7 +27,7 @@ public class URLMetodo implements Container {
 			String method = request.getMethod();
 			String mensagem;
 
-			if (path.startsWith("/contratoPassageiro") && "POST".equals(method)) {
+			if (path.startsWith("/contratoPassageiro") && "GET".equals(method)) {
 				mensagem = stutService.contratoPassageiro(request);
 
 				this.enviaResposta(Status.CREATED, response, mensagem);
@@ -38,20 +38,26 @@ public class URLMetodo implements Container {
 			} else if (path.startsWith("/consultarClientes") && "GET".equals(method)) {
 				mensagem = stutService.consultarClientes(request);
 				this.enviaResposta(Status.OK, response, mensagem);
-			} 
-			
-			
-			
-			else if(path.startsWith("/requisitarTurma") && "POST".equals(method)){
+			} else if(path.startsWith("/requisitarTurma") && "POST".equals(method)){
 				System.out.println("Entrando no get");
 				String[] aux = path.split("/");
-				String cpf = aux[(aux.length-2)];
+				String identificador = aux[(aux.length-2)];
 				String tipoU = aux[(aux.length-1)];
-				mensagem = stutService.getJSONTurma(request, cpf, tipoU);
+				mensagem = stutService.getJSONTurma(identificador, tipoU);
 				this.enviaResposta(Status.OK, response, mensagem);
-			}
-			
-			
+			}else if(path.startsWith("/logarUsuario") && "POST".equals(method)){
+				System.out.println("Entrando no get");
+				String[] aux = path.split("/");
+				String identificador = aux[(aux.length-3)];
+				String senha = aux[(aux.length-2)];
+				String tipoU = aux[(aux.length-1)];
+				if(tipoU.equals("al")){
+					mensagem = stutService.getAlunoAutenticado(identificador, senha);
+				}else{
+					mensagem = stutService.getMotoristaAutenticado(identificador, senha);
+				}
+				this.enviaResposta(Status.OK, response, mensagem);
+			}	
 			
 			else {
 				this.naoEncontrado(response, path);
@@ -110,7 +116,7 @@ public class URLMetodo implements Container {
 		conexao.connect(endereco);
 
 		// Testa a conexão abrindo o navegador padrão.
-		Desktop.getDesktop().browse(new URI("http://127.0.0.1:" + porta));
+		Desktop.getDesktop().browse(new URI("http://localhost:" + porta));
 
 		System.out.println("Tecle ENTER para interromper o servidor...");
 		System.in.read();
