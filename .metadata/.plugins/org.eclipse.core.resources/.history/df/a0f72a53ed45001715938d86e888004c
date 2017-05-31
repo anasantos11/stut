@@ -115,7 +115,7 @@ public class ServiceCliente {
 		String resp = "0";
 		if(a != null){
 			if(a.getSenha().equals(senha)){
-				a.setEstaLogado(true);
+				a.setEstaLogado(0);
 				resp = "aluno : {"
 							+ "\"value\" : \"aluno\","
 							+ "\"nome\" : \""+a.getNome()+"\","
@@ -131,7 +131,6 @@ public class ServiceCliente {
 		String resp = "0";
 		if(m != null){
 			if(m.getSenha().equals(senha)){
-				m.setEstalogado(true);
 				resp = "motorista : {"
 						+ "\"value\" : \"motorista\","
 						+ "\"nome\" : \""+m.getNome()+"\","
@@ -140,9 +139,5 @@ public class ServiceCliente {
 			}
 		}
 		return resp;
-	}
-
-	public boolean getEstaLogado(String cpf) {
-		return lista.consultarClientes(cpf).isEstaLogado();
 	}
 }

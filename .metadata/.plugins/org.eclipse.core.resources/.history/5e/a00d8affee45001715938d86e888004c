@@ -141,8 +141,4 @@ public class ServiceCliente {
 		}
 		return resp;
 	}
-
-	public boolean getEstaLogado(String cpf) {
-		return lista.consultarClientes(cpf).isEstaLogado();
-	}
 }

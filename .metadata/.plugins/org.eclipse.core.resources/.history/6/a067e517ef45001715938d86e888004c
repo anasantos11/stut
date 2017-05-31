@@ -143,6 +143,6 @@ public class ServiceCliente {
 	}
 
 	public boolean getEstaLogado(String cpf) {
-		return lista.consultarClientes(cpf).isEstaLogado();
+		lista.consultarClientes(cpf).get
 	}
 }

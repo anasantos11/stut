@@ -50,6 +50,7 @@ public class URLMetodo implements Container {
 				mensagem = stutService.getJSONTurma(identificador, tipoU);
 				this.enviaResposta(Status.OK, response, mensagem);
 			
+			
 			}else if(path.startsWith("/logarUsuario") && "POST".equals(method)){
 				System.out.println("Entrando no get");
 				String[] aux = path.split("/");
@@ -58,18 +59,11 @@ public class URLMetodo implements Container {
 				String tipoU = aux[(aux.length-1)];
 				System.out.println(tipoU);
 				if(tipoU.equals("al")){
-					System.out.println(identificador);
-					System.out.println(senha);
 					mensagem = stutService.getAlunoAutenticado(identificador, senha);
 				}else{
 					mensagem = stutService.getMotoristaAutenticado(identificador, senha);
 				}
-				System.out.println(mensagem);
 				this.enviaResposta(Status.OK, response, mensagem);	
-			}else if(path.startsWith("/getAutenticacao") && "POST".equals(method)){
-				String[] aux = path.split("?");
-				boolean x = stutService.getEstaLogado(aux[1]);
-				this.enviaResposta(Status.OK, response, ""+x);
 			} else {
 				this.naoEncontrado(response, path);
 			}

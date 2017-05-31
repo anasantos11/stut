@@ -17,16 +17,16 @@ function autentica(){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(parseInt(xhttp.responseText));
             if(isNaN(parseInt(xhttp.responseText))){
+                var dados = xhttp.responseText;
                 if(tipo == "al"){
-                    localStorage.setItem("dados_usuario", xhttp.responseText);
-                    localStorage.setItem("autenticacao" , 1);
-                    location.href = "areadopassageiro.html";
+                    sessionStorage.setItem("autenticacao" , 1);
+                    sessionStorage.setItem("dados_usuario", dados);
+                    location.href = "areadopassageiro.html?" + login;
                 }else{
-                    localStorage.setItem("dados_usuario", xhttp.responseText);
-                    localStorage.setItem("autenticacao" , 1);
-                    location.href = "areadomotorista.html";
+                    sessionStorage.setItem("autenticacao" , 1);
+                    sessionStorage.setItem("dados_usuario", dados);
+                    location.href = "areadomotorista.html?"+ login;
                 }
             }else{
                 alert("Login ou senha digitados de forma errada");

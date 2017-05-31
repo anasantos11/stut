@@ -67,9 +67,7 @@ public class URLMetodo implements Container {
 				System.out.println(mensagem);
 				this.enviaResposta(Status.OK, response, mensagem);	
 			}else if(path.startsWith("/getAutenticacao") && "POST".equals(method)){
-				String[] aux = path.split("?");
-				boolean x = stutService.getEstaLogado(aux[1]);
-				this.enviaResposta(Status.OK, response, ""+x);
+				Spath.split("?");
 			} else {
 				this.naoEncontrado(response, path);
 			}
