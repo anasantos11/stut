@@ -1,6 +1,6 @@
 public class Conta {
 
-	private int banco;
+	private String banco;
 
 	private int agencia;
 
@@ -11,7 +11,7 @@ public class Conta {
 	private String tipo;
 	
 		
-	public Conta(int banco, int agencia, int numConta, int operacao, String tipo) {
+	public Conta(String banco, int agencia, int numConta, int operacao, String tipo) {
 		setBanco(banco);
 		setAgencia(agencia);
 		setNumConta(numConta);
@@ -19,11 +19,11 @@ public class Conta {
 		setTipo(tipo);
 	}
 
-	public int getBanco() {
+	public String getBanco() {
 		return banco;
 	}
 
-	public void setBanco(int banco) {
+	public void setBanco(String banco) {
 		this.banco = banco;
 	}
 

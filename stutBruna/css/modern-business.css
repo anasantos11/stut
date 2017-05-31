@@ -12,7 +12,7 @@ body {
 }
 
 body {
-    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    padding-top: 60px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
 .img-portfolio {
@@ -106,6 +106,10 @@ footer {
   color: #337ab7;
   background-color: rgb(238, 238, 238);
   }
+  #ativo{
+    color: #337ab7;
+    background-color: rgb(238, 238, 238);
+    }
   .navbar-inverse .navbar-nav>.active>a{
     color: #337ab7;
     background-color: rgb(238, 238, 238);
@@ -114,4 +118,3 @@ footer {
 .navbar-header-stut{
   margin: 5px;
 }
-

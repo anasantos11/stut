@@ -26,8 +26,13 @@ public class URLMetodo implements Container {
 			String path = request.getPath().getPath();
 			String method = request.getMethod();
 			String mensagem;
-
 			if (path.startsWith("/contratoPassageiro") && "GET".equals(method)) {
+			
+			if (path.startsWith("") && "GET".equals(method)) {
+				mensagem = stutService.contratoPassageiro(request);
+				this.enviaResposta(Status.OK, response, mensagem);
+			}
+			else if (path.startsWith("/contratoPassageiro") && "POST".equals(method)) {
 				mensagem = stutService.contratoPassageiro(request);
 
 				this.enviaResposta(Status.CREATED, response, mensagem);
@@ -40,6 +45,11 @@ public class URLMetodo implements Container {
 				this.enviaResposta(Status.OK, response, mensagem);
 			} else if(path.startsWith("/requisitarTurma") && "POST".equals(method)){
 				System.out.println("Entrando no get");
+			} 
+			
+			
+			
+			else if(path.startsWith("/requisitarTurma") && "POST".equals(method)){
 				String[] aux = path.split("/");
 				String identificador = aux[(aux.length-2)];
 				String tipoU = aux[(aux.length-1)];
@@ -58,8 +68,7 @@ public class URLMetodo implements Container {
 				}
 				this.enviaResposta(Status.OK, response, mensagem);
 			}	
-			
-			else {
+			} else {
 				this.naoEncontrado(response, path);
 			}
 

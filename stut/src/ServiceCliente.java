@@ -15,7 +15,6 @@ public class ServiceCliente {
 	public String contratoPassageiro(Request request) {
 		Pessoa aluno = null;
 		Query query = request.getQuery();
-
 		// Query Aluno
 		String nome = query.get("nome");
 		LocalDate dataNascimento = LocalDate.parse(query.get("dataNascimento"));
@@ -36,9 +35,9 @@ public class ServiceCliente {
 		String cepAluno = query.get("cep");
 		
 		// Query Cartao
-		int banco = query.getInteger("banco");
+		String banco = query.get("banco");
 		String bandeiraCartao = query.get("bandeiraCartao");
-		int numCartao = query.getInteger("numCartao");
+		String numCartao = query.get("numCartao");
 		int codigoCartao = query.getInteger("codigoCartao");
 		LocalDate dataValidade = LocalDate.parse(query.get("dataValidade"));
 

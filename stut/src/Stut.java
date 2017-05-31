@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -37,7 +38,7 @@ public class Stut {
 		Iterator<Aluno> iter = clientes.iterator();
 		while(iter.hasNext()){
 			Aluno alunoAtual = iter.next();
-			if(alunoAtual.getCpf() == cpf){
+			if(alunoAtual.getCpf().equals(cpf)){
 				resp = alunoAtual;
 			}
 		}			
