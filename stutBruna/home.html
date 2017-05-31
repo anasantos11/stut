@@ -118,10 +118,9 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="login.html" role="button" data-toggle="modal" data-target="#login-modal">Login</a>                     
-                    </li>
-
+                   <li>
+                  <a href="#" role="button" data-toggle="modal" data-target="#login-modal">Login</a>      
+                  </li>  
                 </ul>
             </div>
 
@@ -134,17 +133,17 @@
                 <h2>Transporte Universitário</h2>
                 <p>Rápido, Seguro e Eficiente</p>
 
-                <form class="navbar-form navbar-center">
+                <form class="navbar-form navbar-center" >
                     <select class="form-control" id="estado1" value="Selecione o estado"></select>
                      <select class="form-control" id="cidade1" value="Selecione a cidade"></select>
-                      <select class="form-control" id="faculdade" value="Selecione a faculdade"></select>
+                      <select class="form-control" style="width: 250px" id="faculdade"  value="Selecione a faculdade"></select>
                     <script language="JavaScript" type="text/javascript" charset="utf-8">
                     new dgCidadesEstados({
                         cidade: document.getElementById('cidade1'),
                         estado: document.getElementById('estado1'),
                     });
                     </script>
-
+              
                     <button type="submit" class="btn btn-success">Pesquisar</button>
                 </form>
             </div>
@@ -262,46 +261,46 @@
 
 
     <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header" align="center">
-                    <img class="img-circle" id="img_logo" src="img/stut-logo-round.png">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                    </button>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header" align="center">
+            <img class="img-circle" id="img_logo" src="img/stut-logo-round.png">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <!-- Begin # DIV Form -->
+          <div id="div-forms">
+
+            <!-- Begin # Login Form -->
+            <form id="login-form">
+              <div class="modal-body">
+                <div id="div-login-msg" class="form-group">
+                  <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                  <span id="text-login-msg">Insira seu cpf e sua senha.</span>
                 </div>
-                
-                <!-- Begin # DIV Form -->
-                <div id="div-forms">
-                
-                    <!-- Begin # Login Form -->
-                    <form id="login-form">
-                        <div class="modal-body">
-                            <div id="div-login-msg" class="form-group">
-                                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                <span id="text-login-msg">Insira seu cpf e sua senha.</span>
-                            </div>
-                            <div class="form-group">
-                                <input id="login_username" class="form-control" type="error" placeholder="CPF" required>
-                            </div>
-                            <div class="form-group">
-                                <input id="login_password" class="form-control" type="error" placeholder="Senha" required>
-                            </div>
-                             <div class="form-group">
-                            <select class="form-control" id="exampleSelect1">
-                                    <option>Selecione o tipo de usuário</option>
-                                     <option>Motorista</option>
-                                     <option>Passageiro</option>
-                                 </select>
-                              </div>
-                        <div class="modal-footer">
-                            <div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
-                            </div>
-                        </div>
-                    </form>
-                    
+                <div class="form-group">
+                  <input id="login_username" class="form-control" type="error" placeholder="CPF" required>
                 </div>
+                <div class="form-group">
+                  <input id="login_password" class="form-control" type="error" placeholder="Senha" required>
+                </div>
+                <div class="form-group">
+                  <select class="form-control" id="exampleSelect1">
+                    <option>Selecione o tipo de usuário</option>
+                    <option>Motorista</option>
+                    <option>Passageiro</option>
+                  </select>
+                </div>
+                <div class="modal-footer">
+                  <div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                  </div>
+                </div>
+              </form>
+
+            </div>
 
 </body>
 

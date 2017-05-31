@@ -267,47 +267,47 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-     <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header" align="center">
-                    <img class="img-circle" id="img_logo" src="img/stut-logo-round.png">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                    </button>
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header" align="center">
+            <img class="img-circle" id="img_logo" src="img/stut-logo-round.png">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <!-- Begin # DIV Form -->
+          <div id="div-forms">
+
+            <!-- Begin # Login Form -->
+            <form id="login-form">
+              <div class="modal-body">
+                <div id="div-login-msg" class="form-group">
+                  <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                  <span id="text-login-msg">Insira seu cpf e sua senha.</span>
                 </div>
-                
-                <!-- Begin # DIV Form -->
-                <div id="div-forms">
-                
-                    <!-- Begin # Login Form -->
-                    <form id="login-form">
-                        <div class="modal-body">
-                            <div id="div-login-msg" class="form-group">
-                                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                <span id="text-login-msg">Insira seu cpf e sua senha.</span>
-                            </div>
-                            <div class="form-group">
-                                <input id="login_username" class="form-control" type="error" placeholder="CPF" required>
-                            </div>
-                            <div class="form-group">
-                                <input id="login_password" class="form-control" type="error" placeholder="Senha" required>
-                            </div>
-                             <div class="form-group">
-                            <select class="form-control" id="exampleSelect1">
-                                    <option>Selecione o tipo de usuário</option>
-                                     <option>Motorista</option>
-                                     <option>Passageiro</option>
-                                 </select>
-                              </div>
-                        <div class="modal-footer">
-                            <div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
-                            </div>
-                        </div>
-                    </form>
-                    
+                <div class="form-group">
+                  <input id="login_username" class="form-control" type="error" placeholder="CPF" required>
                 </div>
+                <div class="form-group">
+                  <input id="login_password" class="form-control" type="error" placeholder="Senha" required>
+                </div>
+                <div class="form-group">
+                  <select class="form-control" id="exampleSelect1">
+                    <option>Selecione o tipo de usuário</option>
+                    <option>Motorista</option>
+                    <option>Passageiro</option>
+                  </select>
+                </div>
+                <div class="modal-footer">
+                  <div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                  </div>
+                </div>
+              </form>
+
+            </div>
 
 </body>
 
