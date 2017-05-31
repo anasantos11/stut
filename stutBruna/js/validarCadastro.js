@@ -1,4 +1,5 @@
 function validarCadastro() {
-    document.getElementById("contratoPassageiro").submit();
+    document.getElementById("contratoPassageiro" + "POST").submit();
     alert("Ok");
+    location.href="contratoAluno.html";
 }

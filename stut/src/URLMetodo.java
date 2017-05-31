@@ -27,13 +27,9 @@ public class URLMetodo implements Container {
 			String method = request.getMethod();
 			String mensagem;
 			
-			if (path.startsWith("") && "GET".equals(method)) {
-				mensagem = stutService.contratoPassageiro(request);
-				this.enviaResposta(Status.OK, response, mensagem);
-			}
-			else if (path.startsWith("/contratoPassageiro") && "POST".equals(method)) {
-				mensagem = stutService.contratoPassageiro(request);
 
+			if (path.startsWith("/contratoPassageiro") && "POST".equals(method)) {
+				mensagem = stutService.contratoPassageiro(request);
 				this.enviaResposta(Status.CREATED, response, mensagem);
 
 			} else if (path.startsWith("/totalAlunos") && "GET".equals(method)) {
@@ -42,10 +38,7 @@ public class URLMetodo implements Container {
 			} else if (path.startsWith("/consultarClientes") && "GET".equals(method)) {
 				mensagem = stutService.consultarClientes(request);
 				this.enviaResposta(Status.OK, response, mensagem);
-			} 
-			
-			
-			
+			} 	
 			else if(path.startsWith("/requisitarTurma") && "POST".equals(method)){
 				String[] aux = path.split("/");
 				String cpf = aux[(aux.length-2)];

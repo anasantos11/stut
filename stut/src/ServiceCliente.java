@@ -1,11 +1,6 @@
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-
-import java.time.format.DateTimeFormatter;
-import java.util.LinkedList;
-import java.util.Calendar;
-
 import org.simpleframework.http.Query;
 import org.simpleframework.http.Request;
 
