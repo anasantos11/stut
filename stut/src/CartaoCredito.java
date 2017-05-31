@@ -1,13 +1,13 @@
 import java.time.LocalDate;
 
 public class CartaoCredito {
-	private int banco;
+	private String banco;
 	private String bandeiraCartao;
-	private int numCartao;
+	private String numCartao;
 	private int codigoCartao;
 	private LocalDate dataValidade;
 
-	public CartaoCredito(int banco, String bandeiraCartao, int numCartao, int codigoCartao, LocalDate dataValidade) {
+	public CartaoCredito(String banco, String bandeiraCartao, String numCartao, int codigoCartao, LocalDate dataValidade) {
 		setBanco(banco);
 		setBandeiraCartao(bandeiraCartao);
 		setNumCartao(numCartao);
@@ -15,11 +15,11 @@ public class CartaoCredito {
 		setDataValidade(dataValidade);
 	}
 
-	public int getBanco() {
+	public String getBanco() {
 		return banco;
 	}
 
-	public void setBanco(int banco) {
+	public void setBanco(String banco) {
 		this.banco = banco;
 	}
 
@@ -31,11 +31,11 @@ public class CartaoCredito {
 		this.bandeiraCartao = bandeiraCartao;
 	}
 
-	public int getNumCartao() {
+	public String getNumCartao() {
 		return numCartao;
 	}
 
-	public void setNumCartao(int numCartao) {
+	public void setNumCartao(String numCartao) {
 		this.numCartao = numCartao;
 	}
 
