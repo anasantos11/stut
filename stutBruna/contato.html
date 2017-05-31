@@ -78,8 +78,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="login.html">Login</a>
+                   <li>
+                        <a href="login.html" role="button" data-toggle="modal" data-target="#login-modal">Login</a>                     
                     </li>
 
                 </ul>
@@ -111,13 +111,13 @@
             <!-- Map Column -->
             <div class="col-md-8">
                 <!-- Embedded Google Map -->
-                <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
+                <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.800036842634!2d-43.93872418551643!3d-19.932829586602146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa699dc57d681c9%3A0xaf60d9231761d8c!2sR.+Cl%C3%A1udio+Manoel%2C+1205+-+Funcion%C3%A1rios%2C+Belo+Horizonte+-+MG%2C+30140-100!5e0!3m2!1spt-BR!2sbr!4v1496205941036"> </iframe>
             </div>
             <!-- Contact Details Column -->
             <div class="col-md-4">
                 <h3>Detalhes do Contato</h3>
                 <p>
-                    R. Cláudio Manoel, 1205 <br>Belo Horizonte, MG 30140-108<br>
+                    R. Cláudio Manoel, 1205 <br>Belo Horizonte, MG 30140-100<br>
                 </p>
                 <p><i class="fa fa-phone"></i>
                     <abbr title="Phone">Telefone </abbr>: (12) 3456-7890</p>
@@ -211,6 +211,48 @@
     <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
     <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/contact_me.js"></script>
+
+     <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" align="center">
+                    <img class="img-circle" id="img_logo" src="img/stut-logo-round.png">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </button>
+                </div>
+                
+                <!-- Begin # DIV Form -->
+                <div id="div-forms">
+                
+                    <!-- Begin # Login Form -->
+                    <form id="login-form">
+                        <div class="modal-body">
+                            <div id="div-login-msg" class="form-group">
+                                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-login-msg">Insira seu cpf e sua senha.</span>
+                            </div>
+                            <div class="form-group">
+                                <input id="login_username" class="form-control" type="error" placeholder="CPF" required>
+                            </div>
+                            <div class="form-group">
+                                <input id="login_password" class="form-control" type="error" placeholder="Senha" required>
+                            </div>
+                             <div class="form-group">
+                            <select class="form-control" id="exampleSelect1">
+                                    <option>Selecione o tipo de usuário</option>
+                                     <option>Motorista</option>
+                                     <option>Passageiro</option>
+                                 </select>
+                              </div>
+                        <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                </div>
 
 </body>
 
