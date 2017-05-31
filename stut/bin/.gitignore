@@ -1,10 +1,29 @@
-<<<<<<< HEAD
 /ServiceCliente.java
 /URLMetodo.java
-=======
-/Responsavel.class
-/Stut.class
-/TratamentoArquivo.class
+/.gitignore
+/Aluno.class
+/Arquivo$Aplicacao.class
+/Arquivo.class
 /ArquivoTurma.class
-/turma.txt
->>>>>>> 68a36010fb1da3b2ccb8365251c108f2fab06aff
+/Assinatura$AssinaturaEnum.class
+/Assinatura.class
+/Ausencia.class
+/CartaoCredito.class
+/Conta.class
+/Contrato.class
+/ContratoAluno.class
+/ContratoMotorista.class
+/Endereco.class
+/Entrega.class
+/Faculdade.class
+/Motorista.class
+/Pessoa.class
+/Recolhimento.class
+/Responsavel.class
+/Rota.class
+/ServiceCliente.class
+/StatusContrato.class
+/Stut.class
+/Turma.class
+/URLMetodo.class
+/Viagem.class
