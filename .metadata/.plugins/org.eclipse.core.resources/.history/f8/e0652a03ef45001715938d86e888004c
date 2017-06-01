@@ -1,6 +1,11 @@
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+
+import java.time.format.DateTimeFormatter;
+import java.util.LinkedList;
+import java.util.Calendar;
+
 import org.simpleframework.http.Query;
 import org.simpleframework.http.Request;
 
@@ -76,7 +81,6 @@ public class ServiceCliente {
 	public String consultarClientes(Request request) {
 		Query query = request.getQuery();
 		String cpf = query.get("cpf");
-		System.out.println("retorno = " + lista.consultarClientes(cpf));
 		Aluno a = lista.consultarClientes(cpf);
 		System.out.println(a.toString());
 		return a.toString();
@@ -97,7 +101,7 @@ public class ServiceCliente {
 			}
 		}else{
 			for (int i = 0; i < lista.quantCliente(); i++) {
-				Aluno aux = lista.consultarClientes2(i);
+				Aluno aux = lista.consultarClientes(i);
 				if(aux.getCpf().equals(cpf)){
 					//resp =  aux.getTurma().getRotaDia();
 				}
@@ -139,6 +143,6 @@ public class ServiceCliente {
 	}
 
 	public boolean getEstaLogado(String cpf) {
-		return lista.consultarClientes(cpf).isEstaLogado();
+		return false;
 	}
 }
