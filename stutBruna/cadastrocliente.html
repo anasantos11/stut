@@ -18,7 +18,8 @@
   <link rel="stylesheet" href="css/style.css">
   <link href="css/modern-business.css" rel="stylesheet">
   <link href="css/stut--style.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.4/sweetalert2.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.4/sweetalert2.css">
   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link rel="icon" href="img/stut-logo-round.png" type="img/png" />
 
@@ -86,8 +87,8 @@
             </ul>
           </li>
          <li>
-                  <a href="#" role="button" data-toggle="modal" data-target="#login-modal">Login</a>      
-                  </li>               
+                  <a href="#" role="button" data-toggle="modal" data-target="#login-modal">Login</a>
+                  </li>
                 </ul>
 
         </ul>
@@ -104,7 +105,7 @@
       <div class="row col-md-offset-1 col-md-10 col-md-offset-1">
         <!--  <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-box"> -->
         <div class="form-box">
-          <form role="form" action="http://127.0.0.1:8080/contratoPassageiro" method="POST" class="f1" id="contratoPassageiro">
+          <form role="form" class="f1" id="contratoPassageiro" >
             <h3>Contrate nosso serviço</h3>
             <p>Preencha os dados abaixo para contratar o transporte universitário</p>
             <div class="f1-steps">
@@ -119,13 +120,13 @@
                 <div class="f1-step-icon"><i class="fa fa-home"></i></div>
                 <p>Dados endereço</p>
               </div>
-              <div class="f1-step" >
-                <div class="f1-step-icon"><i class="fa fa-credit-card"></i></div>
-                <p>Dados Bancários</p>
-              </div>
               <div class="f1-step">
                 <div class="f1-step-icon"><i class="fa fa-file-o" ></i></div>
                 <p>Dados Contratuais</p>
+              </div>
+              <div class="f1-step" >
+                <div class="f1-step-icon"><i class="fa fa-credit-card"></i></div>
+                <p>Dados Bancários</p>
               </div>
               <div class="f1-step">
                 <div class="f1-step-icon"><i class="fa fa-bus"></i></div>
@@ -134,41 +135,45 @@
             </div>
 
             <fieldset><!-- Dados Pessoais -->
-              <br>
-              <div class="controls col-md-6 col-md-offset-1">
+              <div class="controls col-md-6">
                 <label>Nome Completo:</label>
                 <input type="text" name="nome"  value="" class="form-control" >
                 <p class="help-block"></p>
               </div>
-              <div class="controls col-md-4 ">
+              <div class="controls col-md-6 ">
                 <label>Data de Nascimento:</label>
                 <input type="date" name="dataNascimento" id="dataNascimento" value="" class="form-control" onblur="calcularIdade()" >
                 <p class="help-block"></p>
               </div>
-              <div class="controls col-md-6 col-md-offset-1" >
+              <div class="controls col-md-6 " >
                 <label>CPF:</label>
                 <input type="text" name="cpf" value="" class="form-control"  >
                 <p class="help-block"></p>
               </div>
-              <div class="controls col-md-4 ">
+              <div class="controls col-md-6 ">
                 <label>Telefone:</label>
                 <input type="text" name="tel" value="" class="form-control"  >
                 <p class="help-block"></p>
               </div>
-              <div class="controls col-md-6 col-md-offset-1">
+              <div class="controls col-md-6 ">
                 <label>E-mail:</label>
-                <input type="email" name="email" value="" class="form-control" id="email" >
+                <input type="email" name="email"  value="" class="form-control" >
                 <p class="help-block"></p>
               </div>
-              <div class="controls col-md-4">
+              <div class="controls col-md-6 ">
                 <label>Senha:</label>
-                <input type="password" name="senha" value="" class="form-control" >
+                <input type="password" name="senha"  value="" class="form-control" >
                 <p class="help-block"></p>
               </div>
               <div id="dadosAlunoMenor" hidden="true">
-                <div class="controls col-md-6 col-md-offset-1">
-                  <label>Responsável</label>
-                  <input type="text" name="responsavel" value="" class="form-control"  >
+                <div class="controls col-md-6">
+                  <label>Nome Responsável</label>
+                  <input name="nomeResponsavel" value="" class="form-control"  >
+                  <p class="help-block"></p>
+                </div>
+                <div class="controls col-md-6 ">
+                  <label>CPF Responsável</label>
+                  <input name="cpfResponsavel" value="" class="form-control"  >
                   <p class="help-block"></p>
                 </div>
               </div>
@@ -180,6 +185,8 @@
               <div class="f1-buttons col-md-12" >
                 <button type="button" class="btn btn-next">Próximo</button>
               </div>
+
+
             </fieldset>
 
             <fieldset><!-- Dados Endereço -->
@@ -214,39 +221,6 @@
                 <p class="help-block"></p>
               </div>
               <div class="f1-buttons">
-                <button type="button" class="btn btn-previous">Anterior</button>
-                <button type="button" class="btn btn-next">Próximo</button>
-              </div>
-            </fieldset>
-
-            <fieldset><!-- Dados Bancários -->
-              <div class="controls col-md-6 ">
-                <label>Banco:</label>
-                <select type="number" class="form-control" name="banco"  value="Selecione o banco"  id="bancos"></select>
-                <!--<input type="number" name="banco" value="" class="form-control" >-->
-                <p class="help-block"></p>
-              </div>
-              <div class="controls col-md-6">
-                <label>Bandeira Cartão</label>
-                <input type="text" name="bandeiraCartao" value="" class="form-control" >
-                <p class="help-block"></p>
-              </div>
-              <div class="controls col-md-6 ">
-                <label>Número Cartão</label>
-                <input type="number" name="numCartao" value="" class="form-control" >
-                <p class="help-block"></p>
-              </div>
-              <div class="controls col-md-2">
-                <label>Código CVV:</label>
-                <input type="number" name="codigoCartao" value="" class="form-control" >
-                <p class="help-block"></p>
-              </div>
-              <div class="controls col-md-4 ">
-                <label>Data Validade:</label>
-                <input type="date" name="dataValidade" value="" class="form-control" >
-                <p class="help-block"></p>
-              </div>
-              <div class="f1-buttons col-md-12">
                 <button type="button" class="btn btn-previous">Anterior</button>
                 <button type="button" class="btn btn-next">Próximo</button>
               </div>
@@ -304,6 +278,40 @@
               </div>
             </fieldset>
 
+            <fieldset><!-- Dados Bancários -->
+              <div class="controls col-md-6 ">
+                <label>Banco:</label>
+                <select type="number" class="form-control" name="banco"  value="Selecione o banco"  id="bancos"></select>
+                <!--<input type="number" name="banco" value="" class="form-control" >-->
+                <p class="help-block"></p>
+              </div>
+              <div class="controls col-md-6">
+                <label>Bandeira Cartão</label>
+                <input type="text" name="bandeiraCartao" value="" class="form-control" >
+                <p class="help-block"></p>
+              </div>
+              <div class="controls col-md-6 ">
+                <label>Número Cartão</label>
+                <input type="number" name="numCartao" value="" class="form-control" >
+                <p class="help-block"></p>
+              </div>
+              <div class="controls col-md-2">
+                <label>Código CVV:</label>
+                <input type="number" name="codigoCartao" value="" class="form-control" >
+                <p class="help-block"></p>
+              </div>
+              <div class="controls col-md-4 ">
+                <label>Data Validade:</label>
+                <input type="date" name="dataValidade" value="" class="form-control" >
+                <p class="help-block"></p>
+              </div>
+              <div class="f1-buttons col-md-12">
+                <button type="button" class="btn btn-previous">Anterior</button>
+                <button type="button" class="btn btn-next">Próximo</button>
+              </div>
+            </fieldset>
+
+
             <fieldset> <!-- Escolha sua turma -->
               <div class="controls col-md-12">
                 <label>Faculdade</label>
@@ -328,11 +336,9 @@
 
                 <div class="f1-buttons">
                   <button type="button" class="btn btn-previous">Anterior</button>
-                  <button type="button" class="btn btn-submit" onclick="validarCadastro()">Cadastrar</button>
+                  <button class="btn btn-submit" id="input"onclick="validarCadastro('http://127.0.0.1:8080') ">Cadastrar</button>-->
                 </div>
               </fieldset>
-
-            </form>
           </form>
         </div>
       </div>
@@ -354,8 +360,37 @@
 <script src="js/lista-bancos.js" type="text/javascript"></script>
 <script src="js/endereco-por-cep.js"></script>
 <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.4/sweetalert2.common.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.4/sweetalert2.common.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.4/sweetalert2.common.min.js.map"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.4/sweetalert2.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.4/sweetalert2.min.js"></script>
 <script type="text/javascript">
-$(document).ready(function () {
+// Não recarregar página form automaticamente
+document.getElementById("input").addEventListener("click", function(event){
+  event.preventDefault()
+});
+// não permitir que submit ocorra pelo ENTER
+$('#contratoPassageiro').on('keyup keypress', function(e) {
+  var keyCode = e.keyCode || e.which;
+  if (keyCode === 13) {
+    e.preventDefault();
+    return false;
+  }
+});
+</script>
+<script type="text/javascript">
+$( "#teste" ).click(function() {
+  swal(
+  'Cadastro realizado com sucesso',  '',
+  'success'
+)
+});
+</script>
+
+
+<script type="text/javascript">
+  $(document).ready(function () {
 
   // Método para pular campos teclando ENTER
   $('.pula').on('keypress', function(e){

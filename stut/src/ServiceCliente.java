@@ -1,11 +1,6 @@
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-
-import java.time.format.DateTimeFormatter;
-import java.util.LinkedList;
-import java.util.Calendar;
-
 import org.simpleframework.http.Query;
 import org.simpleframework.http.Request;
 
@@ -81,6 +76,7 @@ public class ServiceCliente {
 	public String consultarClientes(Request request) {
 		Query query = request.getQuery();
 		String cpf = query.get("cpf");
+		System.out.println("retorno = " + lista.consultarClientes(cpf));
 		Aluno a = lista.consultarClientes(cpf);
 		System.out.println(a.toString());
 		return a.toString();
@@ -101,7 +97,7 @@ public class ServiceCliente {
 			}
 		}else{
 			for (int i = 0; i < lista.quantCliente(); i++) {
-				Aluno aux = lista.consultarClientes(i);
+				Aluno aux = lista.consultarClientes2(i);
 				if(aux.getCpf().equals(cpf)){
 					//resp =  aux.getTurma().getRotaDia();
 				}
@@ -115,6 +111,7 @@ public class ServiceCliente {
 		String resp = "0";
 		if(a != null){
 			if(a.getSenha().equals(senha)){
+				a.setEstaLogado(true);
 				resp = "aluno : {"
 							+ "\"value\" : \"aluno\","
 							+ "\"nome\" : \""+a.getNome()+"\","
@@ -130,6 +127,7 @@ public class ServiceCliente {
 		String resp = "0";
 		if(m != null){
 			if(m.getSenha().equals(senha)){
+				m.setEstalogado(true);
 				resp = "motorista : {"
 						+ "\"value\" : \"motorista\","
 						+ "\"nome\" : \""+m.getNome()+"\","
@@ -138,5 +136,9 @@ public class ServiceCliente {
 			}
 		}
 		return resp;
+	}
+
+	public boolean getEstaLogado(String cpf) {
+		return lista.consultarClientes(cpf).isEstaLogado();
 	}
 }

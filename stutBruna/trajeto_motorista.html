@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="transporte, universitario, estudantes, van, motorista, universidade, faculdade">
+    <meta name="description" content="Transporte universitario rapido, seguro e eficaz">
+    <meta name="author" content="Equipe StuT - Segunda turma Engenharia de Software PUC MINAS - Praça da Liberdade">
+
+    <title>StuT: Transporte Universitário </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <!-- Custom CSS -->
+    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="css/stut--style.css" rel="stylesheet">
+    <link href="trajeto_motorista.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="img/stut-logo-round.png" type="img/png" />
+    
+    
+    <!-- Maps API Javascript -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMgUZpqxShriv6WjlEVpJZ_0vmfMfU6aY&callback=initMap">
+    </script>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                </button>                    
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+                    <div class="navbar-header-stut">
+                         <img class="stut-logo"src="img/stut-logo-white.png" alt=" StuT ">
+                    </div>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="login.html">Sair</a>
+                    </li>
+                </ul>               
+            </div>
+        <!-- /.navbar-collapse -->
+        </div>
+    <!-- /.container -->
+    </nav>
+    <div class="container">
+        <br><br>
+        <div class="container header-trajeto">
+            <div class="well col-sm-12 col-md-6 " id="turma_tabela">
+                <div class="row user-row">
+                    <div class="col-md-2">
+                        <img class="img-circle"
+                            src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=50"
+                            alt="User Pic">
+                    </div>
+                    <div class="col-md-8">
+                        <strong>Vinicius Souza</strong><br>
+                        <span class="text-muted">Avenida Cisne,160</span>
+                    </div>
+                    <!-- add .rowname class to attribute data-for (Dropdown!)-->
+                    <div class="col-md-1 dropdown-user" data-for=".cyruxx">
+                        <i class="glyphicon glyphicon-chevron-down text-muted"></i>
+                    </div>
+                </div>                
+                <!-- Add data-for class to this row -->
+                <div class="row user-infos cyruxx">
+                    <div class="col-sm-10 col-md-10 col-md-offset-1">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Informacoes do usuario</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img class="img-circle"
+                                            src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100"
+                                            alt="User Pic">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <strong>Vinicius Souza</strong><br>
+                                        <table class="table table-condensed table-responsive table-user-information">
+                                            <tbody>
+                                            <tr>
+                                                <td>End:</td>
+                                                <td>Aveninda Cisne, 160</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Bairro:</td>
+                                                <td>Lagoa dos Ingleses</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Cidade:</td>
+                                                <td>Nova Lima</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Universidade</td>
+                                                <td>Puc-Minas Praca da Liberdade</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <button class="btn btn-sm btn-primary" type="button"
+                                        data-toggle="tooltip"
+                                        data-original-title="Send message to user"><i class="glyphicon glyphicon-envelope"></i></button>
+                                <span class="pull-right">
+                                    <button class="btn btn-sm btn-warning" type="button"
+                                            data-toggle="tooltip"
+                                            data-original-title="Edit this user"><i class="glyphicon glyphicon-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger" type="button"
+                                            data-toggle="tooltip"
+                                            data-original-title="Remove this user"><i class="glyphicon glyphicon-remove"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row user-row">
+                    <div class="col-md-2">
+                        <img class="img-circle"
+                            src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=50"
+                            alt="User Pic">
+                    </div>
+                    <div class="col-md-8">
+                        <strong>Ana Paula</strong><br>
+                        <span class="text-muted">Rua Abilio Estrela,280</span>
+                    </div>
+                    <div class="col-md-1 dropdown-user" data-for=".alexanderMahrt">
+                        <i class="glyphicon glyphicon-chevron-down text-muted"></i>
+                    </div>
+                </div>
+                <div class="row user-infos alexanderMahrt">
+                    <div class="col-sm-10 col-md-10 col-md-offset-1">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">User information</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img class="img-circle"
+                                            src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100"
+                                            alt="User Pic">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <strong>Alexander Mahrt</strong><br>
+                                        <table class="table table-condensed table-responsive table-user-information">
+                                            <tbody>
+                                                <tr>
+                                                    <td>User level:</td>
+                                                    <td>Moderator</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Registered since:</td>
+                                                    <td>11/12/2013</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Topics</td>
+                                                    <td>5</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Warnings</td>
+                                                    <td>0</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <button class="btn btn-sm btn-primary" type="button"
+                                        data-toggle="tooltip"
+                                        data-original-title="Send message to user"><i class="glyphicon glyphicon-envelope"></i></button>
+                                <span class="pull-right">
+                                    <button class="btn btn-sm btn-warning" type="button"
+                                            data-toggle="tooltip"
+                                            data-original-title="Edit this user"><i class="glyphicon glyphicon-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger" type="button"
+                                            data-toggle="tooltip"
+                                            data-original-title="Remove this user"><i class="glyphicon glyphicon-remove"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row user-row">
+                    <div class="col-md-2">
+                        <img class="img-circle"
+                            src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=50"
+                            alt="User Pic">
+                    </div>
+                    <div class="col-md-8">
+                        <strong>MyUsername</strong><br>
+                        <span class="text-muted">User level: Registered user</span>
+                    </div>
+                    <div class="col-md-1 dropdown-user" data-for=".myUsername">
+                        <i class="glyphicon glyphicon-chevron-down text-muted"></i>
+                    </div>
+                </div>
+                <div class="row user-infos myUsername">
+                    <div class="col-sm-10 col-md-10 col-md-offset-1">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">User information</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img class="img-circle"
+                                            src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100"
+                                            alt="User Pic">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <strong>MyUsername</strong><br>
+                                        <table class="table table-condensed table-responsive table-user-information">
+                                            <tbody>
+                                            <tr>
+                                                <td>User level:</td>
+                                                <td>Registered user</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Registered since:</td>
+                                                <td>11/12/2013</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Topics</td>
+                                                <td>1</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Warnings</td>
+                                                <td>1</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <button class="btn btn-sm btn-primary" type="button"
+                                        data-toggle="tooltip"
+                                        data-original-title="Send message to user"><i class="glyphicon glyphicon-envelope"></i></button>
+                                <span class="pull-right">
+                                    <button class="btn btn-sm btn-warning" type="button"
+                                            data-toggle="tooltip"
+                                            data-original-title="Edit this user"><i class="glyphicon glyphicon-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger" type="button"
+                                            data-toggle="tooltip"
+                                            data-original-title="Remove this user"><i class="glyphicon glyphicon-remove"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        
+            
+        </div>
+        <div id="mapa"></div>        
+        <button type="button" id="trajeto-button" class="btn button-bar btn-success btn-lg btn-block">Gerar Trajeto</button> 
+        <a href="#" class="btn button-bar btn-success btn-lg btn-block" role="button" aria-disabled="true">Iniciar Trajeto</a>       
+    </div><!-- /.container -->
+    
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+    
+       
+    <!-- Arquivo de inicialização do mapa -->
+		<script src="mapa.js"></script>
+    <!-- Scripts Gerais -->        
+        
+        <script src="js/bootstrap.min.js"></script>
+    <!-- Tabela de usuarios -->
+        <script src="tabela_turma.js"></script>        
+       
+</<body>
+    

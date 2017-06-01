@@ -6,6 +6,7 @@ public class Motorista extends Pessoa {
 	private int quantidadeAssentos;
 	private String licenca;
 	private Turma turma;
+	private boolean estalogado;
 
 	public Motorista(String nome, LocalDate dataNascimento, int idade, String cpf, String identidade, String tel,
 			Endereco endereco, String email, String senha, Conta conta, String cnh, int quantAssentos, String licenca,
@@ -75,5 +76,15 @@ public class Motorista extends Pessoa {
 
 	public void setTurma(Turma turma) {
 		this.turma = turma;
+	}
+
+
+	public boolean isEstalogado() {
+		return estalogado;
+	}
+
+
+	public void setEstalogado(boolean estalogado) {
+		this.estalogado = estalogado;
 	}
 }
