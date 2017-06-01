@@ -1,16 +1,10 @@
 public class Conta {
-
 	private String banco;
-
 	private int agencia;
-
 	private int numConta;
-
 	private int operacao;
-
 	private String tipo;
 	
-		
 	public Conta(String banco, int agencia, int numConta, int operacao, String tipo) {
 		setBanco(banco);
 		setAgencia(agencia);
@@ -57,6 +51,12 @@ public class Conta {
 
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
+	}
+
+	@Override
+	public String toString() {
+		return "\nBanco: " + banco + "\nAgencia: " + agencia + "\nConta: " + numConta + "\nOperacao: " + operacao
+				+ "\nTipo:" + tipo ;
 	}
 	
 	

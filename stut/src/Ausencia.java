@@ -1,14 +1,16 @@
 import java.time.LocalDate;
-import java.util.ArrayList;
+import java.time.LocalTime;
+
 
 public class Ausencia {
 	private LocalDate data;
-	private String viagem;
+	private LocalTime hora;
 	private String observacoes;
-	private ArrayList listaAusencias;
-
-	public void verificarAusencias() {
-
+	
+	public Ausencia(LocalDate data, LocalTime hora, String observacoes) {
+		setData(data);
+		setHora(hora);
+		setObservacoes(observacoes);
 	}
 
 	public LocalDate getData() {
@@ -19,14 +21,6 @@ public class Ausencia {
 		this.data = data;
 	}
 
-	public String getViagem() {
-		return viagem;
-	}
-
-	public void setViagem(String viagem) {
-		this.viagem = viagem;
-	}
-
 	public String getObservacoes() {
 		return observacoes;
 	}
@@ -35,12 +29,13 @@ public class Ausencia {
 		this.observacoes = observacoes;
 	}
 
-	public ArrayList getListaAusencias() {
-		return listaAusencias;
+	public LocalTime getHora() {
+		return hora;
 	}
 
-	public void setListaAusencias(ArrayList listaAusencias) {
-		this.listaAusencias = listaAusencias;
+	public void setHora(LocalTime hora) {
+		this.hora = hora;
 	}
+	
 
 }

@@ -114,9 +114,9 @@ public abstract class Contrato {
 
 	@Override
 	public String toString() {
-		return "Contrato formaPgto: " + formaPgto + ", assinaturaPagto :" + assinaturaPagto + ", servico: " + servico
-				+ ", inicioContrato: " + inicioContrato + ", fimContrato: " + fimContrato + ", percentualMulta: "
-				+ percentualMulta + ", status: " + status + "]";
+		return "\nformaPgto: " + formaPgto + "\nAssinatura Pagto :" + assinaturaPagto + "\nServico: " + servico
+				+ "\nInicio Contrato: " + inicioContrato + "\n Fim Contrato: " + fimContrato + "\n Percentual Multa: "
+				+ percentualMulta + "\nStatus: " + status;
 	}
 	
 

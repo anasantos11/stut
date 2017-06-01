@@ -7,7 +7,8 @@ public class CartaoCredito {
 	private int codigoCartao;
 	private LocalDate dataValidade;
 
-	public CartaoCredito(String banco, String bandeiraCartao, String numCartao, int codigoCartao, LocalDate dataValidade) {
+	public CartaoCredito(String banco, String bandeiraCartao, String numCartao, int codigoCartao,
+			LocalDate dataValidade) {
 		setBanco(banco);
 		setBandeiraCartao(bandeiraCartao);
 		setNumCartao(numCartao);
@@ -57,8 +58,8 @@ public class CartaoCredito {
 
 	@Override
 	public String toString() {
-		return "CartaoCredito banco: " + banco + ", bandeiraCartao: " + bandeiraCartao + ", numCartao: " + numCartao
-				+ ", codigoCartao: " + codigoCartao + ", dataValidade: " + dataValidade;
+		return "\nBanco: " + banco + "\nBandeira: " + bandeiraCartao + "\nNúmero Cartão: " + numCartao
+				+ "\nCodigo Cartao: " + codigoCartao + "\nData Validade: " + dataValidade;
 	}
 
 }

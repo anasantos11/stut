@@ -4,7 +4,7 @@ import java.time.LocalTime;
 import org.simpleframework.http.Query;
 import org.simpleframework.http.Request;
 
-public class ServiceCliente {
+public class StutService {
 	private Stut lista;
 
 	public String contratoPassageiro(Request request) {
@@ -82,7 +82,7 @@ public class ServiceCliente {
 		return a.toString();
 	}
 
-	public ServiceCliente() {
+	public StutService() {
 		lista = new Stut();
 	}
 	

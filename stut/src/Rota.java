@@ -41,10 +41,10 @@ public class Rota {
 	}
 	
 	public Rota(Turma turma, LocalTime inicioViagem, LocalTime terminoViagem, LocalTime tempoViagem) {
-		this.turma = turma;
-		this.inicioViagem = inicioViagem;
-		this.terminoViagem = terminoViagem;
-		this.tempoViagem = tempoViagem;
+		setTurma(turma);
+		setInicioViagem(inicioViagem);
+		setTerminoViagem(terminoViagem);
+		setTempoViagem(tempoViagem);
 	}
 	
 	public void rotaOrdenadaPadraoJson(TreeMap<LocalTime, Aluno> a){

@@ -1,45 +1,27 @@
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Aluno extends Pessoa {
 	private String responsavel;
 	private ContratoAluno contratoA;
 	private Faculdade faculdade;
-	private ContratoAluno contrato;
 	private CartaoCredito cartao;
 	private boolean estaLogado;
-	//private Turma turma;
-	private int turma;
-	private int ausencias;
+	private Turma turma;
+	private List<Ausencia> ausencias;
 	private boolean ausente = false;
 	private boolean temTurma = false;
 
-	public Aluno(String nome, LocalDate dataNascimento, int idade,
-			String cpf, String rg, String tel, Endereco endereco,
-			String email, String senha, String responsavel, 
-			ContratoAluno contrato, Faculdade facul, 
+	public Aluno(String nome, LocalDate dataNascimento, int idade, String cpf, String rg, String tel, Endereco endereco,
+			String email, String senha, String responsavel, ContratoAluno contrato, Faculdade facul,
 			CartaoCredito cartao) {
-		
-		
 		super(nome, dataNascimento, idade, cpf, rg, tel, endereco, email, senha);
 		setContratoAluno(contrato);
 		setResponsavel(responsavel);
 		setCartao(cartao);
 		setFaculdade(facul);
-		setAusencias(0);
-	}
-
-	// Para testar WebService
-	public Aluno(String nome, LocalDate dataNascimento, int idade,
-			String cpf, String rg, String tel, Endereco endAluno,
-			String email, String senha, String responsavel2, 
-			ContratoAluno contratoAluno, String faculdade2,String cartao2, String turma2) {
-		
-		
-		super(nome, dataNascimento, idade, cpf, rg, tel, endAluno, email, senha);
-		setContratoAluno(contratoAluno);
-		setResponsavel(responsavel2);
-		setAusencias(0);
 	}
 
 	public Faculdade getFaculdade() {
@@ -53,12 +35,9 @@ public class Aluno extends Pessoa {
 	/**
 	 * Métodos
 	 */
-	public void comunicarAusencia() {
-
-	}
-
-	public ArrayList verificarAusencias() {
-		return null;
+	public void comunicarAusencia(LocalDate data,  LocalTime hora, String observacoes) {
+		Ausencia a = new Ausencia(data, hora, observacoes);
+		ausencias.add(a);
 	}
 
 	public ArrayList verificarViagens() {
@@ -85,14 +64,6 @@ public class Aluno extends Pessoa {
 		this.contratoA = contrato;
 	}
 
-	public ContratoAluno getContrato() {
-		return contrato;
-	}
-
-	public void setContrato(ContratoAluno contrato) {
-		this.contrato = contrato;
-	}
-
 	public CartaoCredito getCartao() {
 		return cartao;
 	}
@@ -101,27 +72,20 @@ public class Aluno extends Pessoa {
 		this.cartao = cartao;
 	}
 
-	//public Turma getTurma() {
-	//	return turma;
-	//}
-	
-	public int getTurma() {
+	public Turma getTurma() {
 		return turma;
 	}
 
-	//public void setTurma(Turma turma) {
-	//	this.turma = turma;
-	//}
-	
-	public void setTurma(int turma) {
-	this.turma = turma;
+	public void setTurma(Turma turma) {
+		this.turma = turma;
 	}
 
-	public int getAusencias() {
+
+	public List<Ausencia> getAusencias() {
 		return ausencias;
 	}
 
-	public void setAusencias(int ausencias) {
+	public void setAusencias(List<Ausencia> ausencias) {
 		this.ausencias = ausencias;
 	}
 
@@ -151,8 +115,8 @@ public class Aluno extends Pessoa {
 
 	@Override
 	public String toString() {
-		return super.toString() + " responsavel=" + responsavel + ", contrato=" + contratoA + ", faculdade=" + faculdade + ", cartao="
-				+ cartao + ", turma=" + turma + ", ausencias=" + ausencias + "]";
+		return super.toString() + "\nResponsavel: " + responsavel + "\nContrato: " + contratoA.toString() + "\nFaculdade=" + faculdade
+				+ "\nCartao:" + cartao.toString() + "\nTurma:" + turma.toString() + "\nAusencias=" + ausencias;
 
 	}
 
