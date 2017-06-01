@@ -1,38 +1,3 @@
-$(document).ready(function() {
-    var panels = $('.user-infos');
-    var panelsButton = $('.dropdown-user');
-    panels.hide();
-
-    //Click dropdown
-    panelsButton.click(function() {
-        //get data-for attribute
-        var dataFor = $(this).attr('data-for');
-        var idFor = $(dataFor);
-
-        //current button
-        var currentButton = $(this);
-        idFor.slideToggle(400, function() {
-            //Completed slidetoggle
-            if(idFor.is(':visible'))
-            {
-                currentButton.html('<i class="glyphicon glyphicon-chevron-up text-muted"></i>');
-            }
-            else
-            {
-                currentButton.html('<i class="glyphicon glyphicon-chevron-down text-muted"></i>');
-            }
-        })
-    });
-
-
-    $('[data-toggle="tooltip"]').tooltip();
-
-    //$('button').click(function(e) {
-    //    e.preventDefault();
-    //    alert("This is a demo.\n :-)");
-    //});
-});
-
 var turma = {"alunos":
 	[{"nome" :"Joao",
 	"tel" : "21994823757",
@@ -63,8 +28,8 @@ function gerarTabela(){
 	var lista_turma;
 	for(x=0; x<turma.alunos.length;x++){
 		lista_turma += 
-			'<div class="row user-row">'+
-				'<div class="col-md-2">'+
+			'<div class="row user-row">'
+				'<div class="col-md-2">'
 					'<img class="img-circle"'+
 					'src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=50"'+
 					'alt="User Pic">'+
@@ -129,14 +94,72 @@ function gerarTabela(){
 											'data-toggle="tooltip"'+
 												'data-original-title="Remove this user"><i class="glyphicon glyphicon-remove"></i></button>'+
 									'</span>'+
-								'</div>'+
 							'</div>'+
 						'</div>'+
 					'</div>'+
 				'</div>'+
-			'</div>';
+			'</div>'+
+		'</div>';
 		}
 		var element = document.getElementById("turma_tabela");
 		element.innerHTML = lista_turma;
 	}
 //gerarTabela();
+
+	$(function(){
+		var htmlStructure = '';
+		for(x = 0; x < turma.alunos.length; x++){
+			var className = 'row user-infos cyruxx' + x;
+			var nome = turma.alunos[x].nome;
+			var rua = turma.alunos[x].ruaAl;
+			var numero = turma.alunos[x].numeroEndAl;
+			var bairro = turma.alunos[x].bairroAl;
+			var faculdade = turma.alunos[x].nomeFac;
+			$('#aluno_nome').text(nome);
+			$('#aluno_nome2').text(nome);
+			$('#aluno_end').text(rua + ', ' + numero);
+			$('#aluno_end2').text(rua + ', ' + numero);
+			$('#aluno_bairro').text(bairro);
+			$('#aluno_fac').text(faculdade);
+			$('#first-cyruxx').attr('data-for', '.cyruxx' + x);
+			$('#second-cyruxx').removeClass();
+			$('#second-cyruxx').addClass(className);
+			htmlStructure += $('#turma_tabela').html();
+		}
+		$('#turma_tabela').html(htmlStructure);
+	})
+
+	$(document).ready(function() {
+    var panels = $('.user-infos');
+    var panelsButton = $('.dropdown-user');
+    panels.hide();
+
+    //Click dropdown
+    panelsButton.click(function() {
+        //get data-for attribute
+        var dataFor = $(this).attr('data-for');
+        var idFor = $(dataFor);
+
+        //current button
+        var currentButton = $(this);
+        idFor.slideToggle(400, function() {
+            //Completed slidetoggle
+            if(idFor.is(':visible'))
+            {
+                currentButton.html('<i class="glyphicon glyphicon-chevron-up text-muted"></i>');
+            }
+            else
+            {
+                currentButton.html('<i class="glyphicon glyphicon-chevron-down text-muted"></i>');
+            }
+        })
+    });
+
+
+    $('[data-toggle="tooltip"]').tooltip();
+
+    //$('button').click(function(e) {
+    //    e.preventDefault();
+    //    alert("This is a demo.\n :-)");
+    //});
+});
