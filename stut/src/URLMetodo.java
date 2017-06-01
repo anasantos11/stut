@@ -26,16 +26,12 @@ public class URLMetodo implements Container {
 			String path = request.getPath().getPath();
 			String method = request.getMethod();
 			String mensagem;
-			
-<<<<<<< HEAD
-=======
-			/*if (path.startsWith("") && "GET".equals(method)) {
-				mensagem = stutService.contratoPassageiro(request);
-				this.enviaResposta(Status.OK, response, mensagem);
-			}
-			else*/ if (path.startsWith("/contratoPassageiro") && "POST".equals(method)) {
-				mensagem = stutService.contratoPassageiro(request);
->>>>>>> 8f75f6291f8692ec59bcdd460c9c919c95ce6114
+
+			/*
+			 * if (path.startsWith("") && "GET".equals(method)) { mensagem =
+			 * stutService.contratoPassageiro(request);
+			 * this.enviaResposta(Status.OK, response, mensagem); } else
+			 */
 
 			if (path.startsWith("/contratoPassageiro") && "POST".equals(method)) {
 				mensagem = stutService.contratoPassageiro(request);
@@ -47,35 +43,32 @@ public class URLMetodo implements Container {
 			} else if (path.startsWith("/consultarClientes") && "GET".equals(method)) {
 				mensagem = stutService.consultarClientes(request);
 				this.enviaResposta(Status.OK, response, mensagem);
-<<<<<<< HEAD
-			} 	
-=======
-			} else if(path.startsWith("/requisitarTurma") && "POST".equals(method)){
-				System.out.println("Entrando no get");
-			} 
-			
->>>>>>> 8f75f6291f8692ec59bcdd460c9c919c95ce6114
-			else if(path.startsWith("/requisitarTurma") && "POST".equals(method)){
+
+			}
+
+			else if (path.startsWith("/requisitarTurma") && "POST".equals(method)) {
+				
+			}
+
+			else if (path.startsWith("/requisitarTurma") && "POST".equals(method)) {
 				String[] aux = path.split("/");
-				String identificador = aux[(aux.length-2)];
-				String tipoU = aux[(aux.length-1)];
+				String identificador = aux[(aux.length - 2)];
+				String tipoU = aux[(aux.length - 1)];
 				mensagem = stutService.getJSONTurma(identificador, tipoU);
 				this.enviaResposta(Status.OK, response, mensagem);
-			
-			
-			}else if(path.startsWith("/logarUsuario") && "POST".equals(method)){
-				System.out.println("Entrando no get");
+
+			} else if (path.startsWith("/logarUsuario") && "POST".equals(method)) {
 				String[] aux = path.split("/");
-				String identificador = aux[(aux.length-3)];
-				String senha = aux[(aux.length-2)];
-				String tipoU = aux[(aux.length-1)];
+				String identificador = aux[(aux.length - 3)];
+				String senha = aux[(aux.length - 2)];
+				String tipoU = aux[(aux.length - 1)];
 				System.out.println(tipoU);
-				if(tipoU.equals("al")){
+				if (tipoU.equals("al")) {
 					mensagem = stutService.getAlunoAutenticado(identificador, senha);
-				}else{
+				} else {
 					mensagem = stutService.getMotoristaAutenticado(identificador, senha);
 				}
-				this.enviaResposta(Status.OK, response, mensagem);	
+				this.enviaResposta(Status.OK, response, mensagem);
 			} else {
 				this.naoEncontrado(response, path);
 			}
@@ -133,7 +126,7 @@ public class URLMetodo implements Container {
 		conexao.connect(endereco);
 
 		// Testa a conexão abrindo o navegador padrão.
-		//Desktop.getDesktop().browse(new URI("http://localhost:" + porta));
+		Desktop.getDesktop().browse(new URI("http://localhost:" + porta));
 
 		System.out.println("Tecle ENTER para interromper o servidor...");
 		System.in.read();
@@ -142,5 +135,6 @@ public class URLMetodo implements Container {
 		servidor.stop();
 
 	}
+	
 
 }

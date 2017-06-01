@@ -76,6 +76,7 @@ public class ServiceCliente {
 	public String consultarClientes(Request request) {
 		Query query = request.getQuery();
 		String cpf = query.get("cpf");
+		System.out.println("retorno = " + lista.consultarClientes(cpf));
 		Aluno a = lista.consultarClientes(cpf);
 		System.out.println(a.toString());
 		return a.toString();
@@ -96,7 +97,7 @@ public class ServiceCliente {
 			}
 		}else{
 			for (int i = 0; i < lista.quantCliente(); i++) {
-				Aluno aux = lista.consultarClientes(i);
+				Aluno aux = lista.consultarClientes2(i);
 				if(aux.getCpf().equals(cpf)){
 					//resp =  aux.getTurma().getRotaDia();
 				}

@@ -4,6 +4,7 @@
 		dia_aniversario= data[2];
 		mes_aniversario = data[1];
 		ano_aniversario = data[0];
+		
     var d = new Date();
     var ano_atual = d.getFullYear();
     var mes_atual = d.getMonth() + 1;

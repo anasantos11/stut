@@ -7,7 +7,7 @@ import java.util.function.Consumer;
 
 
 public class Stut {
-	private List<Aluno> clientes = new LinkedList<Aluno>();
+	private List<Aluno> clientes = new ArrayList<Aluno>();
 	private List<Motorista> fornecedores = new LinkedList<Motorista>();
 	private int j;
 	private LinkedList<LinkedList<Aluno>> lb = new LinkedList<LinkedList<Aluno>>();
@@ -38,6 +38,7 @@ public class Stut {
 		Iterator<Aluno> iter = clientes.iterator();
 		while(iter.hasNext()){
 			Aluno alunoAtual = iter.next();
+			System.out.println(alunoAtual.getCpf());
 			if(alunoAtual.getCpf().equals(cpf)){
 				resp = alunoAtual;
 			}
@@ -57,7 +58,7 @@ public class Stut {
 		return resp;	
 	}
 	
-	public Aluno consultarClientes(int x) {
+	public Aluno consultarClientes2(int x) {
 		return clientes.get(x);
 	}
 	
