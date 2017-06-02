@@ -4,7 +4,7 @@ import java.time.LocalTime;
 import org.simpleframework.http.Query;
 import org.simpleframework.http.Request;
 
-public class StutService {
+public class ServiceCliente {
 	private Stut lista = new Stut();
 
 	/**
