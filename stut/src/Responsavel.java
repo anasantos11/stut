@@ -16,5 +16,10 @@ public class Responsavel extends Pessoa {
 	public void setResponsavelAluno(Aluno responsavelAluno) {
 		this.responsavelAluno = responsavelAluno;
 	}
+
+	@Override
+	public String toString() {
+		return super.toString();
+	}
 	
 }

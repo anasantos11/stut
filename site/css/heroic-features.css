@@ -1,0 +1,25 @@
+/*
+ * Start Bootstrap - Heroic Features (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.row{
+  margin: 35px 20px;
+  padding: 30px;
+}
+.hero-spacer {
+    margin-top: 50px;
+
+}
+
+.hero-feature {
+    margin-bottom: 30px;
+}
+.col-md-3,  .col-lg-3, .col-sm-3, .col-md-1,  .col-lg-1, .col-sm-1, .col-md-4,  .col-lg-4, .col-sm-4{
+  padding: 3px;
+}

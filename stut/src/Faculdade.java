@@ -1,5 +1,5 @@
 public class Faculdade {
-	private String Nome;
+	private String faculdade;
 	private Endereco endereco;
 	private static  int idFacul;
 	private int cont = 0;
@@ -15,10 +15,10 @@ public class Faculdade {
 	 */
 	
 	public String getNome() {
-		return Nome;
+		return faculdade;
 	}
 	public void setNome(String nome) {
-		Nome = nome;
+		faculdade = nome;
 	}
 	public Endereco getEndereco() {
 		return endereco;
@@ -29,4 +29,11 @@ public class Faculdade {
 	public static int getIdFacul() {
 		return idFacul;
 	}
+
+	@Override
+	public String toString() {
+		return "\nFaculdade: " + faculdade + "\nEndereco Faculdade: " + endereco.toString();
+	}
+	
+	
 }

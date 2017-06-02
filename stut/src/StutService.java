@@ -5,9 +5,15 @@ import org.simpleframework.http.Query;
 import org.simpleframework.http.Request;
 
 public class StutService {
-	private Stut lista;
+	private Stut lista = new Stut();
 
+	/**
+	 * Cadastro contrato tipo Aluno
+	 * @param request
+	 * @return
+	 */
 	public String contratoPassageiro(Request request) {
+		String resp = "erro";
 		Pessoa aluno = null;
 		Query query = request.getQuery();
 		// Query Aluno
@@ -65,14 +71,28 @@ public class StutService {
 			lista.inserirCliente((Aluno) aluno);
 			lista.alunoPorBairro((Aluno) aluno);
 			lista.inserirEmTurma((Aluno)aluno);
+			resp = "ok";
 		}
-		return aluno.toString();
-	} // Fim cadastro
 
+		return resp;
+		//return aluno.toString();
+
+	} // Fim cadastro
+	
+	/**
+	 * Total clientes tipo Aluno cadastrato na Stut
+	 * @param request
+	 * @return
+	 */
 	public String totalAlunos(Request request) {
 		return Integer.toString(lista.quantCliente());
 	}
 	
+	/**
+	 * Consultar cliente do tipo aluno atrvés do cpf
+	 * @param request
+	 * @return
+	 */
 	public String consultarClientes(Request request) {
 		Query query = request.getQuery();
 		String cpf = query.get("cpf");
@@ -82,10 +102,13 @@ public class StutService {
 		return a.toString();
 	}
 
-	public StutService() {
-		lista = new Stut();
-	}
-	
+	/**
+	 * 
+	 * @param cpf
+	 * @param tipoU
+	 * @return
+	 */
+
 	public String getJSONTurma(String cpf, String tipoU){
 		String resp = null;
 		if(tipoU.equals("motorista")){ 
@@ -111,12 +134,8 @@ public class StutService {
 		String resp = "0";
 		if(a != null){
 			if(a.getSenha().equals(senha)){
-				a.setEstaLogado(true);
-				resp = "aluno : {"
-							+ "\"value\" : \"aluno\","
-							+ "\"nome\" : \""+a.getNome()+"\","
-							+ "\"cpf\" : \""+a.getCpf()+"\""
-						+ "}";
+				a.setEstalogado(true);
+				resp = "1";
 			}
 		}
 		return resp;
@@ -128,17 +147,13 @@ public class StutService {
 		if(m != null){
 			if(m.getSenha().equals(senha)){
 				m.setEstalogado(true);
-				resp = "motorista : {"
-						+ "\"value\" : \"motorista\","
-						+ "\"nome\" : \""+m.getNome()+"\","
-						+ "\"cpf\" : \""+m.getCpf()+"\""
-					+ "}";
+			resp = "1";
 			}
 		}
 		return resp;
 	}
 
 	public boolean getEstaLogado(String cpf) {
-		return lista.consultarClientes(cpf).isEstaLogado();
+		return lista.consultarClientes(cpf).isEstalogado();
 	}
 }

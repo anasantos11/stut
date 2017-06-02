@@ -8,7 +8,6 @@ public class Aluno extends Pessoa {
 	private ContratoAluno contratoA;
 	private Faculdade faculdade;
 	private CartaoCredito cartao;
-	private boolean estaLogado;
 	private Turma turma;
 	private List<Ausencia> ausencias;
 	private boolean ausente = false;
@@ -24,13 +23,7 @@ public class Aluno extends Pessoa {
 		setFaculdade(facul);
 	}
 
-	public Faculdade getFaculdade() {
-		return faculdade;
-	}
 
-	public void setFaculdade(Faculdade faculdade) {
-		this.faculdade = faculdade;
-	}
 
 	/**
 	 * Métodos
@@ -39,7 +32,7 @@ public class Aluno extends Pessoa {
 		Ausencia a = new Ausencia(data, hora, observacoes);
 		ausencias.add(a);
 	}
-
+	
 	public ArrayList verificarViagens() {
 		return null;
 	}
@@ -47,6 +40,14 @@ public class Aluno extends Pessoa {
 	/**
 	 * Getters e setters
 	 */
+	
+	public Faculdade getFaculdade() {
+		return faculdade;
+	}
+
+	public void setFaculdade(Faculdade faculdade) {
+		this.faculdade = faculdade;
+	}
 
 	public String getResponsavel() {
 		return responsavel;
@@ -105,18 +106,10 @@ public class Aluno extends Pessoa {
 		this.temTurma = temTurma;
 	}
 
-	public boolean isEstaLogado() {
-		return estaLogado;
-	}
-
-	public void setEstaLogado(boolean estaLogado) {
-		this.estaLogado = estaLogado;
-	}
-
 	@Override
 	public String toString() {
-		return super.toString() + "\nResponsavel: " + responsavel + "\nContrato: " + contratoA.toString() + "\nFaculdade=" + faculdade
-				+ "\nCartao:" + cartao.toString() + "\nTurma:" + turma.toString() + "\nAusencias=" + ausencias;
+		return super.toString() + "\nResponsavel: " + responsavel.toString() + "\nContrato: " + contratoA.toString() + "\nFaculdade=" + faculdade.toString() 
+				+ "\nCartao:" + cartao.toString() + "\nTurma:" + turma.toString() + "\nAusencias=" + ausencias.toString();
 
 	}
 

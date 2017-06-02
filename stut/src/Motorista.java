@@ -6,7 +6,6 @@ public class Motorista extends Pessoa {
 	private int quantidadeAssentos;
 	private String licenca;
 	private Turma turma;
-	private boolean estalogado;
 
 	public Motorista(String nome, LocalDate dataNascimento, int idade, String cpf, String identidade, String tel,
 			Endereco endereco, String email, String senha, Conta conta, String cnh, int quantAssentos, String licenca,
@@ -22,7 +21,7 @@ public class Motorista extends Pessoa {
 	
 	public boolean temAssentos(){
 		boolean sucess = false;
-		if(turma.verificarAlunos().size() <= quantidadeAssentos){
+		if(turma.getAlunosTurma().size() <= quantidadeAssentos){
 			sucess = true;
 		}
 		return sucess;
@@ -79,12 +78,12 @@ public class Motorista extends Pessoa {
 	}
 
 
-	public boolean isEstalogado() {
-		return estalogado;
-	}
 
 
-	public void setEstalogado(boolean estalogado) {
-		this.estalogado = estalogado;
+	@Override
+	public String toString() {
+		return super.toString() + "\n Quantidade Assentos: " + quantidadeAssentos;
 	}
+	
+
 }
