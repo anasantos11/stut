@@ -25,7 +25,7 @@ public class URLMetodo implements Container {
 
 			String path = request.getPath().getPath();
 			String method = request.getMethod();
-			String mensagem;
+			String mensagem = null;
 
 			if (path.startsWith("/contratoPassageiro") && "POST".equals(method)) {
 				mensagem = stutService.contratoPassageiro(request);
@@ -38,35 +38,39 @@ public class URLMetodo implements Container {
 				mensagem = stutService.consultarClientes(request);
 				this.enviaResposta(Status.OK, response, mensagem);
 
-			} else if (path.startsWith("/requisitarTurma") && "POST".equals(method)) {
-				String[] aux = path.split("/");
-				String identificador = aux[(aux.length - 2)];
-				String tipoU = aux[(aux.length - 1)];
+
+			}else if (path.startsWith("/requisitarTurma") && "POST".equals(method)) {
+				String[] aux = path.split("//");
+				String identificador = aux[1];
+				String tipoU = aux[2];
 				mensagem = stutService.getJSONTurma(identificador, tipoU);
 				this.enviaResposta(Status.OK, response, mensagem);
 
-			} else if (path.startsWith("/logarUsuario") && "POST".equals(method)) {
-				String[] aux = path.split("/");
-				String identificador = aux[(aux.length - 3)];
-				String senha = aux[(aux.length - 2)];
-				String tipoU = aux[(aux.length - 1)];
+			}  else if (path.startsWith("/logarUsuario") && "POST".equals(method)) {
+				String[] aux = path.split("//");
+				aux = aux[1].split("/");
+				String identificador = aux[0];
+				String senha = aux[1];
+				String tipoU = aux[2];
+				
+				System.out.println(identificador);
+				System.out.println(senha);
+
 				System.out.println(tipoU);
 				if (tipoU.equals("al")) {
 					if (tipoU.equals("al")) {
-						System.out.println(identificador);
-						System.out.println(senha);
 						mensagem = stutService.getAlunoAutenticado(identificador, senha);
-					} else {
+					} else if(tipoU.equals("mot")) {
 						mensagem = stutService.getMotoristaAutenticado(identificador, senha);
 					}
-					this.enviaResposta(Status.OK, response, mensagem);
-
+					
 					System.out.println(mensagem);
 					this.enviaResposta(Status.OK, response, mensagem);
 				} else if (path.startsWith("/getAutenticacao") && "POST".equals(method)) {
-					String[] aux2 = path.split("?");
+					String[] aux2 = path.split("//");
 					boolean x = stutService.getEstaLogado(aux2[1]);
 					this.enviaResposta(Status.OK, response, "" + x);
+
 
 				} else if (path.startsWith("/comunicarViagem") && "POST".equals(method)) {
 					mensagem = stutService.contratoPassageiro(request);
@@ -75,7 +79,9 @@ public class URLMetodo implements Container {
 				} else {
 					this.naoEncontrado(response, path);
 				}
+
 			}
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();

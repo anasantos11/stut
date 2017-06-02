@@ -1,6 +1,7 @@
 var map;
 var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
+
 var turma = {"alunos":
 	[{"nome" :"Joao",
 	"tel" : "21994823757",
@@ -88,19 +89,39 @@ function turma_request(){
 		var request = {
 			origin: enderecoPartida,
 			destination: enderecoChegada,
-			//waypoints:[{location:"a"}],
-			waypoints: [{location: 'Rua Abilio Estrela,160'}, {location: 'rua do vale,328'}],
+			waypoints:[{"location":"rua do vale,328"}],
+			//waypoints: [{"location": 'Rua Abilio Estrela,160'}, {"location": 'rua do vale,328'}],
 			travelMode: google.maps.TravelMode.DRIVING			
 		};
-		//for(i=0;i<= turma.alunos.length;i++){
-		//request.waypoints[i].location = turma.alunos[i].ruaAl+","+turma.alunos[i].numeroEndAl;
-		//alert(request.waypoints[i].location);		
-		//}		
+		for(i=0;i< turma.alunos.length;i++){
+		request.waypoints.push({"location":turma.alunos[i].ruaAl+","+turma.alunos[i].numeroEndAl});
+		//alert(turma.alunos[i].ruaAl);		
+		}
+		//request.waypoints.splice(0, 1);		
 		directionsService.route(request, function(result, status) {
 			if (status == google.maps.DirectionsStatus.OK) {
 				directionsDisplay.setDirections(result);
 			}
 		});
+		getLocalizacao();
 	});
+	
+	function getLocalizacao() {
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(gerarLinkTrajeto);
+		} else { 
+			alert("Geolocation is not supported by this browser.");
+		}
+	}
 
-
+	function gerarLinkTrajeto(position) {
+		var link_trajeto = "https://www.google.com/maps?saddr=" + position.coords.latitude + "+" + position.coords.longitude + "+&daddr=";
+		for (i = 0 ; i < turma.alunos.length; i++) {
+			link_trajeto += turma.alunos[i].ruaAl + '+' + turma.alunos[i].numeroEndAl + '+to:';
+		}
+		var enderecoFinal = 'rua+claudio+manuel+1205';
+		link_trajeto += enderecoFinal;
+		$('#iniciar_trajeto').attr('href', link_trajeto);
+	}
+	
+// exemplo https://www.google.com/maps?saddr=avenida+cisne&daddr=praca+da+liberdade+to:bh+shopping+to:patio+savassi

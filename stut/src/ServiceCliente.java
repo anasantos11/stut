@@ -73,8 +73,10 @@ public class ServiceCliente {
 			lista.inserirEmTurma((Aluno)aluno);
 			resp = "ok";
 		}
+
 		return resp;
 		//return aluno.toString();
+
 	} // Fim cadastro
 	
 	/**
@@ -132,12 +134,8 @@ public class ServiceCliente {
 		String resp = "0";
 		if(a != null){
 			if(a.getSenha().equals(senha)){
-				a.setEstaLogado(true);
-				resp = "aluno : {"
-							+ "\"value\" : \"aluno\","
-							+ "\"nome\" : \""+a.getNome()+"\","
-							+ "\"cpf\" : \""+a.getCpf()+"\""
-						+ "}";
+				a.setEstalogado(true);
+				resp = "1";
 			}
 		}
 		return resp;
@@ -149,17 +147,13 @@ public class ServiceCliente {
 		if(m != null){
 			if(m.getSenha().equals(senha)){
 				m.setEstalogado(true);
-				resp = "motorista : {"
-						+ "\"value\" : \"motorista\","
-						+ "\"nome\" : \""+m.getNome()+"\","
-						+ "\"cpf\" : \""+m.getCpf()+"\""
-					+ "}";
+			resp = "1";
 			}
 		}
 		return resp;
 	}
 
 	public boolean getEstaLogado(String cpf) {
-		return lista.consultarClientes(cpf).isEstaLogado();
+		return lista.consultarClientes(cpf).isEstalogado();
 	}
 }

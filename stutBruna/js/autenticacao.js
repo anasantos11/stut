@@ -1,9 +1,10 @@
 function testaAutenticacao(){
-	dados = localstorage.getItem("autenticacao");
-	if(dados != 1){
-		alert("Favor realizar o login na pagina!!!!!");
-		locale.href = "home.html";
-	}
+	setInterval(function(){
+    dados = localStorage.getItem("autenticacao");
+  	if(dados != 1){
+    	getEstaAutenticado();
+    }
+  }, 5000);
 }
 
 function getEstaAutenticado(){
@@ -14,14 +15,21 @@ function getEstaAutenticado(){
 	var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-           if(xhttp.responseText){
-           	sessionStorage.setItem("autenticacao" , 1);
-            sessionStorage.setItem("dados_usuario", cpf);
-           }else{
-           	location.href = "home.html"
-           }
+           //if(xhttp.responseText){
+           	localStorage.setItem("autenticacao" , 1);
+            localStorage.setItem("dados_usuario", cpf);
+           //}else{
+            //alert("Favor realizar o login!");
+           	//location.href = "home.html"
+           // }
         }
     };
-    xhttp.open("POST", "http://127.0.0.1:8080/getAutenticacao?"+ cpf, true);
+    xhttp.open("POST", "http://127.0.0.1:8080/getAutenticacao//"+ cpf, true);
     xhttp.send();
+}
+
+
+function logout(){
+  localStorage.clear();
+  location.href = "home.html";
 }

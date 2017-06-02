@@ -8,6 +8,7 @@ public abstract class Pessoa {
 	private String identidade;
 	private String tel;
 	private Endereco endereco;
+	private boolean estalogado;
 	private String email;
 	private String senha;
 	private static  int idPessoa;
@@ -141,6 +142,14 @@ public abstract class Pessoa {
 	public String toString() {
 		return "Nome: " + nome + "\n Data Nascimento: " + dataNascimento + "\nIdade: " + idade + "\nCpf: " + cpf
 				+ "\nIdentidade:" + identidade + "\nTel: " + tel + "\nEndereço: " + endereco.toString() + "\nE-mail=" + email;
+	}
+	
+	public boolean isEstalogado() {
+		return estalogado;
+	}
+
+	public void setEstalogado(boolean estalogado) {
+		this.estalogado = estalogado;
 	}
 	
 	

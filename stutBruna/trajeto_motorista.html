@@ -14,7 +14,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery-min-1.12.js"></script>
     <!-- Custom CSS -->
     <link href="css/modern-business.css" rel="stylesheet">
     <link href="css/stut--style.css" rel="stylesheet">
@@ -80,16 +80,16 @@
                             alt="User Pic">
                     </div>
                     <div class="col-md-8">
-                        <strong>Vinicius Souza</strong><br>
-                        <span class="text-muted">Avenida Cisne,160</span>
+                        <strong id="aluno_nome">Vinicius Souza</strong><br>
+                        <span class="text-muted" id="aluno_end">Avenida Cisne,160</span>
                     </div>
                     <!-- add .rowname class to attribute data-for (Dropdown!)-->
-                    <div class="col-md-1 dropdown-user" data-for=".cyruxx">
+                    <div id='first-cyruxx' class="col-md-1 dropdown-user" data-for=".cyruxx">
                         <i class="glyphicon glyphicon-chevron-down text-muted"></i>
                     </div>
                 </div>                
                 <!-- Add data-for class to this row -->
-                <div class="row user-infos cyruxx">
+                <div id='second-cyruxx' class="row user-infos">
                     <div class="col-sm-10 col-md-10 col-md-offset-1">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
@@ -103,24 +103,24 @@
                                             alt="User Pic">
                                     </div>
                                     <div class="col-md-6">
-                                        <strong>Vinicius Souza</strong><br>
+                                        <strong id="aluno_nome2">Vinicius Souza</strong><br>
                                         <table class="table table-condensed table-responsive table-user-information">
                                             <tbody>
                                             <tr>
                                                 <td>End:</td>
-                                                <td>Aveninda Cisne, 160</td>
+                                                <td id="aluno_end2">Aveninda Cisne, 160</td>
                                             </tr>
                                             <tr>
                                                 <td>Bairro:</td>
-                                                <td>Lagoa dos Ingleses</td>
+                                                <td id="aluno_bairro">Lagoa dos Ingleses</td>
                                             </tr>
                                             <tr>
                                                 <td>Cidade:</td>
-                                                <td>Nova Lima</td>
+                                                <td>Belo Horizonte</td>
                                             </tr>
                                             <tr>
                                                 <td>Universidade</td>
-                                                <td>Puc-Minas Praca da Liberdade</td>
+                                                <td id="aluno_fac">Puc-Minas Praca da Liberdade</td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -142,149 +142,14 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row user-row">
-                    <div class="col-md-2">
-                        <img class="img-circle"
-                            src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=50"
-                            alt="User Pic">
-                    </div>
-                    <div class="col-md-8">
-                        <strong>Ana Paula</strong><br>
-                        <span class="text-muted">Rua Abilio Estrela,280</span>
-                    </div>
-                    <div class="col-md-1 dropdown-user" data-for=".alexanderMahrt">
-                        <i class="glyphicon glyphicon-chevron-down text-muted"></i>
-                    </div>
-                </div>
-                <div class="row user-infos alexanderMahrt">
-                    <div class="col-sm-10 col-md-10 col-md-offset-1">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">User information</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img class="img-circle"
-                                            src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100"
-                                            alt="User Pic">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <strong>Alexander Mahrt</strong><br>
-                                        <table class="table table-condensed table-responsive table-user-information">
-                                            <tbody>
-                                                <tr>
-                                                    <td>User level:</td>
-                                                    <td>Moderator</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Registered since:</td>
-                                                    <td>11/12/2013</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Topics</td>
-                                                    <td>5</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Warnings</td>
-                                                    <td>0</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel-footer">
-                                <button class="btn btn-sm btn-primary" type="button"
-                                        data-toggle="tooltip"
-                                        data-original-title="Send message to user"><i class="glyphicon glyphicon-envelope"></i></button>
-                                <span class="pull-right">
-                                    <button class="btn btn-sm btn-warning" type="button"
-                                            data-toggle="tooltip"
-                                            data-original-title="Edit this user"><i class="glyphicon glyphicon-edit"></i></button>
-                                    <button class="btn btn-sm btn-danger" type="button"
-                                            data-toggle="tooltip"
-                                            data-original-title="Remove this user"><i class="glyphicon glyphicon-remove"></i></button>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row user-row">
-                    <div class="col-md-2">
-                        <img class="img-circle"
-                            src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=50"
-                            alt="User Pic">
-                    </div>
-                    <div class="col-md-8">
-                        <strong>MyUsername</strong><br>
-                        <span class="text-muted">User level: Registered user</span>
-                    </div>
-                    <div class="col-md-1 dropdown-user" data-for=".myUsername">
-                        <i class="glyphicon glyphicon-chevron-down text-muted"></i>
-                    </div>
-                </div>
-                <div class="row user-infos myUsername">
-                    <div class="col-sm-10 col-md-10 col-md-offset-1">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">User information</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img class="img-circle"
-                                            src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100"
-                                            alt="User Pic">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <strong>MyUsername</strong><br>
-                                        <table class="table table-condensed table-responsive table-user-information">
-                                            <tbody>
-                                            <tr>
-                                                <td>User level:</td>
-                                                <td>Registered user</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Registered since:</td>
-                                                <td>11/12/2013</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Topics</td>
-                                                <td>1</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Warnings</td>
-                                                <td>1</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel-footer">
-                                <button class="btn btn-sm btn-primary" type="button"
-                                        data-toggle="tooltip"
-                                        data-original-title="Send message to user"><i class="glyphicon glyphicon-envelope"></i></button>
-                                <span class="pull-right">
-                                    <button class="btn btn-sm btn-warning" type="button"
-                                            data-toggle="tooltip"
-                                            data-original-title="Edit this user"><i class="glyphicon glyphicon-edit"></i></button>
-                                    <button class="btn btn-sm btn-danger" type="button"
-                                            data-toggle="tooltip"
-                                            data-original-title="Remove this user"><i class="glyphicon glyphicon-remove"></i></button>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
+                </div>   
             </div>
         
-            
+            <div id="mapa"></div>        
+            <button type="button" id="trajeto-button" class="btn button-bar btn-success btn-lg btn-block">Gerar Trajeto</button> 
+            <a id="iniciar_trajeto" href="#" class="btn button-bar btn-success btn-lg btn-block" role="button" aria-disabled="true">Iniciar Trajeto</a>     
         </div>
-        <div id="mapa"></div>        
-        <button type="button" id="trajeto-button" class="btn button-bar btn-success btn-lg btn-block">Gerar Trajeto</button> 
-        <a href="#" class="btn button-bar btn-success btn-lg btn-block" role="button" aria-disabled="true">Iniciar Trajeto</a>       
+           
     </div><!-- /.container -->
     
 
