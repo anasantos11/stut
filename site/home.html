@@ -15,6 +15,8 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.4/sweetalert2.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.4/sweetalert2.css">
   <link href="css/modern-business.css" rel="stylesheet">
   <link href="css/stut--style.css" rel="stylesheet">
   <link href="css/heroic-features.css" rel="stylesheet">
@@ -100,7 +102,7 @@
         <h2>Transporte Universitário</h2>
         <p>Rápido, Seguro e Eficiente</p>
       </div>
-      <div class="col-md-11 col-md-offset-1 col-lg-11  col-lg-offset-1 col-sm-11 col-sm-offset-1">
+      <div class="col-md-1 col-md-offset-1 col-lg-11  col-lg-offset-1 col-sm-11 col-sm-offset-1">
         <form class="form-group ">
           <div class="col-md-3 col-lg-3 col-sm-3">
             <select class="form-control" id="estado1" value="Selecione o estado"></select>
@@ -108,11 +110,11 @@
           <div class="col-md-3 col-lg-3 col-sm-3">
             <select class="form-control" id="cidade1" value="Selecione a cidade"></select>
           </div>
-          <div class="col-md-3  col-lg-3 col-sm-3">
+          <div class="col-md-4  col-lg-4 col-sm-4">
             <select class="form-control  " id="faculdade"  value="Selecione a faculdade"></select>
           </div>
-          <div class="col-md-2  col-lg-2 col-sm-2">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Pesquisar</button>
+          <div class="col-md-1  col-lg-1 col-sm-1">
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#">Pesquisar</button>
           </div>
           <script language="JavaScript" type="text/javascript" charset="utf-8">
           new dgCidadesEstados({
@@ -140,8 +142,8 @@
         </div>
       </div>
     </div>
-    <div class="row text-center" id="alinha">
-      <div class="col-md-12  col-lg-12 col-sm-12">
+
+      <div class="col-md-12  col-lg-12 col-sm-12 text-center">
         <div class="col-md-4  col-lg-4 col-sm-4" >
           <div class="panel panel-default" style="background-color: #cfdde9 !important;" >
             <div class="panel-heading" style="background-color: #cfdde9 !important;" >
@@ -149,8 +151,8 @@
               <hr>
             </div>
             <div class="panel-body" style="background-color: #cfdde9 !important;" >
-              <img class="stut-symbol-tempo"src="img/tempo.png" alt=" Tempo "> </p></p>
-              <p> Calculamos as melhores rotas para busca e entrega de alunos de diferentes residencias e universidades.</p>
+              <img class="stut-symbol-tempo"src="img/tempo.png" alt=" Tempo ">
+              <p> Calculamos as melhores rotas para busca e entrega de alunos em diversos locais.</p>
             </div>
           </div>
         </div>
@@ -161,7 +163,7 @@
               <hr>
             </div>
             <div class="panel-body" style="background-color: #cfdde9 !important;" >
-              <img class="stut-symbol-motorista"src="img/motorista.png" alt=" Motorista "> </p> </p>
+              <img class="stut-symbol-motorista"src="img/motorista.png" alt=" Motorista ">
               <p>Motoristas cadastrados com documentos e licenças em dia, de acordo com a legislação vigente.</p>
             </div>
           </div>
@@ -173,14 +175,14 @@
               <hr>
             </div>
             <div class="panel-body" style="background-color: #cfdde9 !important;" >
-              <img class="stut-symbol-pagamento"src="img/pagamento.png" alt=" Pagamento ">  </p> </p>
-              <p>Oferecemos formas diversas de pagamento, como boleto, depósito bancário e cartão de crédito.</p> </p> </p>
+              <img class="stut-symbol-pagamento"src="img/pagamento.png" alt=" Pagamento ">
+              <p>Oferecemos formas diversas de pagamento, como boleto, depósito bancário e cartão de crédito.</p>
             </div>
           </div>
 
         </div>
       </div>
-    </div>
+
 
 
     <hr>
@@ -188,7 +190,7 @@
     <!-- Footer -->
     <footer>
 
-        <div class="col-md-1  col-lg-12 col-sm-12 text-center">
+        <div class="col-md-12  col-lg-12 col-sm-12 text-center">
           <p>Copyright &copy; StuT 2017</p>
         </div>
       </div>
@@ -249,8 +251,20 @@
 <script src="js/jquery.js"></script>
 <script src="js/lista-faculdades.js" type="text/javascript"></script>
 <script src="js/alertas.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.4/sweetalert2.common.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.4/sweetalert2.common.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.4/sweetalert2.common.min.js.map"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.4/sweetalert2.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.4/sweetalert2.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 
+<script type="text/javascript">
+$( "#teste" ).click(function() {
+  swal(
+  'Cadastro realizado com sucesso',  '',
+  'success'
+)
+});
+</script>
 </html>
