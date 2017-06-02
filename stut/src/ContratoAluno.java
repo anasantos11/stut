@@ -17,6 +17,12 @@ public class ContratoAluno extends Contrato {
 		setEntregaFaculdade(entregaFaculdade);
 	}
 
+
+
+	
+
+
+
 	public void multaAluno() {
 
 	}
