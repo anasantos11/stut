@@ -92,19 +92,19 @@
           <div class="panel-body">
             <img class="stut-symbol-tempo"src="img/viagem.png" alt="Viagem"> </p></p>
             <p> Horário de recolhimento, acompanhar rota do motorista. </p>
-
+            <br>
           </div>
         </div>
       </div>
       <div class="col-md-4" >
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h4><i class="fa fa-fw fa fa-envelope"></i> <a href=".html"> Mensagens </a></h4>
+            <h4><i class="fa fa-fw fa fa-envelope"></i> <a href=".html" data-toggle="modal" data-target="#mensagem"> Mensagens </a></h4>
           </div>
           <div class="panel-body">
             <img class="stut-symbol-motorista"src="img/msg.png" alt="Mensagens"> </p> </p>
             <p>Mensagens enviadas e recebidas.</p>
-          </p><br>
+          </p><br><br>
 
         </div>
       </div>
@@ -112,38 +112,26 @@
     <div class="col-md-4" >
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h4><i class="fa fa-fw fa-wrench"></i> <a href=".html"> Configurações </a></h4>
+          <h4><i class="fa fa-fw fa-wrench"></i> <a href=".html" data-toggle="modal" data-target="#configuracoes"> Configurações </a></h4>
         </div>
         <div class="panel-body">
           <img class="stut-symbol-pagamento"src="img/config.png" alt="configurações">  </p> </p>
-          <p>Alterar foto, apelido. </p> </p> </p>
+          <p>Alterar dados cadastrais/Solicitar alteração de contrato. </p> </p> </p>
           <br>
         </div>
       </div>
     </div>
 
   </div>
-    <div id="alinha">
+  <div id="alinha">
     <div class="col-md-4" >
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h4><i class="fa fa-fw fa-user"></i> <a href=".html"> Alterar dados </a></h4>
+          <h4><i class="fa fa-fw fa-money"></i> <a href=".html" data-toggle="modal" data-target="#pagamento"> Pagamentos </a></h4>
         </div>
         <div class="panel-body">
-          <img class="stut-symbol-tempo"src="img/alteradados.png" alt="Alterar Dados"> </p></p>
-          <p> Alterar email, telefone, documentos, endereço, faculdade.</p>
-
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4" >
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4><i class="fa fa-fw fa fa-file"></i> <a href=".html"> Solicitar alteração de contrato </a></h4>
-        </div>
-        <div class="panel-body">
-          <img class="stut-symbol-motorista"src="img/alteracontrato.png" alt="Alterar Contrato"> </p> </p>
-          <p> Alterar dados contratuais.</p>
+          <img class="stut-symbol-tempo"src="img/change.png" alt="Alterar Dados"> </p></p>
+          <p> Dados de recebimento de pagamentos.</p>
           <br>
         </div>
       </div>
@@ -151,7 +139,19 @@
     <div class="col-md-4" >
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h4><i class="fa fa-fw fa-times"></i><a href=".html"> Cancelamento </a></h4>
+          <h4><i class="fa fa-fw fa fa-user"></i> <a href=".html" data-toggle="modal" data-target="#fichamotorista"> Ficha do motorista </a></h4>
+        </div>
+        <div class="panel-body">
+          <img class="stut-symbol-motorista"src="img/alteradados.png" alt="Alterar Contrato"> </p> </p>
+          <p> Visualizar dados do motorista da minha van.</p>
+          <br>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4" >
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4><i class="fa fa-fw fa-times"></i><a href=".html" data-toggle="modal" data-target="#cancelamento"> Cancelamento </a></h4>
         </div>
         <div class="panel-body">
           <img class="stut-symbol-pagamento"src="img/document.png" alt="Cancelamento">  </p> </p>
@@ -165,7 +165,7 @@
 
 
   </div>
-    <hr>
+  <hr>
   <!-- Footer -->
   <footer>
     <div class="row">
@@ -182,6 +182,209 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
+
+<div class="modal fade" id="configuracoes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLongTitle">Configurações de Perfil </h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="card hovercard">
+          <div class="cardheader">
+
+          </div>
+          <div class="avatar">
+            <img alt="" src="img/girl128.png">
+          </div>
+
+          <div class="modal-body">
+            <form class="form-horizontal">
+             <div class="col-md-">
+              <div class="form-group">
+                <input type="email" class="form-control" id="inputEmail3" placeholder="Nome">
+              </div>
+            </div>
+            <form class="form-horizontal">
+             <div class="col-md-">
+              <div class="form-group">
+                <input type="email" class="form-control" id="inputEmail3" placeholder="Mudar email">
+              </div>
+            </div>
+            <form class="form-horizontal">
+             <div class="col-md-">
+              <div class="form-group">
+                <input type="email" class="form-control" id="inputEmail3" placeholder="Mudar Telefone">
+              </div>
+            </div>
+            <form class="form-horizontal">
+             <div class="col-md-">
+              <div class="form-group">
+                <input type="email" class="form-control" id="inputEmail3" placeholder="Mudar Endereço">
+              </div>
+            </div>
+            <form class="form-horizontal">
+             <div class="col-md-">
+              <div class="form-group">
+                <input type="email" class="form-control" id="inputEmail3" placeholder="Nova Faculdade">
+              </div>
+            </div>
+            <form class="form-horizontal">
+             <div class="col-md-">
+              <div class="form-group">
+                <input type="email" class="form-control" id="inputEmail3" placeholder="Novo Bairro">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-">
+                <label>Detalhe o pedido de mudança: </label>
+                <textarea rows="5" cols="2" class="form-control" id="message" maxlength="300"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-primary">Enviar solicitação</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="mensagem" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLongTitle">Mensagens</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal">
+         <div class="col-md-">
+          <div class="form-group">
+            <input type="email" class="form-control" id="inputEmail3" placeholder="Assunto">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-">
+            <label>Mensagem:</label>
+            <textarea rows="5" cols="2" class="form-control" id="message" maxlength="300"></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary">Enviar mensagem</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="modal fade" id="pagamento" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLongTitle">Pagamentos </h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       Não há pagamentos pendentes no momento. 
+     </div>
+     <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="fichamotorista" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLongTitle">Ficha do motorista</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="card hovercard">
+          <div class="cardheader">
+          </div>
+          <div class="avatar">
+            <img alt="" src="img/boy.png">
+          </div>
+          <div class="modal-body">
+            <div class="desc">João da Silva</div>
+            <div class="desc">Veículo: Sprinter</div>
+            <div class="desc">Placa: ABC-1234</div>
+            <div class="desc">joaodasilva@email.com</div>
+            <br>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="cancelamento" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLongTitle">Cancelamento de Contrato</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <form class="form-horizontal">
+         <div class="col-md-">
+          <div class="form-group">
+            <input type="email" class="form-control" id="inputEmail3" placeholder="Nome Completo">
+          </div>
+        </div>
+        <form class="form-horizontal">
+         <div class="col-md-">
+          <div class="form-group">
+            <input type="email" class="form-control" id="inputEmail3" placeholder="CPF">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-"> 
+            <label> Detalhe o motivo pelo qual você deseja cancelar:</label>
+            <textarea rows="5" cols="2" class="form-control" id="message" maxlength="300"></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary">Enviar solicitação</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 </body>
 
