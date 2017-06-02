@@ -94,76 +94,50 @@
                     <h4><i class="fa fa-fw fa-compass"></i> <a href=".html"> Minhas viagens </a></h4>
                 </div>
                 <div class="panel-body">
-                    <img class="stut-symbol-tempo"src="img/viagem.png" alt="Viagem"> </p></p>
+                    <img class="stut-symbol-tempo" src="img/viagem.png" alt="Viagem"> </p></p>
                     <p> Turmas e rotas por turno. </p>
                     <br>
                 </div>
             </div>
         </div>
-
-
+        <div class="col-md-4" >
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><i class="fa fa-fw fa fa-envelope"></i> <a href="#" data-toggle="modal" data-target="#mensagem"> Mensagens </a> </h4> 
+            </div>
+            <div class="panel-body">
+                <img class="stut-symbol-motorista" src="img/msg.png" alt="Mensagens"> </p> </p>
+                <p>Mensagens enviadas e recebidas.</p> 
+                </p><br>
+            </div>
+        </div>
+    </div>
 
         <div class="col-md-4" >
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4><i class="fa fa-fw fa fa-envelope"></i> <a href="#" data-toggle="modal" data-target="#myModal"> Mensagens </a> </h4>
-                    <!-- Modal -->
-                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                      <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Mensagens</h4>
-                        </div>
-                        <div class="modal-body">
-                            No momento não há novas mensagens. 
-                        </div>
-                        <div class="modal-footer">
-                         
-                            <button type="button" class="btn btn-success" href="areadomotorista.html">Ok</button>
-                        </div>
-                    </div>
-                </div>
+                    <h4><i class="fa fa-fw fa-wrench"></i> <a href="#" data-toggle="modal" data-target="#configuracoes"> Configurações </a> </h4>
+                </div>  
+            <div class="panel-body">
+                <img class="stut-symbol-pagamento" src="img/config.png" alt="configurações">  </p> </p>
+                <p>Alterar dados cadastrais. </p> </p> </p> 
+                <br>
             </div>
-                </div>
-                <div class="panel-body">
-                   <img class="stut-symbol-motorista"src="img/msg.png" alt="Mensagens"> </p> </p>
-                   <p>Mensagens enviadas e recebidas.</p> 
-               </p><br>
-
-           </div>
-       </div>
-   </div>
-
-
-
-   <div class="col-md-4" >
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4><i class="fa fa-fw fa-wrench"></i> <a href=".html"> Configurações </a> </h4>
         </div>
-        <div class="panel-body">
-         <img class="stut-symbol-pagamento"src="img/config.png" alt="configurações">  </p> </p>
-         <p>Alterar foto, apelido. </p> </p> </p> 
-         <br>
-
-     </div>
- </div>
-</div>
+    </div>
 
 </div>
-
-
 
 <div id="alinha">
     <div class="col-md-4" >
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h4><i class="fa fa-fw fa-user"></i> <a href=".html"> Alterar dados </a> </h4>
+                <h4><i class="fa fa-fw fa-money"></i> <a href=".html" data-toggle="modal" data-target="#pagamento"> Pagamento </a> </h4>
             </div>
             <div class="panel-body">
-                <img class="stut-symbol-tempo"src="img/alteradados.png" alt="Alterar Dados"> </p></p>
-                <p> Alterar email, telefone, documentos, endereço.</p>
+                <img class="stut-symbol-tempo" src="img/change.png" alt="Alterar Dados"> </p></p>
+                <p> Dados de recebimento de pagamento. </p>
+                </br>
 
             </div>
         </div>
@@ -174,11 +148,11 @@
     <div class="col-md-4" >
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h4><i class="fa fa-fw fa fa-file"></i> <a href=".html"> Solicitar alteração de contrato </a> </h4>
+                <h4><i class="fa fa-fw fa fa-file"></i> <a href=".html" data-toggle="modal" data-target="#alteracontrato"> Solicitar alteração de contrato </a> </h4>
             </div>
             <div class="panel-body">
-               <img class="stut-symbol-motorista"src="img/alteracontrato.png" alt="Alterar Contrato"> </p> </p>
-               <p> Alterar dados contratuais.</p> 
+               <img class="stut-symbol-motorista" src="img/alteracontrato.png" alt="Alterar Contrato"> </p> </p>
+               <p> Alterar dados contratuais, como mudança de horários, faculdades atendidas, etc.</p> 
 
            </div>
        </div>
@@ -189,11 +163,12 @@
    <div class="col-md-4" >
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h4><i class="fa fa-fw fa-times"></i><a href=".html"> Cancelamento </a> </h4>
+            <h4><i class="fa fa-fw fa-times"></i><a href=".html" data-toggle="modal" data-target="#cancelamento"> Cancelamento </a> </h4>
         </div>
         <div class="panel-body">
-         <img class="stut-symbol-pagamento"src="img/document.png" alt="Cancelamento">  </p> </p>
+         <img class="stut-symbol-pagamento" src="img/document.png" alt="Cancelamento">  </p> </p>
          <p>Solicitar cancelamento do contrato.</p> </p> </p> 
+         </br>
 
      </div>
  </div>
@@ -219,6 +194,205 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
+
+
+<div class="modal fade" id="configuracoes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLongTitle">Configurações de Perfil </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                <div class="card hovercard">
+                    <div class="cardheader">
+
+                    </div>
+                    <div class="avatar">
+                        <img alt="" src="img/girl128.png">
+                    </div>
+                    
+                    <div class="modal-body">
+                    <form class="form-horizontal">
+                       <div class="col-md-">
+                          <div class="form-group">
+                              <input type="email" class="form-control" id="inputEmail3" placeholder="Nome">
+                          </div>
+                      </div>
+                         <form class="form-horizontal">
+                       <div class="col-md-">
+                          <div class="form-group">
+                              <input type="email" class="form-control" id="inputEmail3" placeholder="Mudar email">
+                          </div>
+                      </div>
+                       <form class="form-horizontal">
+                       <div class="col-md-">
+                          <div class="form-group">
+                              <input type="email" class="form-control" id="inputEmail3" placeholder="Mudar Telefone">
+                          </div>
+                      </div>
+                        <form class="form-horizontal">
+                       <div class="col-md-">
+                          <div class="form-group">
+                              <input type="email" class="form-control" id="inputEmail3" placeholder="Mudar Endereço">
+                          </div>
+                      </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">Salvar alterações</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div class="modal fade" id="mensagem" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLongTitle">Mensagens</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="col-md-">
+                        <div class="form-group">
+                           <select class="form-control">
+                              <option>Selecione uma turma</option>
+                              <option>Turma Manhã</option>
+                              <option>Turma Tarde</option>
+                               <option>Turma Noite</option>
+                          </select>
+                          </div>
+                      </div>
+                      <form class="form-horizontal">
+                       <div class="col-md-">
+                          <div class="form-group">
+                              <input type="email" class="form-control" id="inputEmail3" placeholder="Assunto">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                      <div class="col-md-">
+                        <label>Mensagem:</label>
+                        <textarea rows="5" cols="2" class="form-control" id="message" maxlength="300"></textarea>
+                    </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary">Enviar mensagem</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+<div class="modal fade" id="pagamento" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLongTitle">Pagamentos </h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                         Não há pagamentos para receber no momento. 
+                      </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="modal fade" id="alteracontrato" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLongTitle">Alterar Dados Contratuais</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                         <form class="form-horizontal">
+                       <div class="col-md-">
+                          <div class="form-group">
+                              <input type="email" class="form-control" id="inputEmail3" placeholder="Novo Horário de Trabalho">
+                          </div>
+                      </div>
+                       <form class="form-horizontal">
+                       <div class="col-md-">
+                          <div class="form-group">
+                              <input type="email" class="form-control" id="inputEmail3" placeholder="Novas Faculdades Atendidas">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                      <div class="col-md-">
+                        <label>Detalhe o pedido de mudança: </label>
+                        <textarea rows="5" cols="2" class="form-control" id="message" maxlength="300"></textarea>
+                    </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary">Enviar solicitação</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="modal fade" id="cancelamento" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLongTitle">Cancelamento de Contrato</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                         <form class="form-horizontal">
+                       <div class="col-md-">
+                          <div class="form-group">
+                              <input type="email" class="form-control" id="inputEmail3" placeholder="Nome Completo">
+                          </div>
+                      </div>
+                       <form class="form-horizontal">
+                       <div class="col-md-">
+                          <div class="form-group">
+                              <input type="email" class="form-control" id="inputEmail3" placeholder="CPF">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                      <div class="col-md-"> 
+                        <label> Detalhe o motivo pelo qual você deseja cancelar:</label>
+                        <textarea rows="5" cols="2" class="form-control" id="message" maxlength="300"></textarea>
+                    </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary">Enviar solicitação</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 </body>
 
