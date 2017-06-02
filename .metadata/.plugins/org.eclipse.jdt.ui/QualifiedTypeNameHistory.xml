@@ -13,5 +13,6 @@
 <fullyQualifiedTypeName name="java.util.Map.Entry"/>
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="Aluno"/>
+<fullyQualifiedTypeName name="Turma"/>
 <fullyQualifiedTypeName name="Motorista"/>
 </qualifiedTypeNameHistroy>

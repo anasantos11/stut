@@ -422,4 +422,12 @@ body {
 }
 
 
+.btn-sair{
+    padding: 14px;
+    background-color: #37474f;
+    border: none;
+}
 
+.btn-sair:hover {
+    background-color: rgb(238, 238, 238);
+}

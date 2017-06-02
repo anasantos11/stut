@@ -37,6 +37,9 @@
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
   <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
 
+  <script type="text/javascript" src="js/login.js"></script>
+
+
 </head>
 
 <body onload="carregaFaculdade(); carregaBancos()">
@@ -469,7 +472,7 @@ $( "#teste" ).click(function() {
                 </div>
                 <div class="modal-footer">
                   <div>
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="autentica()">Login</button>
                   </div>
                 </div>
               </form>
