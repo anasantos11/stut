@@ -17,7 +17,7 @@ import org.simpleframework.transport.connect.SocketConnection;
 
 public class URLMetodo implements Container {
 
-	static ServiceCliente stutService;
+	static StutService stutService;
 
 	public void handle(Request request, Response response) {
 		try {
@@ -122,7 +122,7 @@ public class URLMetodo implements Container {
 
 	public static void main(String[] list) throws Exception {
 
-		stutService = new ServiceCliente();
+		stutService = new StutService();
 
 		int porta = 8080;
 
