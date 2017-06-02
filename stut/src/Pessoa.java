@@ -139,9 +139,8 @@ public abstract class Pessoa {
 
 	@Override
 	public String toString() {
-		return "Pessoa [nome=" + nome + ", dataNascimento=" + dataNascimento + ", idade=" + idade + ", cpf=" + cpf
-				+ ", identidade=" + identidade + ", tel=" + tel + ", endereco=" + endereco + ", email=" + email
-				+ ", senha=" + senha + "]";
+		return "Nome: " + nome + "\n Data Nascimento: " + dataNascimento + "\nIdade: " + idade + "\nCpf: " + cpf
+				+ "\nIdentidade:" + identidade + "\nTel: " + tel + "\nEndereço: " + endereco.toString() + "\nE-mail=" + email;
 	}
 	
 	

@@ -38,14 +38,14 @@ public class URLMetodo implements Container {
 				mensagem = stutService.consultarClientes(request);
 				this.enviaResposta(Status.OK, response, mensagem);
 
-			}else if (path.startsWith("/requisitarTurma") && "POST".equals(method)) {
+			} else if (path.startsWith("/requisitarTurma") && "POST".equals(method)) {
 				String[] aux = path.split("/");
 				String identificador = aux[(aux.length - 2)];
 				String tipoU = aux[(aux.length - 1)];
 				mensagem = stutService.getJSONTurma(identificador, tipoU);
 				this.enviaResposta(Status.OK, response, mensagem);
 
-			}  else if (path.startsWith("/logarUsuario") && "POST".equals(method)) {
+			} else if (path.startsWith("/logarUsuario") && "POST".equals(method)) {
 				String[] aux = path.split("/");
 				String identificador = aux[(aux.length - 3)];
 				String senha = aux[(aux.length - 2)];
@@ -67,6 +67,10 @@ public class URLMetodo implements Container {
 					String[] aux2 = path.split("?");
 					boolean x = stutService.getEstaLogado(aux2[1]);
 					this.enviaResposta(Status.OK, response, "" + x);
+
+				} else if (path.startsWith("/comunicarViagem") && "POST".equals(method)) {
+					mensagem = stutService.contratoPassageiro(request);
+					this.enviaResposta(Status.CREATED, response, mensagem);
 
 				} else {
 					this.naoEncontrado(response, path);

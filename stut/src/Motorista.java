@@ -22,7 +22,7 @@ public class Motorista extends Pessoa {
 	
 	public boolean temAssentos(){
 		boolean sucess = false;
-		if(turma.verificarAlunos().size() <= quantidadeAssentos){
+		if(turma.getAlunosTurma().size() <= quantidadeAssentos){
 			sucess = true;
 		}
 		return sucess;
@@ -87,4 +87,11 @@ public class Motorista extends Pessoa {
 	public void setEstalogado(boolean estalogado) {
 		this.estalogado = estalogado;
 	}
+
+
+	@Override
+	public String toString() {
+		return super.toString() + "\n Quantidade Assentos: " + quantidadeAssentos;
+	}
+	
 }

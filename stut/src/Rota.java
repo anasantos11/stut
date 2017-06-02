@@ -1,53 +1,34 @@
 import java.time.LocalTime;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class Rota {
-	private Turma turma;
-	private LocalTime inicioViagem;
-	private LocalTime terminoViagem;
-	private LocalTime tempoViagem;
-	private String rotaPadrao;
-	
-	public Turma getTurma() {
-		return turma;
+public  class Rota {
+	private String rota;
+
+	public Rota(Turma turma){
+		setRota(ordenarRota(turma));
 	}
-	public void setTurma(Turma turma) {
-		this.turma = turma;
+	public String ordenarRota( Turma turma){
+		TreeMap<LocalTime, Aluno> a = new TreeMap<LocalTime, Aluno>();
+		turma.getListaAluno().forEach(x -> {
+			a.put(x.getContratoAluno().getRecolhimentoCasa(), x);
+		});
+		return rotaOrdenadaPadraoJson(a);
 	}
-	public LocalTime getInicioViagem() {
-		return inicioViagem;
+	public String getRota() {
+		return rota;
 	}
-	public void setInicioViagem(LocalTime inicioViagem) {
-		this.inicioViagem = inicioViagem;
-	}
-	public LocalTime getTerminoViagem() {
-		return terminoViagem;
-	}
-	public void setTerminoViagem(LocalTime terminoViagem) {
-		this.terminoViagem = terminoViagem;
-	}
-	public LocalTime getTempoViagem() {
-		return tempoViagem;
-	}
-	public void setTempoViagem(LocalTime tempoViagem) {
-		this.tempoViagem = tempoViagem;
-	}
-	public String getRotaPadrao() {
-		return rotaPadrao;
-	}
-	public void setRotaPadrao(String rotaPadrao) {
-		this.rotaPadrao = rotaPadrao;
+	public void setRota(String rota) {
+		this.rota = rota;
 	}
 	
-	public Rota(Turma turma, LocalTime inicioViagem, LocalTime terminoViagem, LocalTime tempoViagem) {
-		setTurma(turma);
-		setInicioViagem(inicioViagem);
-		setTerminoViagem(terminoViagem);
-		setTempoViagem(tempoViagem);
-	}
 	
-	public void rotaOrdenadaPadraoJson(TreeMap<LocalTime, Aluno> a){
+	/**
+	 * Atualiza rota após novo aluno ser inserido na turma
+	 * @param a
+	 */
+	public String rotaOrdenadaPadraoJson(TreeMap<LocalTime, Aluno> a){
 		String jsonAlunos = "{Alunos : {";
 		for (Map.Entry<LocalTime, Aluno> x : a.entrySet()){
 			jsonAlunos += "[{\"nome :\" \" " + x.getValue().getNome() + "\"," +
@@ -63,32 +44,9 @@ public class Rota {
 					"\"cepFac\" : \" " + x.getValue().getFaculdade().getEndereco().getCep() + "\"}],";
 		}
 		jsonAlunos += "[]}}";
-		setRotaPadrao(jsonAlunos);
-	}
-	
-	public String rotaAtualizadaPadraoJson(TreeMap<LocalTime, Aluno> a){
-		String jsonAlunos = "{Alunos : {";
-		for (Map.Entry<LocalTime, Aluno> x : a.entrySet()){
-			if(!x.getValue().ehAusente()){
-				jsonAlunos += "[{\"nome :\" \" " + x.getValue().getNome() + "\"," +
-						"\"tel :\" \" " + x.getValue().getTel() + "\"," +
-						"\"ruaAl\" : \" " + x.getValue().getEndereco().getRua() + "\"," +
-						"\"bairroAl\" : \" " + x.getValue().getEndereco().getBairro() + "\"," +
-						"\"numeroEndAl\" : \" " + x.getValue().getEndereco().getNumero() + "\"," +
-						"\"cepAl\" : \" " + x.getValue().getEndereco().getCep() + "\"," +
-						"\"nomeFac\" : \" " + x.getValue().getFaculdade().getNome() + "\"," +
-						"\"ruaFac\" : \" " + x.getValue().getFaculdade().getEndereco().getRua() + "\"," +
-						"\"bairroFac\" : \" " + x.getValue().getFaculdade().getEndereco().getBairro() + "\"," +
-						"\"numeorEndFac\" : \" " + x.getValue().getFaculdade().getEndereco().getNumero() + "\"," +
-						"\"cepFac\" : \" " + x.getValue().getFaculdade().getEndereco().getCep() + "\"}],";
-			}
-		}
-		jsonAlunos += "[]}}";
 		return jsonAlunos;
 	}
-	
-	
-	
+
 	
 
 }

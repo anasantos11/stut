@@ -24,13 +24,7 @@ public class Aluno extends Pessoa {
 		setFaculdade(facul);
 	}
 
-	public Faculdade getFaculdade() {
-		return faculdade;
-	}
 
-	public void setFaculdade(Faculdade faculdade) {
-		this.faculdade = faculdade;
-	}
 
 	/**
 	 * Métodos
@@ -39,7 +33,7 @@ public class Aluno extends Pessoa {
 		Ausencia a = new Ausencia(data, hora, observacoes);
 		ausencias.add(a);
 	}
-
+	
 	public ArrayList verificarViagens() {
 		return null;
 	}
@@ -47,6 +41,14 @@ public class Aluno extends Pessoa {
 	/**
 	 * Getters e setters
 	 */
+	
+	public Faculdade getFaculdade() {
+		return faculdade;
+	}
+
+	public void setFaculdade(Faculdade faculdade) {
+		this.faculdade = faculdade;
+	}
 
 	public String getResponsavel() {
 		return responsavel;
@@ -115,8 +117,8 @@ public class Aluno extends Pessoa {
 
 	@Override
 	public String toString() {
-		return super.toString() + "\nResponsavel: " + responsavel + "\nContrato: " + contratoA.toString() + "\nFaculdade=" + faculdade
-				+ "\nCartao:" + cartao.toString() + "\nTurma:" + turma.toString() + "\nAusencias=" + ausencias;
+		return super.toString() + "\nResponsavel: " + responsavel.toString() + "\nContrato: " + contratoA.toString() + "\nFaculdade=" + faculdade.toString() 
+				+ "\nCartao:" + cartao.toString() + "\nTurma:" + turma.toString() + "\nAusencias=" + ausencias.toString();
 
 	}
 

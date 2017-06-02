@@ -7,7 +7,6 @@ public abstract class Contrato {
 	private LocalDate inicioContrato;
 	private LocalDate fimContrato;
 	private int percentualMulta;
-	//private StatusContrato status;
 	private String status;
 	
 	public Contrato(String formaPgto, String assinaturaPagto, String servico, LocalDate inicioContrato,

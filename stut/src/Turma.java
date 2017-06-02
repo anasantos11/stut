@@ -1,4 +1,5 @@
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
 
@@ -7,41 +8,59 @@ public class Turma {
 	private Motorista motorista;
 	private final int quantAlunos = motorista.getQuantidadeAssentos();
 	private Rota rota;
+	private Viagem viagem;
 	private List<Aluno> listaAluno;
-	private List<Endereco> listaBairro;
+	private List<String> listaBairro;
 	private List<Faculdade> listaFaculdades;
 	private int cont = 0;
+	
+	public Turma(Motorista motorista, Aluno aluno) {
+		setMotorista(motorista);
+		setRota(new Rota (this));
+		setViagem(new Viagem(this, getRotaPadrao()));
+		setListaAluno(new ArrayList<Aluno>());
+		getListaAluno().add(aluno);
+		setListaBairro( new ArrayList<String>());
+	}
+	
+	/**
+	 * Retorna os alunos cadastrados na turma
+	 * @return
+	 */
 
-	public List<Aluno> verificarAlunos() {
+	public List<Aluno> getAlunosTurma() {
 		return listaAluno;
 	}
-	public void verificarRota() {
-		this.rota.getRotaPadrao();
+	/**
+	 * Retorna a rota padrão da turma
+	 */
+	public Rota getRotaPadrao() {
+		return rota;
 	}
-	
-	public void ordenarRota(){
-		TreeMap<LocalTime, Aluno> a = new TreeMap<LocalTime, Aluno>();
-		listaAluno.forEach(x -> {
-			a.put(x.getContratoAluno().getRecolhimentoCasa(), x);
-		});
-		rota.rotaOrdenadaPadraoJson(a);
-	}
-	
+
+	public void setRota(Rota rota) {
+		this.rota = rota;
+	}	
+	/**
+	 *Verifica a rota do dia que a turma deverá fazer
+	 * @return
+	 */
 	public String getRotaDia(){
 		this.cont = 0;
+		//Verifica se tem aluno ausente
 		listaAluno.forEach(x -> {
 			if(x.ehAusente()){
 				this.cont++;
 			}
-		});
+		}); // se nao tiver ninguem ausente, pega rota padrao
 		if(this.cont == 0){
-			return rota.getRotaPadrao();
+			return rota.getRota();
 		}else{
 			TreeMap<LocalTime, Aluno> a = new TreeMap<LocalTime, Aluno>();
 			listaAluno.forEach(x -> {
 				a.put(x.getContratoAluno().getRecolhimentoCasa(), x);
 			});
-			return rota.rotaAtualizadaPadraoJson(a);
+			return viagem.rotaAtualizadaPadraoJson(a);
 		}
 	}
 	
@@ -54,12 +73,7 @@ public class Turma {
 	public void setMotorista(Motorista motorista) {
 		this.motorista = motorista;
 	}
-	public Rota getRota() {
-		return rota;
-	}
-	public void setRota(Rota rota) {
-		this.rota = rota;
-	}
+
 	public static int getIdTurma() {
 		return idTurma;
 	}
@@ -72,10 +86,10 @@ public class Turma {
 	public void setCont(int cont) {
 		this.cont = cont;
 	}
-	public List<Endereco> getListaBairro() {
+	public List<String> getListaBairro() {
 		return listaBairro;
 	}
-	public void setListaBairro(List<Endereco> listaBairro) {
+	public void setListaBairro(List<String> listaBairro) {
 		this.listaBairro = listaBairro;
 	}
 	public List<Faculdade> getListaFaculdades() {
@@ -89,6 +103,12 @@ public class Turma {
 	}
 	public List<Aluno> getListaAluno() {
 		return listaAluno;
+	}
+	public Viagem getViagem() {
+		return viagem;
+	}
+	public void setViagem(Viagem viagem) {
+		this.viagem = viagem;
 	}
 
 }

@@ -5,9 +5,15 @@ import org.simpleframework.http.Query;
 import org.simpleframework.http.Request;
 
 public class StutService {
-	private Stut lista;
+	private Stut lista = new Stut();
 
+	/**
+	 * Cadastro contrato tipo Aluno
+	 * @param request
+	 * @return
+	 */
 	public String contratoPassageiro(Request request) {
+		String resp = "erro";
 		Pessoa aluno = null;
 		Query query = request.getQuery();
 		// Query Aluno
@@ -65,14 +71,26 @@ public class StutService {
 			lista.inserirCliente((Aluno) aluno);
 			lista.alunoPorBairro((Aluno) aluno);
 			lista.inserirEmTurma((Aluno)aluno);
+			resp = "ok";
 		}
-		return aluno.toString();
+		return resp;
+		//return aluno.toString();
 	} // Fim cadastro
-
+	
+	/**
+	 * Total clientes tipo Aluno cadastrato na Stut
+	 * @param request
+	 * @return
+	 */
 	public String totalAlunos(Request request) {
 		return Integer.toString(lista.quantCliente());
 	}
 	
+	/**
+	 * Consultar cliente do tipo aluno atrvés do cpf
+	 * @param request
+	 * @return
+	 */
 	public String consultarClientes(Request request) {
 		Query query = request.getQuery();
 		String cpf = query.get("cpf");
@@ -82,10 +100,13 @@ public class StutService {
 		return a.toString();
 	}
 
-	public StutService() {
-		lista = new Stut();
-	}
-	
+	/**
+	 * 
+	 * @param cpf
+	 * @param tipoU
+	 * @return
+	 */
+
 	public String getJSONTurma(String cpf, String tipoU){
 		String resp = null;
 		if(tipoU.equals("motorista")){ 

@@ -42,7 +42,6 @@ function validarCadastro(url) {
   "&entregaFaculdade=" + entregaFaculdade + "&recolhimentoFaculdade=" + recolhimentoFaculdade + "&entregaCasa=" + entregaCasa  + "&banco=" + banco +
   "&bandeiraCartao=" + bandeiraCartao + "&numCartao=" + numCartao + "&codigoCartao=" + codigoCartao + "&dataValidade=" + dataValidade;
 
-  var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
     if(xmlhttp.readyState==4) {
       swal({

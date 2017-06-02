@@ -11,7 +11,7 @@ public class Stut {
 	private List<Motorista> fornecedores = new LinkedList<Motorista>();
 	private int j;
 	private LinkedList<LinkedList<Aluno>> lb = new LinkedList<LinkedList<Aluno>>();
-	private LinkedList<Turma> lt = new LinkedList<Turma>();
+	private List<Turma> listaTurma = new ArrayList<Turma>();
 	
 	public LinkedList<LinkedList<Aluno>> getListBairrosXAuno() {
 		return lb;
@@ -67,14 +67,13 @@ public class Stut {
 	}
 	
 	public void inserirEmTurma(Aluno aluno) {
-		lt.forEach(y -> {
+		listaTurma.forEach(y -> {
 			// pro futuro String bairroTurma = y.verificarAlunos().get(0).getEndereco().getBairro();
 			// pro futuro String bairroAluno = aluno.getEndereco().getBairro();
 			boolean temEspaco = y.getMotorista().temAssentos();
-			
 			if(temEspaco){
-				y.verificarAlunos().add(aluno);
-				y.ordenarRota();
+				y.getAlunosTurma().add(aluno);
+				y.getRotaPadrao().ordenarRota(y);
 			}
 		});
 	}
