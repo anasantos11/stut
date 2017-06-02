@@ -66,7 +66,7 @@ public class StutService {
 			lista.alunoPorBairro((Aluno) aluno);
 			lista.inserirEmTurma((Aluno)aluno);
 		}
-		return aluno.toString();
+		return "OK";
 	} // Fim cadastro
 
 	public String totalAlunos(Request request) {
@@ -111,12 +111,8 @@ public class StutService {
 		String resp = "0";
 		if(a != null){
 			if(a.getSenha().equals(senha)){
-				a.setEstaLogado(true);
-				resp = "aluno : {"
-							+ "\"value\" : \"aluno\","
-							+ "\"nome\" : \""+a.getNome()+"\","
-							+ "\"cpf\" : \""+a.getCpf()+"\""
-						+ "}";
+				a.setEstalogado(true);
+				resp = "1";
 			}
 		}
 		return resp;
@@ -128,17 +124,13 @@ public class StutService {
 		if(m != null){
 			if(m.getSenha().equals(senha)){
 				m.setEstalogado(true);
-				resp = "motorista : {"
-						+ "\"value\" : \"motorista\","
-						+ "\"nome\" : \""+m.getNome()+"\","
-						+ "\"cpf\" : \""+m.getCpf()+"\""
-					+ "}";
+			resp = "1";
 			}
 		}
 		return resp;
 	}
 
 	public boolean getEstaLogado(String cpf) {
-		return lista.consultarClientes(cpf).isEstaLogado();
+		return lista.consultarClientes(cpf).isEstalogado();
 	}
 }

@@ -8,7 +8,6 @@ public class Aluno extends Pessoa {
 	private ContratoAluno contratoA;
 	private Faculdade faculdade;
 	private CartaoCredito cartao;
-	private boolean estaLogado;
 	private Turma turma;
 	private List<Ausencia> ausencias;
 	private boolean ausente = false;
@@ -103,14 +102,6 @@ public class Aluno extends Pessoa {
 
 	public void setTemTurma(boolean temTurma) {
 		this.temTurma = temTurma;
-	}
-
-	public boolean isEstaLogado() {
-		return estaLogado;
-	}
-
-	public void setEstaLogado(boolean estaLogado) {
-		this.estaLogado = estaLogado;
 	}
 
 	@Override
