@@ -1,5 +1,19 @@
-var turma = {"alunos":
-	[{"nome" :"Joao",
+//  Modelo para testar request para Luiz
+var turmaLuiz = "";
+function turma_request(){
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+	if (this.readyState == 4 && this.status == 200) {
+		turmaLuiz = JSON.parse(this.responseText);		
+		}
+	};
+	xmlhttp.open("GET", "http://127.0.0.1:8080/requisitarTurma//"+cpf, true);
+	xmlhttp.send();
+}
+// Simulacao de JSON resposta do turma_request()
+
+var turma ={"alunos":
+	[{"nome" :"Valisnei",
 	"tel" : "21994823757",
 	"ruaAl": "avenida cisne",
 	"bairroAl": "lagoa dos ingleses",
@@ -16,6 +30,28 @@ var turma = {"alunos":
 	"bairroAl": "Jardim Guanabara" ,
 	"numeroEndAl": "280",
 	"cepAl": "31742135",
+	"nomeFac": "PUC-Minas Praca da Liberdade",
+	"ruaFac": "Rua Claudio Manuel",
+	"bairroFac": "Funcionarios",
+	"numeroEndFac":"1205", 
+	"cepFac": "30140108"
+	},{"nome" :"Luiz Jesus",
+	"tel" : "21994823757",
+	"ruaAl": "Rua Papa onorio" ,
+	"bairroAl": "Ouro Minas" ,
+	"numeroEndAl": "354",
+	"cepAl": "318070870",
+	"nomeFac": "PUC-Minas Praca da Liberdade",
+	"ruaFac": "Rua Claudio Manuel",
+	"bairroFac": "Funcionarios",
+	"numeroEndFac":"1205", 
+	"cepFac": "30140108"
+	},{"nome" :"Bruna Silva",
+	"tel" : "21994823757",
+	"ruaAl": "Rua Acassias" ,
+	"bairroAl": "Eldorado" ,
+	"numeroEndAl": "1442",
+	"cepAl": "32310370",
 	"nomeFac": "PUC-Minas Praca da Liberdade",
 	"ruaFac": "Rua Claudio Manuel",
 	"bairroFac": "Funcionarios",
@@ -163,3 +199,6 @@ function gerarTabela(){
     //    alert("This is a demo.\n :-)");
     //});
 });
+
+
+// URL metodo.java, stut.java, stutservice
