@@ -21,7 +21,7 @@ function getEstaAutenticado(){
            //}else{
             //alert("Favor realizar o login!");
            	//location.href = "home.html"
-           //}
+           // }
         }
     };
     xhttp.open("POST", "http://127.0.0.1:8080/getAutenticacao//"+ cpf, true);

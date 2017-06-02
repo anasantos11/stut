@@ -69,9 +69,6 @@ public class URLMetodo implements Container {
 					boolean x = stutService.getEstaLogado(aux2[1]);
 					this.enviaResposta(Status.OK, response, "" + x);
 			}
-			} else {
-				this.naoEncontrado(response, path);
-			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
