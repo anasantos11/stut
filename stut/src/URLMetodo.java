@@ -41,8 +41,9 @@ public class URLMetodo implements Container {
 
 			}else if (path.startsWith("/requisitarTurma") && "POST".equals(method)) {
 				String[] aux = path.split("//");
-				String identificador = aux[1];
-				String tipoU = aux[2];
+				aux = aux[1].split("/");
+				String identificador = aux[0];
+				String tipoU = aux[1];
 				mensagem = stutService.getJSONTurma(identificador, tipoU);
 				this.enviaResposta(Status.OK, response, mensagem);
 
@@ -75,11 +76,9 @@ public class URLMetodo implements Container {
 				} else if (path.startsWith("/comunicarViagem") && "POST".equals(method)) {
 					mensagem = stutService.contratoPassageiro(request);
 					this.enviaResposta(Status.CREATED, response, mensagem);
-
-				} else {
-					this.naoEncontrado(response, path);
 				}
-
+			} else {
+				this.naoEncontrado(response, path);
 			}
 			
 

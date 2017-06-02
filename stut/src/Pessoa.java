@@ -137,12 +137,6 @@ public abstract class Pessoa {
 	public void setCont(int cont) {
 		this.cont = cont;
 	}
-
-	@Override
-	public String toString() {
-		return "Nome: " + nome + "\n Data Nascimento: " + dataNascimento + "\nIdade: " + idade + "\nCpf: " + cpf
-				+ "\nIdentidade:" + identidade + "\nTel: " + tel + "\nEndereço: " + endereco.toString() + "\nE-mail=" + email;
-	}
 	
 	public boolean isEstalogado() {
 		return estalogado;
@@ -152,7 +146,11 @@ public abstract class Pessoa {
 		this.estalogado = estalogado;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Nome: " + nome + "\n Data Nascimento: " + dataNascimento + "\nIdade: " + idade + "\nCpf: " + cpf
+				+ "\nIdentidade:" + identidade + "\nTel: " + tel + "\nEndereço: " + endereco.toString() + "\nE-mail=" + email;
+	}
 	
 
 }
