@@ -17,7 +17,7 @@ public class Turma {
 	public Turma(Motorista motorista, Aluno aluno) {
 		setMotorista(motorista);
 		setRota(new Rota (this));
-		setViagem(new Viagem(this, getRotaPadrao()));
+		setViagem(new Viagem(this, getRota()));
 		setListaAluno(new ArrayList<Aluno>());
 		getListaAluno().add(aluno);
 		setListaBairro( new ArrayList<String>());
@@ -34,7 +34,11 @@ public class Turma {
 	/**
 	 * Retorna a rota padrão da turma
 	 */
-	public Rota getRotaPadrao() {
+	public String getRotaPadrao() {
+		return rota.getRota();
+	}
+	
+	public Rota getRota() {
 		return rota;
 	}
 

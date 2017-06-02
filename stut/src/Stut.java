@@ -67,15 +67,21 @@ public class Stut {
 	}
 	
 	public void inserirEmTurma(Aluno aluno) {
-		listaTurma.forEach(y -> {
-			// pro futuro String bairroTurma = y.verificarAlunos().get(0).getEndereco().getBairro();
-			// pro futuro String bairroAluno = aluno.getEndereco().getBairro();
-			boolean temEspaco = y.getMotorista().temAssentos();
-			if(temEspaco){
-				y.getAlunosTurma().add(aluno);
-				y.getRotaPadrao().ordenarRota(y);
-			}
-		});
+		if(listaTurma.size() != 0){
+			listaTurma.forEach(y -> {
+				boolean temEspaco = y.getMotorista().temAssentos();
+				if(temEspaco){
+					y.getAlunosTurma().add(aluno);
+					y.getRota().ordenarRota(y);
+				}
+			});
+		}else{
+			fornecedores.forEach(x -> {
+				if(x.temAssentos()){
+					listaTurma.add(new Turma(x, aluno));
+				}
+			});
+		}
 	}
 
 	public void alunoPorBairro(Aluno aluno){

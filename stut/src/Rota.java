@@ -9,7 +9,7 @@ public  class Rota {
 	public Rota(Turma turma){
 		setRota(ordenarRota(turma));
 	}
-	public String ordenarRota( Turma turma){
+	public String ordenarRota(Turma turma){
 		TreeMap<LocalTime, Aluno> a = new TreeMap<LocalTime, Aluno>();
 		turma.getListaAluno().forEach(x -> {
 			a.put(x.getContratoAluno().getRecolhimentoCasa(), x);
