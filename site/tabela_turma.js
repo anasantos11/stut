@@ -4,7 +4,7 @@ function turma_request(){
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
 	if (this.readyState == 4 && this.status == 200) {
-		turmaLuiz = JSON.parse(this.responseText);		
+		turmaLuiz = JSON.parse(this.responseText);
 		}
 	};
 	xmlhttp.open("GET", "http://127.0.0.1:8080/requisitarTurma//"+cpf, true);
@@ -22,7 +22,7 @@ var turma ={"alunos":
 	"nomeFac": "PUC-Minas Praca da Liberdade",
 	"ruaFac": "Rua Claudio Manuel",
 	"bairroFac": "Funcionarios",
-	"numeroEndFac":"1205", 
+	"numeroEndFac":"1205",
 	"cepFac": "30140108"
 	},{"nome" :"ana paula",
 	"tel" : "21994823757",
@@ -33,7 +33,7 @@ var turma ={"alunos":
 	"nomeFac": "PUC-Minas Praca da Liberdade",
 	"ruaFac": "Rua Claudio Manuel",
 	"bairroFac": "Funcionarios",
-	"numeroEndFac":"1205", 
+	"numeroEndFac":"1205",
 	"cepFac": "30140108"
 	},{"nome" :"Luiz Jesus",
 	"tel" : "21994823757",
@@ -44,7 +44,7 @@ var turma ={"alunos":
 	"nomeFac": "PUC-Minas Praca da Liberdade",
 	"ruaFac": "Rua Claudio Manuel",
 	"bairroFac": "Funcionarios",
-	"numeroEndFac":"1205", 
+	"numeroEndFac":"1205",
 	"cepFac": "30140108"
 	},{"nome" :"Bruna Silva",
 	"tel" : "21994823757",
@@ -55,7 +55,7 @@ var turma ={"alunos":
 	"nomeFac": "PUC-Minas Praca da Liberdade",
 	"ruaFac": "Rua Claudio Manuel",
 	"bairroFac": "Funcionarios",
-	"numeroEndFac":"1205", 
+	"numeroEndFac":"1205",
 	"cepFac": "30140108"
 	}]
 }
@@ -63,7 +63,7 @@ var turma ={"alunos":
 function gerarTabela(){
 	var lista_turma;
 	for(x=0; x<turma.alunos.length;x++){
-		lista_turma += 
+		lista_turma +=
 			'<div class="row user-row">'
 				'<div class="col-md-2">'
 					'<img class="img-circle"'+
@@ -78,7 +78,7 @@ function gerarTabela(){
 				'<div class="col-md-1 dropdown-user" data-for=".cyruxx">'+
 					'<i class="glyphicon glyphicon-chevron-down text-muted"></i>'+
 				'</div>'+
-			'</div>'+            
+			'</div>'+
 			'<!-- Add data-for class to this row -->'+
 			'<div class="row user-infos cyruxx">'+
 				'<div class="col-sm-10 col-md-10 col-md-offset-1">'+

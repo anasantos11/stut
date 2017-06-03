@@ -6,21 +6,18 @@ import java.util.TreeMap;
 public class Turma {
 	private static int idTurma;
 	private Motorista motorista;
-	private final int quantAlunos = motorista.getQuantidadeAssentos();
+	private final int quantAlunos = 20;
 	private Rota rota;
 	private Viagem viagem;
-	private List<Aluno> listaAluno;
-	private List<String> listaBairro;
+	private List<Aluno> listaAluno = new ArrayList<Aluno>();
+	private List<String> listaBairro = new ArrayList<String>();
 	private List<Faculdade> listaFaculdades;
 	private int cont = 0;
 	
-	public Turma(Motorista motorista, Aluno aluno) {
+	public Turma(Motorista motorista) {
 		setMotorista(motorista);
 		setRota(new Rota (this));
 		setViagem(new Viagem(this, getRota()));
-		setListaAluno(new ArrayList<Aluno>());
-		getListaAluno().add(aluno);
-		setListaBairro( new ArrayList<String>());
 	}
 	
 	/**

@@ -120,9 +120,9 @@ public class URLMetodo implements Container {
 	}
 
 	public static void main(String[] list) throws Exception {
-
 		stutService = new StutService();
-
+		
+		stutService.atualizarSistema();
 		int porta = 8080;
 
 		// Configura uma conexão soquete para o servidor HTTP.

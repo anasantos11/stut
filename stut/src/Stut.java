@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -13,6 +15,7 @@ public class Stut {
 	private LinkedList<LinkedList<Aluno>> lb = new LinkedList<LinkedList<Aluno>>();
 	private List<Turma> listaTurma = new ArrayList<Turma>();
 	
+
 	public LinkedList<LinkedList<Aluno>> getListBairrosXAuno() {
 		return lb;
 	}
@@ -78,7 +81,7 @@ public class Stut {
 		}else{
 			fornecedores.forEach(x -> {
 				if(x.temAssentos()){
-					listaTurma.add(new Turma(x, aluno));
+					listaTurma.add(new Turma(x));
 				}
 			});
 		}
