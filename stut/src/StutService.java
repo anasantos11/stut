@@ -153,7 +153,10 @@ public class StutService {
 		return lista.consultarClientes(cpf).isEstalogado();
 	}
 	
-	
+	/**
+	 * Método havia sido criado com o intuito de criar a turma e inserir alguns alunos para 
+	 * apresentação do sistema em aula. 
+	 */
 	public void atualizarSistema(){
 		Endereco endMotorista = new Endereco("Avenida Bias Fortes", 160, "Carlos Prates", "Belo Horizonte", "MG",
 				"30710045");
